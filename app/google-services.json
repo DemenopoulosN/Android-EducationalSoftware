@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "31932008959",
+    "project_id": "educational-software-8fcb4",
+    "storage_bucket": "educational-software-8fcb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31932008959:android:5be707225aad71c00affca",
+        "android_client_info": {
+          "package_name": "com.unipi.p17019p17024.educationalsoftware"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31932008959-uqiqasqud8ni6lagr0ua0dkv2tbp2hia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfWYZk_DEmNcWAOt7yh8hiLdNApSydT5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31932008959-uqiqasqud8ni6lagr0ua0dkv2tbp2hia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

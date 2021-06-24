@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Educational Software</string>
+
+    <!--LogIn Activity-->
+    <string name="loginTitle1">Φτιάξε λογαριασμό</string>
+    <string name="editTextEmail">Email</string>
+    <string name="editTextPassword">Κωδικός</string>
+    <string name="loginTitle2">Βάλε τα στοιχεία σου</string>
+    <string name="editTextUsername">Όνομα χρήστη</string>
+    <string name="checkbox">να με θυμάσαι</string>
+    <string name="signInButton">Είσοδος</string>
+    <string name="signUpButton">Εγγραφή</string>
+    <string name="textView2">Έχεις ήδη λογαριασμό;</string>
+    <string name="buttonBack">πίσω στη δημιουργία λογαριασμού</string>
+    <string name="errorToast2">Ένα ή περισσότερα πεδία είναι κενά!</string>
+    <string name="signUpToast">Η εγγραφή ήταν επιτυχής!</string>
+    <string name="loginToast">Επιτυχής σύνδεση!</string>
+    <string name="userCratedToast">Ο χρήστης δημιουργήθηκε</string>
+</resources>
