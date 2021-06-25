@@ -1,7 +1,9 @@
 package com.unipi.p17019p17024.educationalsoftware;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -15,20 +17,30 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.unipi.p17019p17024.educationalsoftware.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     String userID, email;
-    ImageView imageView;
+
+    //
+    //Button
+    //
+    Button buttonUnits;
+    Button buttonTests;
 
     //User Authentication
     public FirebaseAuth mAuth;
     FirebaseUser currentUser ;
 
+    //Firebase Database
+    FirebaseDatabase database;
+    DatabaseReference myRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        imageView = findViewById(R.id.imageView9);
 
         com.unipi.p17019p17024.educationalsoftware.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -55,10 +67,29 @@ public class MainActivity extends AppCompatActivity {
 
         userID = getIntent().getStringExtra("userID");
         email = getIntent().getStringExtra("email");
+
+
+        //Firebase Database
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("message");
+
+
+
+        buttonUnits = findViewById(R.id.buttonUnits);
+        buttonUnits.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), UnitsActivity.class);
+            intent.putExtra("userID", currentUser.getUid());
+            startActivity(intent);
+        });
+
+        buttonTests = findViewById(R.id.buttonTests);
+        buttonTests.setOnClickListener(v -> {
+            Intent intent2 = new Intent(getApplicationContext(), RevisionTestsActivity.class);
+            intent2.putExtra("userID", currentUser.getUid());
+            startActivity(intent2);
+        });
+
+
     }
 
-    public void getInfo(View view){
-        Toast.makeText(this, "This is my Toast message!",
-                Toast.LENGTH_LONG).show();
-    }
 }

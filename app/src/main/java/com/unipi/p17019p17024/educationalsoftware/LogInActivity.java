@@ -1,6 +1,7 @@
 package com.unipi.p17019p17024.educationalsoftware;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.unipi.p17019p17024.educationalsoftware.ui.home.HomeFragment;
 
 public class LogInActivity extends AppCompatActivity {
     EditText editTextEmail, editTextPassword;
@@ -140,7 +142,6 @@ public class LogInActivity extends AppCompatActivity {
                         Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
                         intent2.putExtra("userID", currentUser.getUid());
                         intent2.putExtra("email", currentUser.getEmail());
-                        intent2.putExtra("username",currentUser.getDisplayName());
                         startActivity(intent2);
                     } else {
                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();

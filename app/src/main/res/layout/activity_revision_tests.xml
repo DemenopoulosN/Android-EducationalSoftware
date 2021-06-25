@@ -4,14 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LogInActivity">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="455dp"
-        android:layout_height="860dp"
-        app:srcCompat="@drawable/wp7955934"
-        tools:layout_editor_absoluteX="-42dp"
-        tools:layout_editor_absoluteY="-40dp" />
+    tools:context=".RevisionTestsActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

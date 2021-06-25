@@ -16,6 +16,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wp7955934" />
 
+    <Button
+        android:id="@+id/buttonTests"
+        android:layout_width="332dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="388dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="199dp"
+        android:backgroundTint="#673AB7"
+        android:text="ΕΠΑΝΑΛΗΠΤΙΚΑ ΤΕΣΤ"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
@@ -25,40 +43,6 @@
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        style="@android:style/Widget.Holo.ImageButton"
-        android:layout_width="332dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="344dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="380dp"
-        android:background="#CD8E31"
-        android:backgroundTint="#CD8E31"
-        android:hapticFeedbackEnabled="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        style="@android:style/Widget.Holo.ImageButton"
-        android:layout_width="332dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="457dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="267dp"
-        android:background="#673AB7"
-        android:backgroundTint="#673AB7"
-        android:hapticFeedbackEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,16 +99,33 @@
         app:srcCompat="@drawable/kids_2_c24f5de232752639434941a62d682fbe" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imageViewInfo"
         android:layout_width="60dp"
         android:layout_height="59dp"
         android:layout_marginStart="335dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="721dp"
-        android:onClick="getInfo"
         android:scaleType="fitXY"
         android:src="@drawable/information_icon4_orange_svg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonUnits"
+        android:layout_width="332dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="274dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="313dp"
+        android:backgroundTint="#CD8E31"
+        android:text="ΕΝΟΤΗΤΕΣ"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
