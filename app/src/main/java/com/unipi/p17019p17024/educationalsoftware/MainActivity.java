@@ -23,10 +23,6 @@ import com.unipi.p17019p17024.educationalsoftware.databinding.ActivityMainBindin
 
 public class MainActivity extends AppCompatActivity {
     String userID, email;
-
-    //
-    //Button
-    //
     Button buttonUnits;
     Button buttonTests;
 

@@ -19,4 +19,7 @@
     <string name="signUpToast">Sign-up successful!</string>
     <string name="loginToast">Log-in successful!</string>
     <string name="userCratedToast">User created</string>
+
+    <!--Theory Activity-->
+    <string name="errorToast">Error</string>
 </resources>

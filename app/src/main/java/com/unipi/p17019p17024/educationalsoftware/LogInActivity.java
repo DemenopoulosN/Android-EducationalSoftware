@@ -143,7 +143,8 @@ public class LogInActivity extends AppCompatActivity {
                         intent2.putExtra("userID", currentUser.getUid());
                         intent2.putExtra("email", currentUser.getEmail());
                         startActivity(intent2);
-                    } else {
+                    }
+                    else {
                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });

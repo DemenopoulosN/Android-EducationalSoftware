@@ -17,4 +17,7 @@
     <string name="signUpToast">Η εγγραφή ήταν επιτυχής!</string>
     <string name="loginToast">Επιτυχής σύνδεση!</string>
     <string name="userCratedToast">Ο χρήστης δημιουργήθηκε</string>
+
+    <!--Theory Activity-->
+    <string name="errorToast">Σφάλμα</string>
 </resources>
