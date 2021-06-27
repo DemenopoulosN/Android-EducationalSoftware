@@ -99,7 +99,7 @@
         app:srcCompat="@drawable/kids_2_c24f5de232752639434941a62d682fbe" />
 
     <ImageView
-        android:id="@+id/imageViewInfo"
+        android:id="@+id/imageViewInfoHome"
         android:layout_width="60dp"
         android:layout_height="59dp"
         android:layout_marginStart="335dp"

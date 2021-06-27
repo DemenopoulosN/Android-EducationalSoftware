@@ -58,6 +58,17 @@
         app:srcCompat="@drawable/wp7955934" />
 
     <ImageView
+        android:id="@+id/imageViewInfoUnits"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="364dp"
+        android:layout_marginTop="1dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/information_icon4_orange_svg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/imageViewUnit4Stars"
         android:layout_width="121dp"
         android:layout_height="36dp"

@@ -16,6 +16,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wp7955934" />
 
+    <ImageView
+        android:id="@+id/imageViewInfoLogIn"
+        android:layout_width="60dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="335dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/information_icon4_orange_svg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"

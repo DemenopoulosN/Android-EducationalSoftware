@@ -16,6 +16,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wp7955934" />
 
+    <ImageView
+        android:id="@+id/imageViewInfoEntry"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="358dp"
+        android:layout_marginTop="3dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/information_icon4_orange_svg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textView42"
         android:layout_width="112dp"
@@ -177,13 +188,7 @@
         android:id="@+id/imageView8"
         android:layout_width="70dp"
         android:layout_height="64dp"
-        android:layout_marginStart="336dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="678dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/umbrella" />
+        app:srcCompat="@drawable/crab"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="64dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

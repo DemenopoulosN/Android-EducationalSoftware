@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -16,6 +17,7 @@ public class UnitsActivity extends AppCompatActivity {
     String userID;
     ImageButton imageButton1, imageButton2, imageButton3, imageButton4, imageButton5, imageButton6, imageButton7, imageButton8, imageButton9, imageButton10;
     Integer selectedUnit = 0;
+    ImageView imageView;
 
     //User Authentication
     public FirebaseAuth mAuth;
@@ -39,6 +41,7 @@ public class UnitsActivity extends AppCompatActivity {
         imageButton8 = findViewById(R.id.imageButtonUnit8);
         imageButton9 = findViewById(R.id.imageButtonUnit9);
         imageButton10 = findViewById(R.id.imageButtonUnit10);
+        imageView = findViewById(R.id.imageViewInfoUnits);
 
         //User Authentication
         mAuth = FirebaseAuth.getInstance();
@@ -49,7 +52,6 @@ public class UnitsActivity extends AppCompatActivity {
 
         //Firebase Database
         database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("message");
 
 
         //

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExercisesActivity">
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="455dp"
+        android:layout_height="860dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wp7955934" />
+
+    <Button
+        android:id="@+id/buttonSubmitMultipleChoice"
+        style="@android:style/Widget.Holo.Button.Toggle"
+        android:layout_width="140dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="439dp"
+        android:backgroundTint="#14A51A"
+        android:text="Υποβολή"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSubmitFillInTheGap"
+        style="@android:style/Widget.Holo.Button.Toggle"
+        android:layout_width="140dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="335dp"
+        android:backgroundTint="#14A51A"
+        android:text="Υποβολή"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonWrong"
+        style="@android:style/Widget.Holo.Button.Toggle"
+        android:layout_width="101dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="329dp"
+        android:layout_marginEnd="66dp"
+        android:backgroundTint="#E4392D"
+        android:text="Λάθος"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewInfoExercises"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="347dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/information_icon4_orange_svg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewQuestion"
+        android:layout_width="223dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="200dp"
+        android:textAlignment="center"
+        android:textSize="37sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCorrect"
+        style="@android:style/Widget.Holo.Button.Toggle"
+        android:layout_width="101dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="329dp"
+        android:backgroundTint="#14A51A"
+        android:text="Σωστό"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextAnswer"
+        android:layout_width="70dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="202dp"
+        android:layout_marginEnd="64dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="398dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="329dp"
+        android:layout_marginBottom="414dp"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButtonEasy"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            android:textSize="30sp"
+            tools:text="5" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMedium"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonHard"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textSize="30sp" />
+
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

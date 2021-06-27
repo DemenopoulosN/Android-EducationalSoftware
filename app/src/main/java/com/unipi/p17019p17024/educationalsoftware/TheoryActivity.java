@@ -3,7 +3,10 @@ package com.unipi.p17019p17024.educationalsoftware;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +26,8 @@ public class TheoryActivity extends AppCompatActivity {
     String userID;
     Integer selectedUnit;
     TextView textView1, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10;
+    Button button1;
+    ImageView imageView;
 
     //User Authentication
     public FirebaseAuth mAuth;
@@ -46,6 +51,8 @@ public class TheoryActivity extends AppCompatActivity {
         textView8 = findViewById(R.id.textViewOperation8);
         textView9 = findViewById(R.id.textViewOperation9);
         textView10 = findViewById(R.id.textViewOperation10);
+        button1 = findViewById(R.id.buttonGoToExercises);
+        imageView = findViewById(R.id.imageViewInfoTheory);
 
         //User Authentication
         mAuth = FirebaseAuth.getInstance();
@@ -53,7 +60,7 @@ public class TheoryActivity extends AppCompatActivity {
 
         userID = getIntent().getStringExtra("userID");
         selectedUnit = getIntent().getIntExtra("selectedUnit", 0);
-        Toast.makeText(getApplicationContext(), "unit: "+ selectedUnit, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "unit: "+ selectedUnit, Toast.LENGTH_LONG).show();
 
 
         //Firebase Database
@@ -85,5 +92,12 @@ public class TheoryActivity extends AppCompatActivity {
             }
         });
 
+
+        button1.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), ExercisesActivity.class);
+            intent.putExtra("userID", currentUser.getUid());
+            intent.putExtra("selectedUnit", selectedUnit);
+            startActivity(intent);
+        });
     }
 }

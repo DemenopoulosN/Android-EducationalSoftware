@@ -17,6 +17,17 @@
         app:srcCompat="@drawable/wallpaper2" />
 
     <ImageView
+        android:id="@+id/imageViewInfoTheory"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="364dp"
+        android:layout_marginTop="1dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/information_icon4_orange_svg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/imageViewOperation1Stars"
         android:layout_width="121dp"
         android:layout_height="36dp"
@@ -217,7 +228,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonGoToExercises"
         android:layout_width="316dp"
         android:layout_height="68dp"
         android:layout_marginStart="47dp"
@@ -226,6 +237,7 @@
         android:layout_marginBottom="25dp"
         android:backgroundTint="#BD3232"
         android:fontFamily="monospace"
+        android:onClick="goToExercises"
         android:text="Έλεγξε τις γνώσεις σου!"
         android:textAlignment="center"
         android:textAllCaps="false"

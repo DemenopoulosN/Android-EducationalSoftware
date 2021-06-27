@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,7 @@ public class LogInActivity extends AppCompatActivity {
     Button button1,button2,button3,button4;
     TextView textView1,textView2,textView3;
     CheckBox checkBox, checkBox2;
+    ImageView imageView;
 
     //Shared Preferences
     SharedPreferences preferences;
@@ -48,6 +50,7 @@ public class LogInActivity extends AppCompatActivity {
         textView3 = findViewById(R.id.loginTitle2);
         checkBox = findViewById(R.id.checkBox);
         checkBox2 = findViewById(R.id.checkBox2);
+        imageView = findViewById(R.id.imageViewInfoLogIn);
 
         //
         //Shared Preferences
