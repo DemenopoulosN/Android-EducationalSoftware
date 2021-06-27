@@ -23,10 +23,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.unipi.p17019p17024.educationalsoftware.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-    String userID, email;
+    String userID, email, difficulty;
     Button buttonUnits, buttonTests;
     ImageView imageView;
-    RadioButton radioButton1, radioButton2, radioButton3;
+    RadioButton radioButtonEasy, radioButtonMedium, radioButtonHard;
 
     //User Authentication
     public FirebaseAuth mAuth;
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageViewInfoHome);
         buttonUnits = findViewById(R.id.buttonUnits);
         buttonTests = findViewById(R.id.buttonTests);
-        radioButton1 = findViewById(R.id.radioButtonEasy);
-        radioButton2 = findViewById(R.id.radioButtonMedium);
-        radioButton3 = findViewById(R.id.radioButtonHard);
+        radioButtonEasy = findViewById(R.id.radioButtonEasy);
+        radioButtonMedium = findViewById(R.id.radioButtonMedium);
+        radioButtonHard = findViewById(R.id.radioButtonHard);
 
 
         com.unipi.p17019p17024.educationalsoftware.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Shared Preferences
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        difficulty = preferences.getString("difficultyKey", "Easy");
 
 
         //When buttonUnits is clicked in MainActivity
@@ -90,30 +91,18 @@ public class MainActivity extends AppCompatActivity {
         buttonUnits.setOnClickListener(v -> {
             buttonUnitsClick();
         });
+
         //When buttonTests is clicked in MainActivity
         buttonTests = findViewById(R.id.buttonTests);
         buttonTests.setOnClickListener(v -> {
             buttonTestsClick();
         });
-
-
-        /*
-        radioButton1.setOnClickListener(v -> {
-            SharedPreferences.Editor editor = preferences.edit();
-        });
-
-        radioButton2.setOnClickListener(v -> {
-            SharedPreferences.Editor editor = preferences.edit();
-        });
-
-        radioButton3.setOnClickListener(v -> {
-            SharedPreferences.Editor editor = preferences.edit();
-        });  */
     }
 
     public void buttonUnitsClick() {
         Intent intent = new Intent(getApplicationContext(), UnitsActivity.class);
         intent.putExtra("userID", currentUser.getUid());
+        intent.putExtra("difficulty", difficulty);
         startActivity(intent);
     }
 
@@ -123,45 +112,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent2);
     }
 
-    /*
-    public void writeSP() {
+    public void setDifficulty(String difficulty) {
+        //updating SharedPreferences
         SharedPreferences.Editor editor = preferences.edit();
-        if (){
-            if(checkBox2.isChecked()) {
-                //Email
-                editor.putString("myKeyEmail", editTextEmail.getText().toString());
-                editor.apply();
-                //Password
-                editor.putString("myKeyPassword", editTextPassword.getText().toString());
-                editor.apply();
-            }
-            else {
-                //Email
-                editor.putString("myKeyEmail", "");
-                editor.apply();
-                //Password
-                editor.putString("myKeyPassword", "");
-                editor.apply();
-            }
-        }
-        else
-        {
-            if(checkBox.isChecked()) {
-                //Email
-                editor.putString("myKeyEmail", editTextEmail.getText().toString());
-                editor.apply();
-                //Password
-                editor.putString("myKeyPassword", editTextPassword.getText().toString());
-                editor.apply();
-            }
-            else {
-                //Email
-                editor.putString("myKeyEmail", "");
-                editor.apply();
-                //Password
-                editor.putString("myKeyPassword", "");
-                editor.apply();
-            }
-        }
-    } */
+        editor.putString("difficultyKey", difficulty);
+        editor.apply();
+
+        this.difficulty = difficulty;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
 }

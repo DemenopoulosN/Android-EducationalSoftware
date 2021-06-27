@@ -14,7 +14,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class UnitsActivity extends AppCompatActivity {
-    String userID;
+    String userID, difficulty;
     ImageButton imageButton1, imageButton2, imageButton3, imageButton4, imageButton5, imageButton6, imageButton7, imageButton8, imageButton9, imageButton10;
     Integer selectedUnit = 0;
     ImageView imageView;
@@ -48,6 +48,7 @@ public class UnitsActivity extends AppCompatActivity {
         currentUser = mAuth.getCurrentUser();
 
         userID = getIntent().getStringExtra("userID");
+        difficulty = getIntent().getStringExtra("difficulty");
 
 
         //Firebase Database
@@ -62,6 +63,7 @@ public class UnitsActivity extends AppCompatActivity {
             intent.putExtra("userID", currentUser.getUid());
             selectedUnit = 1;
             intent.putExtra("selectedUnit", selectedUnit);
+            intent.putExtra("difficulty", difficulty);
             startActivity(intent);
         });
 
@@ -70,6 +72,7 @@ public class UnitsActivity extends AppCompatActivity {
             intent.putExtra("userID", currentUser.getUid());
             selectedUnit = 2;
             intent.putExtra("selectedUnit", selectedUnit);
+            intent.putExtra("difficulty", difficulty);
             startActivity(intent);
         });
 
@@ -78,6 +81,7 @@ public class UnitsActivity extends AppCompatActivity {
             intent.putExtra("userID", currentUser.getUid());
             selectedUnit = 3;
             intent.putExtra("selectedUnit", selectedUnit);
+            intent.putExtra("difficulty", difficulty);
             startActivity(intent);
         });
 
@@ -86,6 +90,7 @@ public class UnitsActivity extends AppCompatActivity {
             intent.putExtra("userID", currentUser.getUid());
             selectedUnit = 4;
             intent.putExtra("selectedUnit", selectedUnit);
+            intent.putExtra("difficulty", difficulty);
             startActivity(intent);
         });
 
@@ -94,6 +99,7 @@ public class UnitsActivity extends AppCompatActivity {
             intent.putExtra("userID", currentUser.getUid());
             selectedUnit = 5;
             intent.putExtra("selectedUnit", selectedUnit);
+            intent.putExtra("difficulty", difficulty);
             startActivity(intent);
         });
 
@@ -102,6 +108,7 @@ public class UnitsActivity extends AppCompatActivity {
             intent.putExtra("userID", currentUser.getUid());
             selectedUnit = 6;
             intent.putExtra("selectedUnit", selectedUnit);
+            intent.putExtra("difficulty", difficulty);
             startActivity(intent);
         });
 
@@ -110,6 +117,7 @@ public class UnitsActivity extends AppCompatActivity {
             intent.putExtra("userID", currentUser.getUid());
             selectedUnit = 7;
             intent.putExtra("selectedUnit", selectedUnit);
+            intent.putExtra("difficulty", difficulty);
             startActivity(intent);
         });
 
@@ -118,6 +126,7 @@ public class UnitsActivity extends AppCompatActivity {
             intent.putExtra("userID", currentUser.getUid());
             selectedUnit = 8;
             intent.putExtra("selectedUnit", selectedUnit);
+            intent.putExtra("difficulty", difficulty);
             startActivity(intent);
         });
 
@@ -126,6 +135,7 @@ public class UnitsActivity extends AppCompatActivity {
             intent.putExtra("userID", currentUser.getUid());
             selectedUnit = 9;
             intent.putExtra("selectedUnit", selectedUnit);
+            intent.putExtra("difficulty", difficulty);
             startActivity(intent);
         });
 
@@ -134,6 +144,7 @@ public class UnitsActivity extends AppCompatActivity {
             intent.putExtra("userID", currentUser.getUid());
             selectedUnit = 10;
             intent.putExtra("selectedUnit", selectedUnit);
+            intent.putExtra("difficulty", difficulty);
             startActivity(intent);
         });
     }

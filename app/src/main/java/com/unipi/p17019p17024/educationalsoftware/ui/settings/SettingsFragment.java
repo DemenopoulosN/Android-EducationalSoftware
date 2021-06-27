@@ -4,15 +4,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.unipi.p17019p17024.educationalsoftware.MainActivity;
+import com.unipi.p17019p17024.educationalsoftware.R;
 import com.unipi.p17019p17024.educationalsoftware.databinding.FragmentSettingsBinding;
 
 public class SettingsFragment extends Fragment {
+    RadioButton radioButtonEasy, radioButtonMedium, radioButtonHard;
+    String selectedDifficulty;
 
     private FragmentSettingsBinding binding;
 
@@ -25,6 +30,47 @@ public class SettingsFragment extends Fragment {
 
         final TextView textView = binding.textSettings;
         settingsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
+        radioButtonEasy = root.findViewById(R.id.radioButtonEasy);
+        radioButtonMedium = root.findViewById(R.id.radioButtonMedium);
+        radioButtonHard = root.findViewById(R.id.radioButtonHard);
+
+
+        //Starting Activity with pre-selected difficulty
+        MainActivity mainActivity = new MainActivity();
+        selectedDifficulty = mainActivity.getDifficulty();
+
+        if(selectedDifficulty.equals("Easy")){
+            radioButtonEasy.setChecked(true);
+            radioButtonMedium.setChecked(false);
+            radioButtonHard.setChecked(false);
+        }
+        else if(selectedDifficulty.equals("Medium")){
+            radioButtonEasy.setChecked(false);
+            radioButtonMedium.setChecked(true);
+            radioButtonHard.setChecked(false);
+        }
+        else{
+            radioButtonEasy.setChecked(false);
+            radioButtonMedium.setChecked(false);
+            radioButtonHard.setChecked(true);
+        }
+
+        //When radioButtonEasy is clicked in SettingsFragment
+        radioButtonEasy.setOnClickListener(v -> {
+            ((MainActivity) requireActivity()).setDifficulty("Easy");
+        });
+
+        //When radioButtonMedium is clicked in SettingsFragment
+        radioButtonMedium.setOnClickListener(v -> {
+            ((MainActivity) requireActivity()).setDifficulty("Medium");
+        });
+
+        //When radioButtonHard is clicked in SettingsFragment
+        radioButtonHard.setOnClickListener(v -> {
+            ((MainActivity) requireActivity()).setDifficulty("Hard");
+        });
+
         return root;
     }
 
@@ -33,4 +79,6 @@ public class SettingsFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+
 }

@@ -28,7 +28,7 @@ import java.util.Objects;
 import java.util.Random;
 
 public class ExercisesActivity extends AppCompatActivity {
-    String userID, questionID;
+    String userID, questionID, difficulty;
     TextView textView1;
     EditText editText1;
     Button button1,button2,button3,button4;
@@ -37,6 +37,8 @@ public class ExercisesActivity extends AppCompatActivity {
     ImageView imageView;
     Integer selectedUnit, randomOperation, randomQuestion;
     ArrayList<String> selectedQuestions = new ArrayList<>();
+    Boolean condition1, condition2, condition3;
+    Integer count = 1;
 
     Random random;
 
@@ -59,9 +61,9 @@ public class ExercisesActivity extends AppCompatActivity {
         button3 = findViewById(R.id.buttonSubmitMultipleChoice);
         button4 = findViewById(R.id.buttonSubmitFillInTheGap);
         radioGroup = findViewById(R.id.radioGroup);
-        radioButton1 = findViewById(R.id.radioButtonEasy);
-        radioButton2 = findViewById(R.id.radioButtonMedium);
-        radioButton3 = findViewById(R.id.radioButtonHard);
+        radioButton1 = findViewById(R.id.radioButton1);
+        radioButton2 = findViewById(R.id.radioButton2);
+        radioButton3 = findViewById(R.id.radioButton3);
         radioButton4 = findViewById(R.id.radioButton4);
         imageView = findViewById(R.id.imageViewInfoExercises);
         questionID = "0";
@@ -74,12 +76,14 @@ public class ExercisesActivity extends AppCompatActivity {
 
         userID = getIntent().getStringExtra("userID");
         selectedUnit = getIntent().getIntExtra("selectedUnit", 0);
+        difficulty = getIntent().getStringExtra("difficulty");
         Toast.makeText(getApplicationContext(), "unit: "+ selectedUnit, Toast.LENGTH_LONG).show();
 
         //Firebase Database
         database = FirebaseDatabase.getInstance();
         unitRef = FirebaseDatabase.getInstance().getReference().child("Exercises").child(String.valueOf(selectedUnit));
 
+        //generateExercise();
         unitRef.addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NotNull DataSnapshot dataSnapshot)
@@ -90,8 +94,56 @@ public class ExercisesActivity extends AppCompatActivity {
                         randomOperation = random.nextInt(10 + 1) + 1;
                         randomQuestion = random.nextInt(3 + 1) + 1;
                         questionID = randomOperation.toString() + randomQuestion.toString();
+
+                        condition1 = questionAlreadyChosen(selectedQuestions, questionID);
+                        condition2 = difficultyCheck(difficulty, count, randomQuestion);
                     }
-                    while (selectedQuestions.contains(questionID));
+                    while (condition1 && condition2);
+                    count++;
+
+                    selectedQuestions.add(questionID);
+                    textView1.setText(Objects.requireNonNull(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(randomQuestion)).child("question").getValue()).toString());
+
+                    if(Objects.requireNonNull(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(randomQuestion)).child("type").getValue()).toString().equals("true or false")){
+                        button1.setVisibility(View.VISIBLE);
+                        button2.setVisibility(View.VISIBLE);
+                    }
+                    else if(Objects.requireNonNull(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(randomQuestion)).child("type").getValue()).toString().equals("multiple choice")){
+                        button3.setVisibility(View.VISIBLE);
+                        radioGroup.setVisibility(View.VISIBLE);
+                    }
+                    else{
+                        button4.setVisibility(View.VISIBLE);
+                        editText1.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // we are showing that error message in toast
+                Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+
+    public void generateExercise(){
+        unitRef.addValueEventListener(new ValueEventListener(){
+            @Override
+            public void onDataChange(@NotNull DataSnapshot dataSnapshot)
+            {
+                if (dataSnapshot.exists())
+                {
+                    do {
+                        randomOperation = random.nextInt(10 + 1) + 1;
+                        randomQuestion = random.nextInt(3 + 1) + 1;
+                        questionID = randomOperation.toString() + randomQuestion.toString();
+
+                        condition1 = questionAlreadyChosen(selectedQuestions, questionID);
+                        condition2 = difficultyCheck(difficulty, count, randomQuestion);
+                    }
+                    while (condition1 && condition2);
+                    count++;
 
                     selectedQuestions.add(questionID);
                     textView1.setText(Objects.requireNonNull(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(randomQuestion)).child("question").getValue()).toString());
@@ -116,7 +168,71 @@ public class ExercisesActivity extends AppCompatActivity {
                 Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
             }
         });
-
-
     }
+
+    public boolean questionAlreadyChosen(ArrayList<String> list, String id){
+        return list.contains(id);
+    }
+
+    public boolean difficultyCheck(String difficultyLevel, Integer index, Integer questionType){
+        if(difficultyLevel.equals("Easy")){
+            if(index >= 1 && index <= 5){
+                return questionType == 1;
+            }
+            else if(index >= 6 && index <= 9){
+                return questionType == 2;
+            }
+            else{
+                return questionType == 3;
+            }
+        }
+        else if(difficultyLevel.equals("Medium")){
+            if(index >= 1 && index <= 3){
+                return questionType == 1;
+            }
+            else if(index >= 4 && index <= 8){
+                return questionType == 2;
+            }
+            else{
+                return questionType == 3;
+            }
+        }
+        else{
+            if(index >= 1 && index <= 2){
+                return questionType == 1;
+            }
+            else if(index >= 3 && index <= 5){
+                return questionType == 2;
+            }
+            else{
+                return questionType == 3;
+            }
+        }
+    }
+
+    public void buttonCorrectOnClick(){
+        generateExercise();
+    }
+
+    public void buttonFalseOnClick(){
+        generateExercise();
+    }
+
+    public void buttonSubmitMultipleChoiceOnClick(){
+        //TO-DO
+        //έλεγχος για το αν έχει επιλέξει κάποια απάντηση
+        generateExercise();
+    }
+
+    public void buttonSubmitFillInTheGapOnClick(){
+        //TO-DO
+        //έλεγχος για το αν έχει συμπληρώσει κάτι στο κενό
+        generateExercise();
+
+
+        if(count == 10) {
+            Toast.makeText(this,"Goodnight Papatzh", Toast.LENGTH_LONG).show();
+        }
+    }
+
 }

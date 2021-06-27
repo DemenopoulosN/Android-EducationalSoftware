@@ -24,6 +24,7 @@
         android:layout_marginStart="135dp"
         android:layout_marginTop="439dp"
         android:backgroundTint="#14A51A"
+        android:onClick="buttonSubmitMultipleChoiceOnClick"
         android:text="Υποβολή"
         android:textSize="20sp"
         android:visibility="invisible"
@@ -38,6 +39,7 @@
         android:layout_marginStart="135dp"
         android:layout_marginTop="335dp"
         android:backgroundTint="#14A51A"
+        android:onClick="buttonSubmitFillInTheGapOnClick"
         android:text="Υποβολή"
         android:textSize="20sp"
         android:visibility="invisible"
@@ -52,6 +54,7 @@
         android:layout_marginTop="329dp"
         android:layout_marginEnd="66dp"
         android:backgroundTint="#E4392D"
+        android:onClick="buttonFalseOnClick"
         android:text="Λάθος"
         android:textSize="20sp"
         android:visibility="invisible"
@@ -88,6 +91,7 @@
         android:layout_marginStart="66dp"
         android:layout_marginTop="329dp"
         android:backgroundTint="#14A51A"
+        android:onClick="buttonCorrectOnClick"
         android:text="Σωστό"
         android:textSize="20sp"
         android:visibility="invisible"
@@ -122,7 +126,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButtonEasy"
+            android:id="@+id/radioButton1"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="RadioButton"
@@ -130,14 +134,14 @@
             tools:text="5" />
 
         <RadioButton
-            android:id="@+id/radioButtonMedium"
+            android:id="@+id/radioButton2"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="3"
             android:textSize="30sp" />
 
         <RadioButton
-            android:id="@+id/radioButtonHard"
+            android:id="@+id/radioButton3"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="1"

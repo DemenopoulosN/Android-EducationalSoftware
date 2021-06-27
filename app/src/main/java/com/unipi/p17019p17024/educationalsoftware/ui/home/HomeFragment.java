@@ -27,9 +27,7 @@ import com.unipi.p17019p17024.educationalsoftware.databinding.FragmentHomeBindin
 import java.util.Objects;
 
 public class HomeFragment extends Fragment {
-    //
     //ImageView
-    //
     ImageView imageViewInfo;
     //Button
     Button buttonUnits, buttonTests;
@@ -56,6 +54,7 @@ public class HomeFragment extends Fragment {
         buttonUnits.setOnClickListener(v -> {
             ((MainActivity) requireActivity()).buttonUnitsClick();
         });
+
         //When buttonTests is clicked in HomeFragment
         buttonTests = root.findViewById(R.id.buttonTests);
         buttonTests.setOnClickListener(v -> {

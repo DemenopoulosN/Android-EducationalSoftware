@@ -23,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 
 public class TheoryActivity extends AppCompatActivity {
-    String userID;
+    String userID, difficulty;
     Integer selectedUnit;
     TextView textView1, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10;
     Button button1;
@@ -60,6 +60,7 @@ public class TheoryActivity extends AppCompatActivity {
 
         userID = getIntent().getStringExtra("userID");
         selectedUnit = getIntent().getIntExtra("selectedUnit", 0);
+        difficulty = getIntent().getStringExtra("difficulty");
         //Toast.makeText(getApplicationContext(), "unit: "+ selectedUnit, Toast.LENGTH_LONG).show();
 
 
@@ -97,6 +98,7 @@ public class TheoryActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), ExercisesActivity.class);
             intent.putExtra("userID", currentUser.getUid());
             intent.putExtra("selectedUnit", selectedUnit);
+            intent.putExtra("difficulty", difficulty);
             startActivity(intent);
         });
     }
