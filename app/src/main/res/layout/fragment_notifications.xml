@@ -6,49 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.notifications.NotificationsFragment">
 
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="455dp"
-        android:layout_height="860dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/wp7955934" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="391dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="104dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RadioButton
-            android:id="@+id/radioButtonEasy"
-            android:layout_width="115dp"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            tools:text="Easy" />
-
-        <RadioButton
-            android:id="@+id/radioButtonMedium"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:text="Medium"
-            android:textSize="24sp" />
-
-        <RadioButton
-            android:id="@+id/radioButtonHard"
-            android:layout_width="135dp"
-            android:layout_height="wrap_content"
-            android:text="Hard"
-            android:textSize="24sp" />
-
-    </RadioGroup>
-
     <TextView
         android:id="@+id/text_notifications"
         android:layout_width="match_parent"
@@ -62,41 +19,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="43dp"
-        android:text="Επέλεξε επίπεδο δυσκολίας"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="440dp" />
-
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="230dp"
-        android:layout_height="100dp"
-        tools:layout_editor_absoluteX="120dp"
-        tools:layout_editor_absoluteY="511dp" />
-
-    <SeekBar
-        android:id="@+id/seekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="224dp"
-        android:layout_height="83dp"
-        android:max="10"
-        android:progress="3"
-        tools:layout_editor_absoluteX="80dp"
-        tools:layout_editor_absoluteY="605dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

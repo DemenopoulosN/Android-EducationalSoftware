@@ -24,11 +24,15 @@ import com.unipi.p17019p17024.educationalsoftware.MainActivity;
 import com.unipi.p17019p17024.educationalsoftware.R;
 import com.unipi.p17019p17024.educationalsoftware.databinding.FragmentHomeBinding;
 
+import java.util.Objects;
+
 public class HomeFragment extends Fragment {
     //
     //ImageView
     //
     ImageView imageViewInfo;
+    //Button
+    Button buttonUnits, buttonTests;
 
     private FragmentHomeBinding binding;
 
@@ -43,13 +47,19 @@ public class HomeFragment extends Fragment {
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
 
-        imageViewInfo = root.findViewById(R.id.imageViewInfo);
-        imageViewInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), "This is my Toast message!",
-                        Toast.LENGTH_LONG).show();
-            }
+        imageViewInfo = root.findViewById(R.id.imageViewInfoHome);
+        imageViewInfo.setOnClickListener(v -> Toast.makeText(getContext(), "This is my Toast message!",
+                Toast.LENGTH_LONG).show());
+
+        //When buttonUnits is clicked in HomeFragment
+        buttonUnits = root.findViewById(R.id.buttonUnits);
+        buttonUnits.setOnClickListener(v -> {
+            ((MainActivity) requireActivity()).buttonUnitsClick();
+        });
+        //When buttonTests is clicked in HomeFragment
+        buttonTests = root.findViewById(R.id.buttonTests);
+        buttonTests.setOnClickListener(v -> {
+            ((MainActivity)getActivity()).buttonTestsClick();
         });
 
         return root;
@@ -60,18 +70,4 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
-    /*@Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
-
-        if (savedInstanceState == null){
-            getSupportFragmentManager().beginTransaction()
-                    .add(android.R.id.content, new HomeFragment ()).commit();}
-    }
-
-    public HomeFragment() {
-    }*/
 }

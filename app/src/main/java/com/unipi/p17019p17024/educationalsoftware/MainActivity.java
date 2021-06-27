@@ -29,8 +29,7 @@ import com.unipi.p17019p17024.educationalsoftware.databinding.ActivityMainBindin
 
 public class MainActivity extends AppCompatActivity {
     String userID, email;
-    Button buttonUnits;
-    Button buttonTests;
+    Button buttonUnits, buttonTests;
     ImageView imageView;
     RadioButton radioButton1, radioButton2, radioButton3;
 
@@ -90,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         //Shared Preferences
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-
+        /*
         buttonUnits.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), UnitsActivity.class);
             intent.putExtra("userID", currentUser.getUid());
@@ -102,8 +101,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intent2 = new Intent(getApplicationContext(), RevisionTestsActivity.class);
             intent2.putExtra("userID", currentUser.getUid());
             startActivity(intent2);
-        });
+        });  */
 
+        /*
         radioButton1.setOnClickListener(v -> {
             SharedPreferences.Editor editor = preferences.edit();
         });
@@ -114,7 +114,30 @@ public class MainActivity extends AppCompatActivity {
 
         radioButton3.setOnClickListener(v -> {
             SharedPreferences.Editor editor = preferences.edit();
+        });  */
+
+        //When buttonUnits is clicked in MainActivity
+        buttonUnits = findViewById(R.id.buttonUnits);
+        buttonUnits.setOnClickListener(v -> {
+            buttonUnitsClick();
         });
+        //When buttonTests is clicked in MainActivity
+        buttonTests = findViewById(R.id.buttonTests);
+        buttonTests.setOnClickListener(v -> {
+            buttonTestsClick();
+        });
+    }
+
+    public void buttonUnitsClick() {
+        Intent intent = new Intent(getApplicationContext(), UnitsActivity.class);
+        intent.putExtra("userID", currentUser.getUid());
+        startActivity(intent);
+    }
+
+    public void buttonTestsClick() {
+        Intent intent2 = new Intent(getApplicationContext(), RevisionTestsActivity.class);
+        intent2.putExtra("userID", currentUser.getUid());
+        startActivity(intent2);
     }
 
     /*
