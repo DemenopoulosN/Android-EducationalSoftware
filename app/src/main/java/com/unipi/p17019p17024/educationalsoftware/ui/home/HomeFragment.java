@@ -59,7 +59,7 @@ public class HomeFragment extends Fragment {
         //When buttonTests is clicked in HomeFragment
         buttonTests = root.findViewById(R.id.buttonTests);
         buttonTests.setOnClickListener(v -> {
-            ((MainActivity)getActivity()).buttonTestsClick();
+            ((MainActivity) requireActivity()).buttonTestsClick();
         });
 
         return root;

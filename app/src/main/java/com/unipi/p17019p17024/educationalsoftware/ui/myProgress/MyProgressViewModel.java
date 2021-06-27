@@ -1,16 +1,16 @@
-package com.unipi.p17019p17024.educationalsoftware.ui.notifications;
+package com.unipi.p17019p17024.educationalsoftware.ui.myProgress;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class MyProgressViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public MyProgressViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is myProgress fragment");
     }
 
     public LiveData<String> getText() {

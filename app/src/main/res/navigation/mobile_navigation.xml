@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.unipi.p17019p17024.educationalsoftware.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_myProgress"
+        android:name="com.unipi.p17019p17024.educationalsoftware.ui.myProgress.MyProgressFragment"
         android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        tools:layout="@layout/fragment_my_progress" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.unipi.p17019p17024.educationalsoftware.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_settings"
+        android:name="com.unipi.p17019p17024.educationalsoftware.ui.settings.SettingsFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_settings" />
 </navigation>

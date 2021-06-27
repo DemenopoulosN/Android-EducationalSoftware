@@ -1,21 +1,16 @@
 package com.unipi.p17019p17024.educationalsoftware;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.Switch;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -62,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                R.id.navigation_home, R.id.navigation_myProgress, R.id.navigation_settings)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         //
@@ -89,19 +84,18 @@ public class MainActivity extends AppCompatActivity {
         //Shared Preferences
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
-        /*
+
+        //When buttonUnits is clicked in MainActivity
+        buttonUnits = findViewById(R.id.buttonUnits);
         buttonUnits.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), UnitsActivity.class);
-            intent.putExtra("userID", currentUser.getUid());
-            startActivity(intent);
+            buttonUnitsClick();
+        });
+        //When buttonTests is clicked in MainActivity
+        buttonTests = findViewById(R.id.buttonTests);
+        buttonTests.setOnClickListener(v -> {
+            buttonTestsClick();
         });
 
-
-        buttonTests.setOnClickListener(v -> {
-            Intent intent2 = new Intent(getApplicationContext(), RevisionTestsActivity.class);
-            intent2.putExtra("userID", currentUser.getUid());
-            startActivity(intent2);
-        });  */
 
         /*
         radioButton1.setOnClickListener(v -> {
@@ -115,17 +109,6 @@ public class MainActivity extends AppCompatActivity {
         radioButton3.setOnClickListener(v -> {
             SharedPreferences.Editor editor = preferences.edit();
         });  */
-
-        //When buttonUnits is clicked in MainActivity
-        buttonUnits = findViewById(R.id.buttonUnits);
-        buttonUnits.setOnClickListener(v -> {
-            buttonUnitsClick();
-        });
-        //When buttonTests is clicked in MainActivity
-        buttonTests = findViewById(R.id.buttonTests);
-        buttonTests.setOnClickListener(v -> {
-            buttonTestsClick();
-        });
     }
 
     public void buttonUnitsClick() {
@@ -181,6 +164,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     } */
-
-    //γιαννη την φαγατε, την φαγατε στον κώλο
 }
