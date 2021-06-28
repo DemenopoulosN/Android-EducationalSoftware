@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -92,11 +93,22 @@ public class ExercisesActivity extends AppCompatActivity {
                 {
                     do {
                         randomOperation = random.nextInt(10 + 1) + 1;
-                        randomQuestion = random.nextInt(3 + 1) + 1;
-                        questionID = randomOperation.toString() + randomQuestion.toString();
+                        //randomQuestion = random.nextInt(3 + 1) + 1;
+
 
                         condition1 = questionAlreadyChosen(selectedQuestions, questionID);
+                        Log.d("condition1",condition1.toString());
                         condition2 = difficultyCheck(difficulty, count, randomQuestion);
+                        Log.d("condition2",condition2.toString());
+
+
+                        questionID = randomOperation.toString() + randomQuestion.toString();
+                        Log.d("questionID",questionID);
+
+                        condition1 = questionAlreadyChosen(selectedQuestions, questionID);
+                        Log.d("condition1",condition1.toString());
+                        condition2 = difficultyCheck(difficulty, count, randomQuestion);
+                        Log.d("condition2",condition2.toString());
                     }
                     while (condition1 && condition2);
                     count++;
@@ -138,9 +150,12 @@ public class ExercisesActivity extends AppCompatActivity {
                         randomOperation = random.nextInt(10 + 1) + 1;
                         randomQuestion = random.nextInt(3 + 1) + 1;
                         questionID = randomOperation.toString() + randomQuestion.toString();
+                        Log.d("questionID",questionID);
 
                         condition1 = questionAlreadyChosen(selectedQuestions, questionID);
+                        Log.d("condition1",condition1.toString());
                         condition2 = difficultyCheck(difficulty, count, randomQuestion);
+                        Log.d("condition2",condition2.toString());
                     }
                     while (condition1 && condition2);
                     count++;
@@ -176,7 +191,9 @@ public class ExercisesActivity extends AppCompatActivity {
 
     public boolean difficultyCheck(String difficultyLevel, Integer index, Integer questionType){
         if(difficultyLevel.equals("Easy")){
+            Log.d("α","Βρίσκομαι στο easy");
             if(index >= 1 && index <= 5){
+                Log.d("β","Βρίσκομαι στην ερώτηση 1:5");
                 return questionType == 1;
             }
             else if(index >= 6 && index <= 9){
@@ -187,7 +204,9 @@ public class ExercisesActivity extends AppCompatActivity {
             }
         }
         else if(difficultyLevel.equals("Medium")){
+            Log.d("γ","Βρίσκομαι στο medium");
             if(index >= 1 && index <= 3){
+                Log.d("δ","Βρίσκομαι στην ερώτηση 1:3");
                 return questionType == 1;
             }
             else if(index >= 4 && index <= 8){
@@ -198,7 +217,9 @@ public class ExercisesActivity extends AppCompatActivity {
             }
         }
         else{
+            Log.d("ε","Βρίσκομαι στο Hard");
             if(index >= 1 && index <= 2){
+                Log.d("ζ","Βρίσκομαι στην ερώτηση 1:2");
                 return questionType == 1;
             }
             else if(index >= 3 && index <= 5){
