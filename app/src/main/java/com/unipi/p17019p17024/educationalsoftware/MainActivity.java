@@ -11,6 +11,7 @@ import android.widget.RadioButton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -21,12 +22,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.unipi.p17019p17024.educationalsoftware.databinding.ActivityMainBinding;
+import com.unipi.p17019p17024.educationalsoftware.ui.settings.SettingsFragment;
 
 public class MainActivity extends AppCompatActivity {
-    String userID, email, difficulty;
+    String userID, email;
     Button buttonUnits, buttonTests;
     ImageView imageView;
     RadioButton radioButtonEasy, radioButtonMedium, radioButtonHard;
+    String difficulty = "Easy";
 
     //User Authentication
     public FirebaseAuth mAuth;
@@ -73,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
+        //GetIntent
         userID = getIntent().getStringExtra("userID");
         email = getIntent().getStringExtra("email");
 
@@ -83,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Shared Preferences
         preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        //For saving Shared Preferences on launching MainActivity when opening the app
         difficulty = preferences.getString("difficultyKey", "Easy");
 
 
@@ -103,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), UnitsActivity.class);
         intent.putExtra("userID", currentUser.getUid());
         intent.putExtra("difficulty", difficulty);
+        intent.putExtra("email", email);
         startActivity(intent);
     }
 
@@ -112,13 +118,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent2);
     }
 
-    public void setDifficulty(String difficulty) {
-        //updating SharedPreferences
+    public void setDifficulty(String diff) {
+        //Updating SharedPreferences
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("difficultyKey", difficulty);
+        editor.putString("difficultyKey", diff);
         editor.apply();
+        //Updating difficulty variable
+        difficulty = preferences.getString("difficultyKey", diff);
 
-        this.difficulty = difficulty;
     }
 
     public String getDifficulty() {

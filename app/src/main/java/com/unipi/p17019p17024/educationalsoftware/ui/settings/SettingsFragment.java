@@ -1,5 +1,6 @@
 package com.unipi.p17019p17024.educationalsoftware.ui.settings;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,17 +59,17 @@ public class SettingsFragment extends Fragment {
 
         //When radioButtonEasy is clicked in SettingsFragment
         radioButtonEasy.setOnClickListener(v -> {
-            ((MainActivity) requireActivity()).setDifficulty("Easy");
+            ((MainActivity)getActivity()).setDifficulty("Easy");
         });
 
         //When radioButtonMedium is clicked in SettingsFragment
         radioButtonMedium.setOnClickListener(v -> {
-            ((MainActivity) requireActivity()).setDifficulty("Medium");
+            ((MainActivity)getActivity()).setDifficulty("Medium");
         });
 
         //When radioButtonHard is clicked in SettingsFragment
         radioButtonHard.setOnClickListener(v -> {
-            ((MainActivity) requireActivity()).setDifficulty("Hard");
+            ((MainActivity)getActivity()).setDifficulty("Hard");
         });
 
         return root;

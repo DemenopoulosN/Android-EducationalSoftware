@@ -3,6 +3,7 @@ package com.unipi.p17019p17024.educationalsoftware;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +30,7 @@ import java.util.Objects;
 import java.util.Random;
 
 public class ExercisesActivity extends AppCompatActivity {
-    String userID, questionID, difficulty;
+    String userID, email, questionID, difficulty;
     TextView textView1;
     EditText editText1;
     Button button1,button2,button3,button4;
@@ -39,7 +40,7 @@ public class ExercisesActivity extends AppCompatActivity {
     Integer selectedUnit, randomOperation; //, randomQuestion
     ArrayList<String> selectedQuestions = new ArrayList<>();
     Boolean condition1, condition3; //, condition2
-    Integer count = 1;
+    Integer count;
 
     Random random;
 
@@ -69,6 +70,16 @@ public class ExercisesActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageViewInfoExercises);
         questionID = "0";
 
+        //GetIntent
+        //Recursion
+        selectedQuestions = getIntent().getStringArrayListExtra("selectedQuestions");
+        Log.d("selectedQuestions!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", String.valueOf(selectedQuestions.size()));
+        // = selectedQuestions.size() + 1;
+        count = getIntent().getIntExtra("count", 1);
+        Log.d("count!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",count.toString());
+        email = getIntent().getStringExtra("email");
+
+
         random = new Random();
 
         //User Authentication
@@ -93,8 +104,8 @@ public class ExercisesActivity extends AppCompatActivity {
                 {
                     int exerciseType;
                     do {
-                        randomOperation = random.nextInt(10 + 1) + 1;
-                        //randomQuestion = random.nextInt(3 + 1) + 1;
+                        randomOperation = random.nextInt(10) + 1;
+                        //randomQuestion = random.nextInt(3) + 1;
                         exerciseType = getExerciseType(difficulty, count);
 
 
@@ -135,51 +146,6 @@ public class ExercisesActivity extends AppCompatActivity {
 
     }
 
-    /*public void generateExercise(){
-        unitRef.addValueEventListener(new ValueEventListener(){
-            @Override
-            public void onDataChange(@NotNull DataSnapshot dataSnapshot)
-            {
-                if (dataSnapshot.exists())
-                {
-                    do {
-                        randomOperation = random.nextInt(10 + 1) + 1;
-                        randomQuestion = random.nextInt(3 + 1) + 1;
-                        questionID = randomOperation.toString() + randomQuestion.toString();
-                        Log.d("questionID",questionID);
-
-                        condition1 = questionAlreadyChosen(selectedQuestions, questionID);
-                        Log.d("condition1",condition1.toString());
-                        condition2 = difficultyCheck(difficulty, count, randomQuestion);
-                        Log.d("condition2",condition2.toString());
-                    }
-                    while (condition1 && condition2);
-                    count++;
-
-                    selectedQuestions.add(questionID);
-                    textView1.setText(Objects.requireNonNull(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(randomQuestion)).child("question").getValue()).toString());
-
-                    if(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(randomQuestion)).child("type").getValue() == "true or false"){
-                        button1.setVisibility(View.VISIBLE);
-                        button2.setVisibility(View.VISIBLE);
-                    }
-                    else if(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(randomQuestion)).child("type").getValue() == "multiple choice"){
-                        button3.setVisibility(View.VISIBLE);
-                        radioGroup.setVisibility(View.VISIBLE);
-                    }
-                    else{
-                        button4.setVisibility(View.VISIBLE);
-                        editText1.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // we are showing that error message in toast
-                Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
-            }
-        });
-    }*/
 
     public boolean questionAlreadyChosen(ArrayList<String> list, String id){
         return list.contains(id);
@@ -225,78 +191,70 @@ public class ExercisesActivity extends AppCompatActivity {
         return questionType;
     }
 
-    /*public boolean difficultyCheck(String difficultyLevel, Integer index, Integer questionType){
-        if(difficultyLevel.equals("Easy")){
-            Log.d("α","Βρίσκομαι στο easy");
-            if(index >= 1 && index <= 5){
-                Log.d("β","Βρίσκομαι στην ερώτηση 1:5");
-                return questionType == 1;
-            }
-            else if(index >= 6 && index <= 9){
-                return questionType == 2;
-            }
-            else{
-                return questionType == 3;
-            }
-        }
-        else if(difficultyLevel.equals("Medium")){
-            Log.d("γ","Βρίσκομαι στο medium");
-            if(index >= 1 && index <= 3){
-                Log.d("δ","Βρίσκομαι στην ερώτηση 1:3");
-                return questionType == 1;
-            }
-            else if(index >= 4 && index <= 8){
-                return questionType == 2;
-            }
-            else{
-                return questionType == 3;
-            }
-        }
-        else{
-            Log.d("ε","Βρίσκομαι στο Hard");
-            if(index >= 1 && index <= 2){
-                Log.d("ζ","Βρίσκομαι στην ερώτηση 1:2");
-                return questionType == 1;
-            }
-            else if(index >= 3 && index <= 5){
-                return questionType == 2;
-            }
-            else{
-                return questionType == 3;
-            }
-        }
-    }*/
 
-    public void buttonCorrectOnClick(){
-        //generateExercise();
-        finish();
-        startActivity(getIntent());
+    public void buttonCorrectOnClick(View view){
+        Intent intent = new Intent(getApplicationContext(), ExercisesActivity.class);
+        intent.putExtra("userID", currentUser.getUid());
+        intent.putExtra("selectedUnit", selectedUnit);
+        intent.putExtra("difficulty", difficulty);
+
+        //Intents for recursively calling ExercisesActivity
+        intent.putExtra("selectedQuestions", selectedQuestions);
+        intent.putExtra("count", count);
+
+        startActivity(intent);
+
     }
 
-    public void buttonFalseOnClick(){
-        //generateExercise();
-        finish();
-        startActivity(getIntent());
+    public void buttonFalseOnClick(View view){
+        Intent intent = new Intent(getApplicationContext(), ExercisesActivity.class);
+        intent.putExtra("userID", currentUser.getUid());
+        intent.putExtra("selectedUnit", selectedUnit);
+        intent.putExtra("difficulty", difficulty);
+
+        //Intents for recursively calling ExercisesActivity
+        intent.putExtra("selectedQuestions", selectedQuestions);
+        intent.putExtra("count", count);
+
+        startActivity(intent);
+
     }
 
-    public void buttonSubmitMultipleChoiceOnClick(){
-        //TO-DO
-        //έλεγχος για το αν έχει επιλέξει κάποια απάντηση
-        //generateExercise();
-        finish();
-        startActivity(getIntent());
+    public void buttonSubmitMultipleChoiceOnClick(View view){
+        Intent intent = new Intent(getApplicationContext(), ExercisesActivity.class);
+        intent.putExtra("userID", currentUser.getUid());
+        intent.putExtra("selectedUnit", selectedUnit);
+        intent.putExtra("difficulty", difficulty);
+
+        //Intents for recursively calling ExercisesActivity
+        intent.putExtra("selectedQuestions", selectedQuestions);
+        intent.putExtra("count", count);
+
+        startActivity(intent);
     }
 
-    public void buttonSubmitFillInTheGapOnClick(){
+    public void buttonSubmitFillInTheGapOnClick(View view){
         //TO-DO
         //έλεγχος για το αν έχει συμπληρώσει κάτι στο κενό
-        //generateExercise();
-        finish();
-        startActivity(getIntent());
+        if(count > 10) {
+            //Go to MainActivity
+            Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+            intent2.putExtra("userID", currentUser.getUid());
+            intent2.putExtra("email", currentUser.getEmail());
+            startActivity(intent2);
+        }
+        else {
+            //Recursively calling ExercisesActivity
+            Intent intent = new Intent(getApplicationContext(), ExercisesActivity.class);
+            intent.putExtra("userID", currentUser.getUid());
+            intent.putExtra("selectedUnit", selectedUnit);
+            intent.putExtra("difficulty", difficulty);
 
+            //Intents for recursively calling ExercisesActivity
+            intent.putExtra("selectedQuestions", selectedQuestions);
+            intent.putExtra("count", count);
 
-        if(count == 10) {
-            Toast.makeText(this,"Goodnight Papatzh", Toast.LENGTH_LONG).show();
+            startActivity(intent);
         }
     }
 

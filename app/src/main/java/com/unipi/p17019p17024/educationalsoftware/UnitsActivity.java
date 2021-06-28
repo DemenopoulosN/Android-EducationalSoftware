@@ -14,7 +14,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class UnitsActivity extends AppCompatActivity {
-    String userID, difficulty;
+    String userID, email, difficulty;
     ImageButton imageButton1, imageButton2, imageButton3, imageButton4, imageButton5, imageButton6, imageButton7, imageButton8, imageButton9, imageButton10;
     Integer selectedUnit = 0;
     ImageView imageView;
@@ -47,8 +47,10 @@ public class UnitsActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
+        //GetIntent
         userID = getIntent().getStringExtra("userID");
         difficulty = getIntent().getStringExtra("difficulty");
+        email = getIntent().getStringExtra("email");
 
 
         //Firebase Database
@@ -64,6 +66,7 @@ public class UnitsActivity extends AppCompatActivity {
             selectedUnit = 1;
             intent.putExtra("selectedUnit", selectedUnit);
             intent.putExtra("difficulty", difficulty);
+            intent.putExtra("email", email);
             startActivity(intent);
         });
 
@@ -73,6 +76,7 @@ public class UnitsActivity extends AppCompatActivity {
             selectedUnit = 2;
             intent.putExtra("selectedUnit", selectedUnit);
             intent.putExtra("difficulty", difficulty);
+            intent.putExtra("email", email);
             startActivity(intent);
         });
 
@@ -82,6 +86,7 @@ public class UnitsActivity extends AppCompatActivity {
             selectedUnit = 3;
             intent.putExtra("selectedUnit", selectedUnit);
             intent.putExtra("difficulty", difficulty);
+            intent.putExtra("email", email);
             startActivity(intent);
         });
 
@@ -91,6 +96,7 @@ public class UnitsActivity extends AppCompatActivity {
             selectedUnit = 4;
             intent.putExtra("selectedUnit", selectedUnit);
             intent.putExtra("difficulty", difficulty);
+            intent.putExtra("email", email);
             startActivity(intent);
         });
 
@@ -100,6 +106,7 @@ public class UnitsActivity extends AppCompatActivity {
             selectedUnit = 5;
             intent.putExtra("selectedUnit", selectedUnit);
             intent.putExtra("difficulty", difficulty);
+            intent.putExtra("email", email);
             startActivity(intent);
         });
 
@@ -109,6 +116,7 @@ public class UnitsActivity extends AppCompatActivity {
             selectedUnit = 6;
             intent.putExtra("selectedUnit", selectedUnit);
             intent.putExtra("difficulty", difficulty);
+            intent.putExtra("email", email);
             startActivity(intent);
         });
 
@@ -118,6 +126,7 @@ public class UnitsActivity extends AppCompatActivity {
             selectedUnit = 7;
             intent.putExtra("selectedUnit", selectedUnit);
             intent.putExtra("difficulty", difficulty);
+            intent.putExtra("email", email);
             startActivity(intent);
         });
 
@@ -127,6 +136,7 @@ public class UnitsActivity extends AppCompatActivity {
             selectedUnit = 8;
             intent.putExtra("selectedUnit", selectedUnit);
             intent.putExtra("difficulty", difficulty);
+            intent.putExtra("email", email);
             startActivity(intent);
         });
 
@@ -136,6 +146,7 @@ public class UnitsActivity extends AppCompatActivity {
             selectedUnit = 9;
             intent.putExtra("selectedUnit", selectedUnit);
             intent.putExtra("difficulty", difficulty);
+            intent.putExtra("email", email);
             startActivity(intent);
         });
 
@@ -145,6 +156,7 @@ public class UnitsActivity extends AppCompatActivity {
             selectedUnit = 10;
             intent.putExtra("selectedUnit", selectedUnit);
             intent.putExtra("difficulty", difficulty);
+            intent.putExtra("email", email);
             startActivity(intent);
         });
     }

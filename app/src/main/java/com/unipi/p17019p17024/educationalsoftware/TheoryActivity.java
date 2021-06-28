@@ -20,14 +20,19 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class TheoryActivity extends AppCompatActivity {
-    String userID, difficulty;
+    String userID, email, difficulty;
     Integer selectedUnit;
     TextView textView1, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10;
     Button button1;
     ImageView imageView;
+
+    //Intents for ExercisesActivity initialization
+    ArrayList<String> selectedQuestions = new ArrayList<>();
+    Integer count = 1;
 
     //User Authentication
     public FirebaseAuth mAuth;
@@ -58,10 +63,12 @@ public class TheoryActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
+        //GetIntent
         userID = getIntent().getStringExtra("userID");
         selectedUnit = getIntent().getIntExtra("selectedUnit", 0);
         difficulty = getIntent().getStringExtra("difficulty");
         //Toast.makeText(getApplicationContext(), "unit: "+ selectedUnit, Toast.LENGTH_LONG).show();
+        email = getIntent().getStringExtra("email");
 
 
         //Firebase Database
@@ -99,6 +106,12 @@ public class TheoryActivity extends AppCompatActivity {
             intent.putExtra("userID", currentUser.getUid());
             intent.putExtra("selectedUnit", selectedUnit);
             intent.putExtra("difficulty", difficulty);
+
+            //Intents for ExercisesActivity initialization
+            intent.putExtra("selectedQuestions", selectedQuestions);
+            intent.putExtra("count", count);
+            intent.putExtra("email", email);
+
             startActivity(intent);
         });
     }
