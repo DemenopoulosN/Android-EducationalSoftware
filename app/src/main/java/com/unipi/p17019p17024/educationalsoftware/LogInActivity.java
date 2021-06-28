@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,6 +19,8 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.unipi.p17019p17024.educationalsoftware.ui.home.HomeFragment;
 
 public class LogInActivity extends AppCompatActivity {
@@ -32,6 +35,9 @@ public class LogInActivity extends AppCompatActivity {
 
     public FirebaseAuth mAuth;
     FirebaseUser currentUser;
+
+    //Firebase Database
+    DatabaseReference databaseRef;
 
     boolean isSignInPushed = false;
 
@@ -66,6 +72,9 @@ public class LogInActivity extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
+        //Firebase Database
+        //databaseRef = FirebaseDatabase.getInstance();
+        databaseRef = FirebaseDatabase.getInstance().getReference();
 
         button3.setVisibility(View.INVISIBLE);
         button4.setVisibility(View.INVISIBLE);
@@ -85,6 +94,22 @@ public class LogInActivity extends AppCompatActivity {
                             isSignInPushed = false;
                             writeSP(false);
 
+                            //
+                            //creating node for each student in Firebase database
+                            //
+                            DatabaseReference newStudent = databaseRef.child("Students").push();
+                            //String keyChild = newStudent.getKey();
+                            //units
+                            for(int i = 1; i<=10; i++){
+                                databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child("views").setValue(0);
+                                //operations
+                                for(int j = 1; j<=10; j++){
+                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("weight").setValue(1);
+                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("score").setValue(0);
+                                }
+                            }
+
+                            //go to mainActivity
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             intent.putExtra("userID", currentUser.getUid());
                             intent.putExtra("email", currentUser.getEmail());
