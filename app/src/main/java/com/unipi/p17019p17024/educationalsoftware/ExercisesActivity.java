@@ -36,9 +36,9 @@ public class ExercisesActivity extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton radioButton1, radioButton2, radioButton3, radioButton4;
     ImageView imageView;
-    Integer selectedUnit, randomOperation, randomQuestion;
+    Integer selectedUnit, randomOperation; //, randomQuestion
     ArrayList<String> selectedQuestions = new ArrayList<>();
-    Boolean condition1, condition2, condition3;
+    Boolean condition1, condition3; //, condition2
     Integer count = 1;
 
     Random random;
@@ -91,36 +91,32 @@ public class ExercisesActivity extends AppCompatActivity {
             {
                 if (dataSnapshot.exists())
                 {
+                    int exerciseType;
                     do {
                         randomOperation = random.nextInt(10 + 1) + 1;
                         //randomQuestion = random.nextInt(3 + 1) + 1;
+                        exerciseType = getExerciseType(difficulty, count);
 
 
-                        condition1 = questionAlreadyChosen(selectedQuestions, questionID);
-                        Log.d("condition1",condition1.toString());
-                        condition2 = difficultyCheck(difficulty, count, randomQuestion);
-                        Log.d("condition2",condition2.toString());
-
-
-                        questionID = randomOperation.toString() + randomQuestion.toString();
+                        questionID = randomOperation.toString() + exerciseType;
                         Log.d("questionID",questionID);
 
                         condition1 = questionAlreadyChosen(selectedQuestions, questionID);
                         Log.d("condition1",condition1.toString());
-                        condition2 = difficultyCheck(difficulty, count, randomQuestion);
-                        Log.d("condition2",condition2.toString());
+                        //condition2 = difficultyCheck(difficulty, count, randomQuestion);
+                        //Log.d("condition2",condition2.toString());
                     }
-                    while (condition1 && condition2);
+                    while (condition1);
                     count++;
 
                     selectedQuestions.add(questionID);
-                    textView1.setText(Objects.requireNonNull(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(randomQuestion)).child("question").getValue()).toString());
+                    textView1.setText(Objects.requireNonNull(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(exerciseType)).child("question").getValue()).toString());
 
-                    if(Objects.requireNonNull(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(randomQuestion)).child("type").getValue()).toString().equals("true or false")){
+                    if(Objects.requireNonNull(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(exerciseType)).child("type").getValue()).toString().equals("true or false")){
                         button1.setVisibility(View.VISIBLE);
                         button2.setVisibility(View.VISIBLE);
                     }
-                    else if(Objects.requireNonNull(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(randomQuestion)).child("type").getValue()).toString().equals("multiple choice")){
+                    else if(Objects.requireNonNull(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(exerciseType)).child("type").getValue()).toString().equals("multiple choice")){
                         button3.setVisibility(View.VISIBLE);
                         radioGroup.setVisibility(View.VISIBLE);
                     }
@@ -139,7 +135,7 @@ public class ExercisesActivity extends AppCompatActivity {
 
     }
 
-    public void generateExercise(){
+    /*public void generateExercise(){
         unitRef.addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NotNull DataSnapshot dataSnapshot)
@@ -183,13 +179,53 @@ public class ExercisesActivity extends AppCompatActivity {
                 Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
             }
         });
-    }
+    }*/
 
     public boolean questionAlreadyChosen(ArrayList<String> list, String id){
         return list.contains(id);
     }
 
-    public boolean difficultyCheck(String difficultyLevel, Integer index, Integer questionType){
+    public int getExerciseType(String difficultyLevel, Integer index) {
+        int questionType = 0;
+
+        if(difficultyLevel.equals("Easy")){
+            if(index >= 1 && index <= 5){
+                questionType = 1;
+            }
+            else if(index >= 6 && index <= 9){
+                questionType = 2;
+            }
+            else{
+                questionType = 3;
+            }
+        }
+        else if(difficultyLevel.equals("Medium")){
+            if(index >= 1 && index <= 3){
+                questionType = 1;
+            }
+            else if(index >= 4 && index <= 8){
+                questionType = 2;
+            }
+            else{
+                questionType = 3;
+            }
+        }
+        else{
+            if(index >= 1 && index <= 2){
+                questionType = 1;
+            }
+            else if(index >= 3 && index <= 5){
+                questionType = 2;
+            }
+            else{
+                questionType = 3;
+            }
+        }
+
+        return questionType;
+    }
+
+    /*public boolean difficultyCheck(String difficultyLevel, Integer index, Integer questionType){
         if(difficultyLevel.equals("Easy")){
             Log.d("α","Βρίσκομαι στο easy");
             if(index >= 1 && index <= 5){
@@ -229,26 +265,34 @@ public class ExercisesActivity extends AppCompatActivity {
                 return questionType == 3;
             }
         }
-    }
+    }*/
 
     public void buttonCorrectOnClick(){
-        generateExercise();
+        //generateExercise();
+        finish();
+        startActivity(getIntent());
     }
 
     public void buttonFalseOnClick(){
-        generateExercise();
+        //generateExercise();
+        finish();
+        startActivity(getIntent());
     }
 
     public void buttonSubmitMultipleChoiceOnClick(){
         //TO-DO
         //έλεγχος για το αν έχει επιλέξει κάποια απάντηση
-        generateExercise();
+        //generateExercise();
+        finish();
+        startActivity(getIntent());
     }
 
     public void buttonSubmitFillInTheGapOnClick(){
         //TO-DO
         //έλεγχος για το αν έχει συμπληρώσει κάτι στο κενό
-        generateExercise();
+        //generateExercise();
+        finish();
+        startActivity(getIntent());
 
 
         if(count == 10) {
