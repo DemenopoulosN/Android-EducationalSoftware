@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -53,6 +55,10 @@ public class ExercisesActivity extends AppCompatActivity {
     FirebaseDatabase database;
     DatabaseReference unitRef, studentsRef, exercisesRef;
 
+    //Shared Preferences
+    SharedPreferences preferences;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +76,16 @@ public class ExercisesActivity extends AppCompatActivity {
         radioButton4 = findViewById(R.id.radioButton4);
         imageView = findViewById(R.id.imageViewInfoExercises);
         questionID = "0";
+
+        //Shared Preferences
+        preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        //For saving Shared Preferences on launching MainActivity when opening the app
+        //int spScore1 = preferences.getInt("score1", 0);
+        //int spScore2 = preferences.getInt("score2", 0);
+        //int spScore3 = preferences.getInt("score3", 0);
+        //int spScore4 = preferences.getInt("score4", 0);
+        //int spScore5 = preferences.getInt("score5", 0);
+
 
         //GetIntent
         //Recursion
@@ -228,14 +244,82 @@ public class ExercisesActivity extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot2) {
                             if (dataSnapshot1.getValue().toString().equals("true")) {
                                 if(Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) < 5){
-                                    Integer newScore = Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) + 1;
+                                    //Integer newScore = Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) + 1;
+
+
+
+                                    //
+                                    //
+                                    //FOR SCORE:
+                                    //CHANGE THE FIRST LINE FOR THOSE BELOW IT
+                                    //
+                                    //
+                                    //Integer newScore = Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) + 1;
+                                    //
+                                    String id = String.valueOf(selectedUnit) + String.valueOf(randomOperation) + "1";
+                                    int spAnswer2 = preferences.getInt("answer1"+id, 0);
+                                    int spAnswer3 = preferences.getInt("answer2"+id, 0);
+                                    int spAnswer4 = preferences.getInt("answer3"+id, 0);
+                                    int spAnswer5 = preferences.getInt("answer4"+id, 0);
+                                    //Update student's last submitted answer in Shared Preferences
+                                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putInt("answer1"+id, 1);
+                                    editor.putInt("answer2"+id, spAnswer2);
+                                    editor.putInt("answer3"+id, spAnswer3);
+                                    editor.putInt("answer4"+id, spAnswer4);
+                                    editor.putInt("answer5"+id, spAnswer5);
+                                    editor.apply();
+                                    //Update the first Shared Preferences' value
+                                    int spAnswer1 = preferences.getInt("answer1"+id, 0);
+
+                                    Integer newScore = spAnswer1 + spAnswer2 + spAnswer3 + spAnswer4 + spAnswer5;
+                                    //
+                                    //
+                                    //
+
+
+
                                     studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
                                 }
                                 studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(1);
                             }
                             else{
                                 if(Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) > 0){
-                                    Integer newScore = Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) - 1;
+                                    //Integer newScore = Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) - 1;
+
+
+
+                                    //
+                                    //
+                                    //FOR SCORE:
+                                    //CHANGE THE FIRST LINE FOR THOSE BELOW IT
+                                    //
+                                    //
+                                    //Integer newScore = Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) - 1;
+                                    //
+                                    String id = String.valueOf(selectedUnit) + String.valueOf(randomOperation) + "1";
+                                    int spAnswer2 = preferences.getInt("answer1"+id, 0);
+                                    int spAnswer3 = preferences.getInt("answer2"+id, 0);
+                                    int spAnswer4 = preferences.getInt("answer3"+id, 0);
+                                    int spAnswer5 = preferences.getInt("answer4"+id, 0);
+                                    //Update student's last submitted answer in Shared Preferences
+                                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putInt("answer1"+id, 0);
+                                    editor.putInt("answer2"+id, spAnswer2);
+                                    editor.putInt("answer3"+id, spAnswer3);
+                                    editor.putInt("answer4"+id, spAnswer4);
+                                    editor.putInt("answer5"+id, spAnswer5);
+                                    editor.apply();
+                                    //Update the first Shared Preferences' value
+                                    int spAnswer1 = preferences.getInt("answer1"+id, 0);
+
+                                    Integer newScore = spAnswer1 + spAnswer2 + spAnswer3 + spAnswer4 + spAnswer5;
+                                    //
+                                    //
+                                    //
+
+
+
                                     studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
                                 }
                                 Integer newWeight = Integer.parseInt(dataSnapshot2.child("weight").getValue().toString()) + 1;
@@ -291,7 +375,41 @@ public class ExercisesActivity extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot4) {
                             if (dataSnapshot3.getValue().toString().equals("true")) {
                                 if(Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) > 0){
-                                    Integer newScore = Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) - 1;
+                                    //Integer newScore = Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) - 1;
+
+
+
+                                    //
+                                    //
+                                    //FOR SCORE:
+                                    //CHANGE THE FIRST LINE FOR THOSE BELOW IT
+                                    //
+                                    //
+                                    //Integer newScore = Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) - 1;
+                                    //
+                                    String id = String.valueOf(selectedUnit) + String.valueOf(randomOperation) + "1";
+                                    int spAnswer2 = preferences.getInt("answer1"+id, 0);
+                                    int spAnswer3 = preferences.getInt("answer2"+id, 0);
+                                    int spAnswer4 = preferences.getInt("answer3"+id, 0);
+                                    int spAnswer5 = preferences.getInt("answer4"+id, 0);
+                                    //Update student's last submitted answer in Shared Preferences
+                                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putInt("answer1"+id, 0);
+                                    editor.putInt("answer2"+id, spAnswer2);
+                                    editor.putInt("answer3"+id, spAnswer3);
+                                    editor.putInt("answer4"+id, spAnswer4);
+                                    editor.putInt("answer5"+id, spAnswer5);
+                                    editor.apply();
+                                    //Update the first Shared Preferences' value
+                                    int spAnswer1 = preferences.getInt("answer1"+id, 0);
+
+                                    Integer newScore = spAnswer1 + spAnswer2 + spAnswer3 + spAnswer4 + spAnswer5;
+                                    //
+                                    //
+                                    //
+
+
+
                                     studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
                                 }
                                 Integer newWeight = Integer.parseInt(dataSnapshot4.child("weight").getValue().toString()) + 1;
@@ -299,7 +417,41 @@ public class ExercisesActivity extends AppCompatActivity {
                             }
                             else{
                                 if(Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) < 5){
-                                    Integer newScore = Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) + 1;
+                                    //Integer newScore = Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) + 1;
+
+
+
+                                    //
+                                    //
+                                    //FOR SCORE:
+                                    //CHANGE THE FIRST LINE FOR THOSE BELOW IT
+                                    //
+                                    //
+                                    //Integer newScore = Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) + 1;
+                                    //
+                                    String id = String.valueOf(selectedUnit) + String.valueOf(randomOperation) + "1";
+                                    int spAnswer2 = preferences.getInt("answer1"+id, 0);
+                                    int spAnswer3 = preferences.getInt("answer2"+id, 0);
+                                    int spAnswer4 = preferences.getInt("answer3"+id, 0);
+                                    int spAnswer5 = preferences.getInt("answer4"+id, 0);
+                                    //Update student's last submitted answer in Shared Preferences
+                                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putInt("answer1"+id, 1);
+                                    editor.putInt("answer2"+id, spAnswer2);
+                                    editor.putInt("answer3"+id, spAnswer3);
+                                    editor.putInt("answer4"+id, spAnswer4);
+                                    editor.putInt("answer5"+id, spAnswer5);
+                                    editor.apply();
+                                    //Update the first Shared Preferences' value
+                                    int spAnswer1 = preferences.getInt("answer1"+id, 0);
+
+                                    Integer newScore = spAnswer1 + spAnswer2 + spAnswer3 + spAnswer4 + spAnswer5;
+                                    //
+                                    //
+                                    //
+
+
+
                                     studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
                                 }
                                 studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(1);
@@ -355,7 +507,41 @@ public class ExercisesActivity extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot6) {
                             if (dataSnapshot5.child("answer").getValue().toString().equals(radiobuttonSelected.toString())) {
                                 if(Integer.parseInt(dataSnapshot6.child("score").getValue().toString()) < 5){
-                                    Integer newScore = Integer.parseInt(dataSnapshot6.child("score").getValue().toString()) + 1;
+                                    //Integer newScore = Integer.parseInt(dataSnapshot6.child("score").getValue().toString()) + 1;
+
+
+
+                                    //
+                                    //
+                                    //FOR SCORE:
+                                    //CHANGE THE FIRST LINE FOR THOSE BELOW IT
+                                    //
+                                    //
+                                    //Integer newScore = Integer.parseInt(dataSnapshot6.child("score").getValue().toString()) + 1;
+                                    //
+                                    String id = String.valueOf(selectedUnit) + String.valueOf(randomOperation) + "2";
+                                    int spAnswer2 = preferences.getInt("answer1"+id, 0);
+                                    int spAnswer3 = preferences.getInt("answer2"+id, 0);
+                                    int spAnswer4 = preferences.getInt("answer3"+id, 0);
+                                    int spAnswer5 = preferences.getInt("answer4"+id, 0);
+                                    //Update student's last submitted answer in Shared Preferences
+                                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putInt("answer1"+id, 1);
+                                    editor.putInt("answer2"+id, spAnswer2);
+                                    editor.putInt("answer3"+id, spAnswer3);
+                                    editor.putInt("answer4"+id, spAnswer4);
+                                    editor.putInt("answer5"+id, spAnswer5);
+                                    editor.apply();
+                                    //Update the first Shared Preferences' value
+                                    int spAnswer1 = preferences.getInt("answer1"+id, 0);
+
+                                    Integer newScore = spAnswer1 + spAnswer2 + spAnswer3 + spAnswer4 + spAnswer5;
+                                    //
+                                    //
+                                    //
+
+
+
                                     studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
                                 }
                                 studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(1);
@@ -387,7 +573,41 @@ public class ExercisesActivity extends AppCompatActivity {
                             }
                             else{
                                 if(Integer.parseInt(dataSnapshot6.child("score").getValue().toString()) > 0){
-                                    Integer newScore = Integer.parseInt(dataSnapshot6.child("score").getValue().toString()) - 1;
+                                    //Integer newScore = Integer.parseInt(dataSnapshot6.child("score").getValue().toString()) - 1;
+
+
+
+                                    //
+                                    //
+                                    //FOR SCORE:
+                                    //CHANGE THE FIRST LINE FOR THOSE BELOW IT
+                                    //
+                                    //
+                                    //Integer newScore = Integer.parseInt(dataSnapshot6.child("score").getValue().toString()) - 1;
+                                    //
+                                    String id = String.valueOf(selectedUnit) + String.valueOf(randomOperation) + "2";
+                                    int spAnswer2 = preferences.getInt("answer1"+id, 0);
+                                    int spAnswer3 = preferences.getInt("answer2"+id, 0);
+                                    int spAnswer4 = preferences.getInt("answer3"+id, 0);
+                                    int spAnswer5 = preferences.getInt("answer4"+id, 0);
+                                    //Update student's last submitted answer in Shared Preferences
+                                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putInt("answer1"+id, 0);
+                                    editor.putInt("answer2"+id, spAnswer2);
+                                    editor.putInt("answer3"+id, spAnswer3);
+                                    editor.putInt("answer4"+id, spAnswer4);
+                                    editor.putInt("answer5"+id, spAnswer5);
+                                    editor.apply();
+                                    //Update the first Shared Preferences' value
+                                    int spAnswer1 = preferences.getInt("answer1"+id, 0);
+
+                                    Integer newScore = spAnswer1 + spAnswer2 + spAnswer3 + spAnswer4 + spAnswer5;
+                                    //
+                                    //
+                                    //
+
+
+
                                     studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
                                 }
                                 Integer newWeight = Integer.parseInt(dataSnapshot6.child("weight").getValue().toString()) + 1;
