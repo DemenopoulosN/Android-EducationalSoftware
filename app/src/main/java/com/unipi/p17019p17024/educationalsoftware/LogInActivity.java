@@ -98,14 +98,17 @@ public class LogInActivity extends AppCompatActivity {
                             //creating node for each student in Firebase database
                             //
                             DatabaseReference newStudent = databaseRef.child("Students").push();
-                            //String keyChild = newStudent.getKey();
+                            databaseRef.child("Students").child(currentUser.getUid()).child("totalAdditionFaults").setValue(0);
+
                             //units
                             for(int i = 1; i<=10; i++){
                                 databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child("views").setValue(0);
+                                databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child("unitScore").setValue(0);
                                 //operations
                                 for(int j = 1; j<=10; j++){
                                     databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("weight").setValue(1);
                                     databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("score").setValue(0);
+                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("additionFaults").setValue(0);
                                 }
                             }
 

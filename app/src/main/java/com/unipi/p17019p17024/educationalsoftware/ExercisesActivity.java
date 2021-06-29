@@ -43,7 +43,6 @@ public class ExercisesActivity extends AppCompatActivity {
     Integer count;
 
     Random random;
-    //String rightAnswer;
 
     //User Authentication
     public FirebaseAuth mAuth;
@@ -322,6 +321,60 @@ public class ExercisesActivity extends AppCompatActivity {
     }
 
     public void buttonSubmitMultipleChoiceOnClick(View view){
+        //
+        // updating Students' Data
+        //
+        exercisesRef = FirebaseDatabase.getInstance().getReference().child("Exercises");
+        exercisesRef.child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("1").child("answer").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NotNull DataSnapshot dataSnapshot5)
+            {
+                if (dataSnapshot5.exists()) {
+
+                    studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).addListenerForSingleValueEvent(new ValueEventListener(){
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot6) {
+                            if (dataSnapshot5.getValue().toString().equals("true")) {
+                                if(Integer.parseInt(dataSnapshot6.child("score").getValue().toString()) < 5){
+                                    Integer newScore = Integer.parseInt(dataSnapshot6.child("score").getValue().toString()) + 1;
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
+                                }
+                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(1);
+                            }
+                            else{
+                                if(Integer.parseInt(dataSnapshot6.child("score").getValue().toString()) > 0){
+                                    Integer newScore = Integer.parseInt(dataSnapshot6.child("score").getValue().toString()) - 1;
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
+                                }
+                                Integer newWeight = Integer.parseInt(dataSnapshot6.child("weight").getValue().toString()) + 1;
+                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(newWeight);
+                            }
+                            for(int i = 1; i<=10; i++){
+                                for(int j = 1; j<=10; j++){
+                                    //studentsRef.child(userID).child("totalAdditionFaults").setValue();
+                                }
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+                            // we are showing that error message in toast
+                            Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // we are showing that error message in toast
+                Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+
+
+
         //
         //Intents
         //
