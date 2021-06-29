@@ -199,38 +199,31 @@ public class ExercisesActivity extends AppCompatActivity {
         // updating Students' Data
         //
         exercisesRef = FirebaseDatabase.getInstance().getReference().child("Exercises");
-        exercisesRef.child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("1").child("answer").addValueEventListener(new ValueEventListener() {
+        exercisesRef.child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("1").child("answer").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NotNull DataSnapshot dataSnapshot1)
             {
                 if (dataSnapshot1.exists()) {
-                    //rightAnswer = dataSnapshot1.getValue();
-                    Log.d("στο εξωτερικό onDataChange το DataSnaphot1.value ισούται με ", dataSnapshot1.getValue().toString());
-
-
 
                     studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).addValueEventListener(new ValueEventListener(){
+                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).addListenerForSingleValueEvent(new ValueEventListener(){
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot2) {
-                            //for (DataSnapshot dsp2 : dataSnapshot2.getChildren()) {
-                            Log.d("στο εσωτερικό onDataChange το DataSnaphot1.value ισούται με ", dataSnapshot1.getValue().toString());
-                                if (Objects.equals(dataSnapshot1.getValue(), "true")) {
-                                    if(Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) < 5){
-                                        Integer newScore = Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) + 1;
-                                        studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
-                                    }
-                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(1);
+                            if (dataSnapshot1.getValue().toString().equals("true")) {
+                                if(Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) < 5){
+                                    Integer newScore = Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) + 1;
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
                                 }
-                                else{
-                                    if(Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) > 0){
-                                        Integer newScore = Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) - 1;
-                                        studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
-                                    }
-                                    Integer newWeight = Integer.parseInt(dataSnapshot2.child("weight").getValue().toString()) + 1;
-                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(newWeight);
+                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(1);
+                            }
+                            else{
+                                if(Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) > 0){
+                                    Integer newScore = Integer.parseInt(dataSnapshot2.child("score").getValue().toString()) - 1;
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
                                 }
-                            //}
+                                Integer newWeight = Integer.parseInt(dataSnapshot2.child("weight").getValue().toString()) + 1;
+                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(newWeight);
+                            }
                         }
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
@@ -269,36 +262,31 @@ public class ExercisesActivity extends AppCompatActivity {
         // updating Students' Data
         //
         exercisesRef = FirebaseDatabase.getInstance().getReference().child("Exercises");
-        exercisesRef.child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("1").child("answer").addValueEventListener(new ValueEventListener() {
+        exercisesRef.child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("1").child("answer").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NotNull DataSnapshot dataSnapshot3)
             {
                 if (dataSnapshot3.exists()) {
-                    //rightAnswer = (String) dataSnapshot3.getValue();
-
-
 
                     studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).addValueEventListener(new ValueEventListener(){
+                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).addListenerForSingleValueEvent(new ValueEventListener(){
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot4) {
-                            //for (DataSnapshot dsp4 : dataSnapshot4.getChildren()) {
-                                if (Objects.equals(dataSnapshot3.getValue(), "true")) {
-                                    if(Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) > 0){
-                                        Integer newScore = Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) - 1;
-                                        studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
-                                    }
-                                    Integer newWeight = Integer.parseInt(dataSnapshot4.child("weight").getValue().toString()) + 1;
-                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(newWeight);
+                            if (dataSnapshot3.getValue().toString().equals("true")) {
+                                if(Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) > 0){
+                                    Integer newScore = Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) - 1;
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
                                 }
-                                else{
-                                    if(Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) < 5){
-                                        Integer newScore = Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) + 1;
-                                        studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
-                                    }
-                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(1);
+                                Integer newWeight = Integer.parseInt(dataSnapshot4.child("weight").getValue().toString()) + 1;
+                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(newWeight);
+                            }
+                            else{
+                                if(Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) < 5){
+                                    Integer newScore = Integer.parseInt(dataSnapshot4.child("score").getValue().toString()) + 1;
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("score").setValue(newScore);
                                 }
-                            //}
+                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(1);
+                            }
                         }
                         @Override
                         public void onCancelled(@NonNull DatabaseError error) {
