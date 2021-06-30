@@ -32,6 +32,7 @@ public class UnitsActivity extends AppCompatActivity {
 
     Double[] totalUnitsScoresArray = new Double[]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0};
     //Integer totalScoreUnit1, totalScoreUnit2, totalScoreUnit3, totalScoreUnit4, totalScoreUnit5, totalScoreUnit6, totalScoreUnit7, totalScoreUnit8, totalScoreUnit9, totalScoreUnit10;
+    int score1, score2, score3, score4, score5, score6, score7, score8, score9, score10;
 
     //User Authentication
     public FirebaseAuth mAuth;
@@ -93,7 +94,7 @@ public class UnitsActivity extends AppCompatActivity {
                 }
 
                 //unit1
-                int score1 = (int) Math.round(totalUnitsScoresArray[0]);
+                score1 = (int) Math.round(totalUnitsScoresArray[0]);
                 if(score1 == 0){
                     imageViewStars1.setImageResource(R.drawable.stars0);
                 }
@@ -114,7 +115,7 @@ public class UnitsActivity extends AppCompatActivity {
                 }
 
                 //unit2
-                int score2 = (int) Math.round(totalUnitsScoresArray[1]);
+                score2 = (int) Math.round(totalUnitsScoresArray[1]);
                 if(score2 == 0){
                     imageViewStars2.setImageResource(R.drawable.stars0);
                 }
@@ -135,7 +136,7 @@ public class UnitsActivity extends AppCompatActivity {
                 }
 
                 //unit3
-                int score3 = (int) Math.round(totalUnitsScoresArray[2]);
+                score3 = (int) Math.round(totalUnitsScoresArray[2]);
                 if(score3 == 0){
                     imageViewStars3.setImageResource(R.drawable.stars0);
                 }
@@ -156,7 +157,7 @@ public class UnitsActivity extends AppCompatActivity {
                 }
 
                 //unit4
-                int score4 = (int) Math.round(totalUnitsScoresArray[3]);
+                score4 = (int) Math.round(totalUnitsScoresArray[3]);
                 if(score4 == 0){
                     imageViewStars4.setImageResource(R.drawable.stars0);
                 }
@@ -177,7 +178,7 @@ public class UnitsActivity extends AppCompatActivity {
                 }
 
                 //unit5
-                int score5 = (int) Math.round(totalUnitsScoresArray[4]);
+                score5 = (int) Math.round(totalUnitsScoresArray[4]);
                 if(score5 == 0){
                     imageViewStars5.setImageResource(R.drawable.stars0);
                 }
@@ -198,7 +199,7 @@ public class UnitsActivity extends AppCompatActivity {
                 }
 
                 //unit6
-                int score6 = (int) Math.round(totalUnitsScoresArray[5]);
+                score6 = (int) Math.round(totalUnitsScoresArray[5]);
                 if(score6 == 0){
                     imageViewStars6.setImageResource(R.drawable.stars0);
                 }
@@ -219,7 +220,7 @@ public class UnitsActivity extends AppCompatActivity {
                 }
 
                 //unit7
-                int score7 = (int) Math.round(totalUnitsScoresArray[6]);
+                score7 = (int) Math.round(totalUnitsScoresArray[6]);
                 if(score7 == 0){
                     imageViewStars7.setImageResource(R.drawable.stars0);
                 }
@@ -240,7 +241,7 @@ public class UnitsActivity extends AppCompatActivity {
                 }
 
                 //unit8
-                int score8 = (int) Math.round(totalUnitsScoresArray[7]);
+                score8 = (int) Math.round(totalUnitsScoresArray[7]);
                 if(score8 == 0){
                     imageViewStars8.setImageResource(R.drawable.stars0);
                 }
@@ -261,7 +262,7 @@ public class UnitsActivity extends AppCompatActivity {
                 }
 
                 //unit9
-                int score9 = (int) Math.round(totalUnitsScoresArray[8]);
+                score9 = (int) Math.round(totalUnitsScoresArray[8]);
                 if(score9 == 0){
                     imageViewStars9.setImageResource(R.drawable.stars0);
                 }
@@ -282,7 +283,7 @@ public class UnitsActivity extends AppCompatActivity {
                 }
 
                 //unit10
-                int score10 = (int) Math.round(totalUnitsScoresArray[9]);
+                score10 = (int) Math.round(totalUnitsScoresArray[9]);
                 if(score10 == 0){
                     imageViewStars10.setImageResource(R.drawable.stars0);
                 }
@@ -310,8 +311,9 @@ public class UnitsActivity extends AppCompatActivity {
             }
         });
 
-
-
+        //TO-DO
+        //Change background color of imageButtons
+        //green or red
 
         //
         //προαπαιτούμενο να έχει ολοκληρωθεί επιτυχώς η προηγούμενη ενότητα για να ανοίξει η επόμενη (θεωρία + καλό σκορ)
@@ -327,93 +329,138 @@ public class UnitsActivity extends AppCompatActivity {
         });
 
         imageButton2.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
-            intent.putExtra("userID", currentUser.getUid());
-            selectedUnit = 2;
-            intent.putExtra("selectedUnit", selectedUnit);
-            intent.putExtra("difficulty", difficulty);
-            intent.putExtra("email", email);
-            startActivity(intent);
+            if (score1 >= 4) {
+                Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
+                intent.putExtra("userID", currentUser.getUid());
+                selectedUnit = 2;
+                intent.putExtra("selectedUnit", selectedUnit);
+                intent.putExtra("difficulty", difficulty);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(UnitsActivity.this, "You have to finish unit 1\nwith a score of at least 4/5!", Toast.LENGTH_LONG).show();
+            }
         });
 
         imageButton3.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
-            intent.putExtra("userID", currentUser.getUid());
-            selectedUnit = 3;
-            intent.putExtra("selectedUnit", selectedUnit);
-            intent.putExtra("difficulty", difficulty);
-            intent.putExtra("email", email);
-            startActivity(intent);
+            if (score2 >= 4) {
+                Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
+                intent.putExtra("userID", currentUser.getUid());
+                selectedUnit = 3;
+                intent.putExtra("selectedUnit", selectedUnit);
+                intent.putExtra("difficulty", difficulty);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(UnitsActivity.this, "You have to finish unit 2\nwith a score of at least 4/5!", Toast.LENGTH_LONG).show();
+            }
         });
 
         imageButton4.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
-            intent.putExtra("userID", currentUser.getUid());
-            selectedUnit = 4;
-            intent.putExtra("selectedUnit", selectedUnit);
-            intent.putExtra("difficulty", difficulty);
-            intent.putExtra("email", email);
-            startActivity(intent);
+            if (score3 >= 4) {
+                Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
+                intent.putExtra("userID", currentUser.getUid());
+                selectedUnit = 4;
+                intent.putExtra("selectedUnit", selectedUnit);
+                intent.putExtra("difficulty", difficulty);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(UnitsActivity.this, "You have to finish unit 3\nwith a score of at least 4/5!", Toast.LENGTH_LONG).show();
+            }
         });
 
         imageButton5.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
-            intent.putExtra("userID", currentUser.getUid());
-            selectedUnit = 5;
-            intent.putExtra("selectedUnit", selectedUnit);
-            intent.putExtra("difficulty", difficulty);
-            intent.putExtra("email", email);
-            startActivity(intent);
+            if (score4 >= 4) {
+                Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
+                intent.putExtra("userID", currentUser.getUid());
+                selectedUnit = 5;
+                intent.putExtra("selectedUnit", selectedUnit);
+                intent.putExtra("difficulty", difficulty);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(UnitsActivity.this, "You have to finish unit 4\nwith a score of at least 4/5!", Toast.LENGTH_LONG).show();
+            }
         });
 
         imageButton6.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
-            intent.putExtra("userID", currentUser.getUid());
-            selectedUnit = 6;
-            intent.putExtra("selectedUnit", selectedUnit);
-            intent.putExtra("difficulty", difficulty);
-            intent.putExtra("email", email);
-            startActivity(intent);
+            if (score5 >= 4) {
+                Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
+                intent.putExtra("userID", currentUser.getUid());
+                selectedUnit = 6;
+                intent.putExtra("selectedUnit", selectedUnit);
+                intent.putExtra("difficulty", difficulty);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(UnitsActivity.this, "You have to finish unit 5\nwith a score of at least 4/5!", Toast.LENGTH_LONG).show();
+            }
         });
 
         imageButton7.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
-            intent.putExtra("userID", currentUser.getUid());
-            selectedUnit = 7;
-            intent.putExtra("selectedUnit", selectedUnit);
-            intent.putExtra("difficulty", difficulty);
-            intent.putExtra("email", email);
-            startActivity(intent);
+            if (score6 >= 4) {
+                Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
+                intent.putExtra("userID", currentUser.getUid());
+                selectedUnit = 7;
+                intent.putExtra("selectedUnit", selectedUnit);
+                intent.putExtra("difficulty", difficulty);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(UnitsActivity.this, "You have to finish unit 6\nwith a score of at least 4/5!", Toast.LENGTH_LONG).show();
+            }
         });
 
         imageButton8.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
-            intent.putExtra("userID", currentUser.getUid());
-            selectedUnit = 8;
-            intent.putExtra("selectedUnit", selectedUnit);
-            intent.putExtra("difficulty", difficulty);
-            intent.putExtra("email", email);
-            startActivity(intent);
+            if (score7 >= 4) {
+                Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
+                intent.putExtra("userID", currentUser.getUid());
+                selectedUnit = 8;
+                intent.putExtra("selectedUnit", selectedUnit);
+                intent.putExtra("difficulty", difficulty);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(UnitsActivity.this, "You have to finish unit 7\nwith a score of at least 4/5!", Toast.LENGTH_LONG).show();
+            }
         });
 
         imageButton9.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
-            intent.putExtra("userID", currentUser.getUid());
-            selectedUnit = 9;
-            intent.putExtra("selectedUnit", selectedUnit);
-            intent.putExtra("difficulty", difficulty);
-            intent.putExtra("email", email);
-            startActivity(intent);
+            if (score8 >= 4) {
+                Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
+                intent.putExtra("userID", currentUser.getUid());
+                selectedUnit = 9;
+                intent.putExtra("selectedUnit", selectedUnit);
+                intent.putExtra("difficulty", difficulty);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(UnitsActivity.this, "You have to finish unit 8\nwith a score of at least 4/5!", Toast.LENGTH_LONG).show();
+            }
         });
 
         imageButton10.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
-            intent.putExtra("userID", currentUser.getUid());
-            selectedUnit = 10;
-            intent.putExtra("selectedUnit", selectedUnit);
-            intent.putExtra("difficulty", difficulty);
-            intent.putExtra("email", email);
-            startActivity(intent);
+            if (score9 >= 4) {
+                Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
+                intent.putExtra("userID", currentUser.getUid());
+                selectedUnit = 10;
+                intent.putExtra("selectedUnit", selectedUnit);
+                intent.putExtra("difficulty", difficulty);
+                intent.putExtra("email", email);
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(UnitsActivity.this, "You have to finish unit 9\nwith a score of at least 4/5!", Toast.LENGTH_LONG).show();
+            }
         });
     }
 }
