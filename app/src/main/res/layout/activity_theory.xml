@@ -34,8 +34,7 @@
         android:layout_marginStart="47dp"
         android:layout_marginTop="103dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewOperation10Stars"
@@ -44,8 +43,7 @@
         android:layout_marginStart="233dp"
         android:layout_marginTop="634dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewOperation9Stars"
@@ -54,8 +52,7 @@
         android:layout_marginStart="233dp"
         android:layout_marginTop="498dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewOperation8Stars"
@@ -64,8 +61,7 @@
         android:layout_marginStart="233dp"
         android:layout_marginTop="365dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewOperation7Stars"
@@ -74,8 +70,7 @@
         android:layout_marginStart="233dp"
         android:layout_marginTop="235dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewOperation5Stars"
@@ -84,8 +79,7 @@
         android:layout_marginStart="47dp"
         android:layout_marginTop="634dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewOperation4Stars"
@@ -94,8 +88,7 @@
         android:layout_marginStart="47dp"
         android:layout_marginTop="498dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewOperation3Stars"
@@ -104,8 +97,7 @@
         android:layout_marginStart="47dp"
         android:layout_marginTop="365dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewOperation6Stars"
@@ -114,8 +106,7 @@
         android:layout_marginStart="233dp"
         android:layout_marginTop="103dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewOperation10"
@@ -237,7 +228,6 @@
         android:layout_marginBottom="25dp"
         android:backgroundTint="#BD3232"
         android:fontFamily="monospace"
-        android:onClick="goToExercises"
         android:text="Έλεγξε τις γνώσεις σου!"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -255,6 +245,5 @@
         android:layout_marginStart="47dp"
         android:layout_marginTop="235dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

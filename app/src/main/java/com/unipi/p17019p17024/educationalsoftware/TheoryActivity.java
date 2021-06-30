@@ -29,6 +29,7 @@ public class TheoryActivity extends AppCompatActivity {
     TextView textView1, textView2, textView3, textView4, textView5, textView6, textView7, textView8, textView9, textView10;
     Button button1;
     ImageView imageView;
+    ImageView imageViewStars1, imageViewStars2, imageViewStars3, imageViewStars4, imageViewStars5, imageViewStars6, imageViewStars7, imageViewStars8, imageViewStars9, imageViewStars10;
 
     //Intents for ExercisesActivity initialization
     ArrayList<String> selectedQuestions = new ArrayList<>();
@@ -40,7 +41,7 @@ public class TheoryActivity extends AppCompatActivity {
 
     //Firebase Database
     FirebaseDatabase database;
-    DatabaseReference unitRef;
+    DatabaseReference unitRef, studentsRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,17 @@ public class TheoryActivity extends AppCompatActivity {
         textView10 = findViewById(R.id.textViewOperation10);
         button1 = findViewById(R.id.buttonGoToExercises);
         imageView = findViewById(R.id.imageViewInfoTheory);
+        imageViewStars1 =findViewById(R.id.imageViewOperation1Stars);
+        imageViewStars2 =findViewById(R.id.imageViewOperation2Stars);
+        imageViewStars3 =findViewById(R.id.imageViewOperation3Stars);
+        imageViewStars4 =findViewById(R.id.imageViewOperation4Stars);
+        imageViewStars5 =findViewById(R.id.imageViewOperation5Stars);
+        imageViewStars6 =findViewById(R.id.imageViewOperation6Stars);
+        imageViewStars7 =findViewById(R.id.imageViewOperation7Stars);
+        imageViewStars8 =findViewById(R.id.imageViewOperation8Stars);
+        imageViewStars9 =findViewById(R.id.imageViewOperation9Stars);
+        imageViewStars10 =findViewById(R.id.imageViewOperation10Stars);
+
 
         //User Authentication
         mAuth = FirebaseAuth.getInstance();
@@ -75,7 +87,7 @@ public class TheoryActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         unitRef = FirebaseDatabase.getInstance().getReference().child("Units").child(String.valueOf(selectedUnit));
 
-        unitRef.addValueEventListener(new ValueEventListener(){
+        unitRef.addListenerForSingleValueEvent(new ValueEventListener(){
             @Override
             public void onDataChange(@NotNull DataSnapshot dataSnapshot)
             {
@@ -95,6 +107,229 @@ public class TheoryActivity extends AppCompatActivity {
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                // we are showing that error message in toast
+                Toast.makeText(TheoryActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+            }
+        });
+
+
+        studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+        studentsRef.child(userID).child(String.valueOf(selectedUnit)).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot2) {
+                //operation1
+                Integer score1 = Integer.parseInt(dataSnapshot2.child("1").child("score").getValue().toString());
+                if(score1 == 0){
+                    imageViewStars1.setImageResource(R.drawable.stars0);
+                }
+                else if(score1 == 1){
+                    imageViewStars1.setImageResource(R.drawable.stars1);
+                }
+                else if(score1 == 2){
+                    imageViewStars1.setImageResource(R.drawable.stars2);
+                }
+                else if(score1 == 3){
+                    imageViewStars1.setImageResource(R.drawable.stars3);
+                }
+                else if(score1 == 4){
+                    imageViewStars1.setImageResource(R.drawable.stars4);
+                }
+                else{
+                    imageViewStars1.setImageResource(R.drawable.stars5);
+                }
+
+                //operation2
+                Integer score2 = Integer.parseInt(dataSnapshot2.child("2").child("score").getValue().toString());
+                if(score2 == 0){
+                    imageViewStars2.setImageResource(R.drawable.stars0);
+                }
+                else if(score2 == 1){
+                    imageViewStars2.setImageResource(R.drawable.stars1);
+                }
+                else if(score2 == 2){
+                    imageViewStars2.setImageResource(R.drawable.stars2);
+                }
+                else if(score2 == 3){
+                    imageViewStars2.setImageResource(R.drawable.stars3);
+                }
+                else if(score2 == 4){
+                    imageViewStars2.setImageResource(R.drawable.stars4);
+                }
+                else{
+                    imageViewStars2.setImageResource(R.drawable.stars5);
+                }
+
+                //operation3
+                Integer score3 = Integer.parseInt(dataSnapshot2.child("3").child("score").getValue().toString());
+                if(score3 == 0){
+                    imageViewStars3.setImageResource(R.drawable.stars0);
+                }
+                else if(score3 == 1){
+                    imageViewStars3.setImageResource(R.drawable.stars1);
+                }
+                else if(score3 == 2){
+                    imageViewStars3.setImageResource(R.drawable.stars2);
+                }
+                else if(score3 == 3){
+                    imageViewStars3.setImageResource(R.drawable.stars3);
+                }
+                else if(score3 == 4){
+                    imageViewStars3.setImageResource(R.drawable.stars4);
+                }
+                else{
+                    imageViewStars3.setImageResource(R.drawable.stars5);
+                }
+
+                //operation4
+                Integer score4 = Integer.parseInt(dataSnapshot2.child("4").child("score").getValue().toString());
+                if(score4 == 0){
+                    imageViewStars4.setImageResource(R.drawable.stars0);
+                }
+                else if(score4 == 1){
+                    imageViewStars4.setImageResource(R.drawable.stars1);
+                }
+                else if(score4 == 2){
+                    imageViewStars4.setImageResource(R.drawable.stars2);
+                }
+                else if(score4 == 3){
+                    imageViewStars4.setImageResource(R.drawable.stars3);
+                }
+                else if(score4 == 4){
+                    imageViewStars4.setImageResource(R.drawable.stars4);
+                }
+                else{
+                    imageViewStars4.setImageResource(R.drawable.stars5);
+                }
+
+                //operation5
+                Integer score5 = Integer.parseInt(dataSnapshot2.child("5").child("score").getValue().toString());
+                if(score5 == 0){
+                    imageViewStars5.setImageResource(R.drawable.stars0);
+                }
+                else if(score5 == 1){
+                    imageViewStars5.setImageResource(R.drawable.stars1);
+                }
+                else if(score5 == 2){
+                    imageViewStars5.setImageResource(R.drawable.stars2);
+                }
+                else if(score5 == 3){
+                    imageViewStars5.setImageResource(R.drawable.stars3);
+                }
+                else if(score5 == 4){
+                    imageViewStars5.setImageResource(R.drawable.stars4);
+                }
+                else{
+                    imageViewStars5.setImageResource(R.drawable.stars5);
+                }
+
+                //operation6
+                Integer score6 = Integer.parseInt(dataSnapshot2.child("6").child("score").getValue().toString());
+                if(score6 == 0){
+                    imageViewStars6.setImageResource(R.drawable.stars0);
+                }
+                else if(score6 == 1){
+                    imageViewStars6.setImageResource(R.drawable.stars1);
+                }
+                else if(score6 == 2){
+                    imageViewStars6.setImageResource(R.drawable.stars2);
+                }
+                else if(score6 == 3){
+                    imageViewStars6.setImageResource(R.drawable.stars3);
+                }
+                else if(score6 == 4){
+                    imageViewStars6.setImageResource(R.drawable.stars4);
+                }
+                else{
+                    imageViewStars6.setImageResource(R.drawable.stars5);
+                }
+
+                //operation7
+                Integer score7 = Integer.parseInt(dataSnapshot2.child("7").child("score").getValue().toString());
+                if(score7 == 0){
+                    imageViewStars7.setImageResource(R.drawable.stars0);
+                }
+                else if(score7 == 1){
+                    imageViewStars7.setImageResource(R.drawable.stars1);
+                }
+                else if(score7 == 2){
+                    imageViewStars7.setImageResource(R.drawable.stars2);
+                }
+                else if(score7 == 3){
+                    imageViewStars7.setImageResource(R.drawable.stars3);
+                }
+                else if(score7 == 4){
+                    imageViewStars7.setImageResource(R.drawable.stars4);
+                }
+                else{
+                    imageViewStars7.setImageResource(R.drawable.stars5);
+                }
+
+                //operation8
+                Integer score8 = Integer.parseInt(dataSnapshot2.child("8").child("score").getValue().toString());
+                if(score8 == 0){
+                    imageViewStars8.setImageResource(R.drawable.stars0);
+                }
+                else if(score8 == 1){
+                    imageViewStars8.setImageResource(R.drawable.stars1);
+                }
+                else if(score8 == 2){
+                    imageViewStars8.setImageResource(R.drawable.stars2);
+                }
+                else if(score8 == 3){
+                    imageViewStars8.setImageResource(R.drawable.stars3);
+                }
+                else if(score8 == 4){
+                    imageViewStars8.setImageResource(R.drawable.stars4);
+                }
+                else{
+                    imageViewStars8.setImageResource(R.drawable.stars5);
+                }
+
+                //operation9
+                Integer score9 = Integer.parseInt(dataSnapshot2.child("9").child("score").getValue().toString());
+                if(score9 == 0){
+                    imageViewStars9.setImageResource(R.drawable.stars0);
+                }
+                else if(score9 == 1){
+                    imageViewStars9.setImageResource(R.drawable.stars1);
+                }
+                else if(score9 == 2){
+                    imageViewStars9.setImageResource(R.drawable.stars2);
+                }
+                else if(score9 == 3){
+                    imageViewStars9.setImageResource(R.drawable.stars3);
+                }
+                else if(score9 == 4){
+                    imageViewStars9.setImageResource(R.drawable.stars4);
+                }
+                else{
+                    imageViewStars9.setImageResource(R.drawable.stars5);
+                }
+
+                //operation10
+                Integer score10 = Integer.parseInt(dataSnapshot2.child("10").child("score").getValue().toString());
+                if(score10 == 0){
+                    imageViewStars10.setImageResource(R.drawable.stars0);
+                }
+                else if(score10 == 1){
+                    imageViewStars10.setImageResource(R.drawable.stars1);
+                }
+                else if(score10 == 2){
+                    imageViewStars10.setImageResource(R.drawable.stars2);
+                }
+                else if(score10 == 3){
+                    imageViewStars10.setImageResource(R.drawable.stars3);
+                }
+                else if(score10 == 4){
+                    imageViewStars10.setImageResource(R.drawable.stars4);
+                }
+                else{
+                    imageViewStars10.setImageResource(R.drawable.stars5);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
                 // we are showing that error message in toast
                 Toast.makeText(TheoryActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
             }

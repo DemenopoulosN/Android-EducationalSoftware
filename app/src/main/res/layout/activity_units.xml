@@ -11,7 +11,6 @@
         android:id="@+id/imageView25"
         android:layout_width="121dp"
         android:layout_height="36dp"
-        app:srcCompat="@drawable/empty_stars"
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="747dp" />
 
@@ -19,7 +18,6 @@
         android:id="@+id/imageView26"
         android:layout_width="121dp"
         android:layout_height="36dp"
-        app:srcCompat="@drawable/empty_stars"
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="747dp" />
 
@@ -27,7 +25,6 @@
         android:id="@+id/imageView27"
         android:layout_width="121dp"
         android:layout_height="36dp"
-        app:srcCompat="@drawable/empty_stars"
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="747dp" />
 
@@ -35,7 +32,6 @@
         android:id="@+id/imageView28"
         android:layout_width="121dp"
         android:layout_height="36dp"
-        app:srcCompat="@drawable/empty_stars"
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="747dp" />
 
@@ -43,7 +39,6 @@
         android:id="@+id/imageView29"
         android:layout_width="121dp"
         android:layout_height="36dp"
-        app:srcCompat="@drawable/empty_stars"
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="747dp" />
 
@@ -75,8 +70,7 @@
         android:layout_marginStart="46dp"
         android:layout_marginTop="603dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewUnit8Stars"
@@ -85,8 +79,7 @@
         android:layout_marginStart="243dp"
         android:layout_marginTop="453dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewUnit6Stars"
@@ -95,8 +88,7 @@
         android:layout_marginStart="243dp"
         android:layout_marginTop="152dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewUnit1Stars"
@@ -105,8 +97,7 @@
         android:layout_marginStart="46dp"
         android:layout_marginTop="152dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewUnit2Stars"
@@ -115,8 +106,7 @@
         android:layout_marginStart="46dp"
         android:layout_marginTop="300dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewUnit7Stars"
@@ -125,8 +115,7 @@
         android:layout_marginStart="243dp"
         android:layout_marginTop="300dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewUnit3Stars"
@@ -135,8 +124,7 @@
         android:layout_marginStart="46dp"
         android:layout_marginTop="453dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewUnit9Stars"
@@ -145,8 +133,7 @@
         android:layout_marginStart="243dp"
         android:layout_marginTop="603dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewUnit10Stars"
@@ -155,8 +142,7 @@
         android:layout_marginStart="243dp"
         android:layout_marginTop="757dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageViewUnit5Stars"
@@ -165,8 +151,7 @@
         android:layout_marginStart="46dp"
         android:layout_marginTop="757dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/empty_stars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/imageButtonUnit9"
@@ -176,7 +161,6 @@
         android:layout_marginStart="218dp"
         android:layout_marginTop="511dp"
         android:backgroundTint="#BD3232"
-        android:onClick="unit9_OnClick"
         android:scaleType="fitCenter"
         android:src="@drawable/_9"
         app:layout_constraintStart_toStartOf="parent"
@@ -190,7 +174,6 @@
         android:layout_marginStart="218dp"
         android:layout_marginTop="665dp"
         android:backgroundTint="#BD3232"
-        android:onClick="unit10_OnClick"
         android:scaleType="fitCenter"
         android:src="@drawable/_10"
         app:layout_constraintStart_toStartOf="parent"
@@ -204,7 +187,6 @@
         android:layout_marginStart="218dp"
         android:layout_marginTop="361dp"
         android:backgroundTint="#BD3232"
-        android:onClick="unit8_OnClick"
         android:scaleType="fitCenter"
         android:src="@drawable/_8"
         app:layout_constraintStart_toStartOf="parent"
@@ -218,7 +200,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="511dp"
         android:backgroundTint="#BD3232"
-        android:onClick="unit4_OnClick"
         android:scaleType="fitCenter"
         android:src="@drawable/_4"
         app:layout_constraintStart_toStartOf="parent"
@@ -232,7 +213,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="208dp"
         android:backgroundTint="#BD3232"
-        android:onClick="unit2_OnClick"
         android:scaleType="fitCenter"
         android:src="@drawable/_2"
         app:layout_constraintStart_toStartOf="parent"
@@ -246,7 +226,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="60dp"
         android:backgroundTint="#BD3232"
-        android:onClick="unit1_OnClick"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -260,7 +239,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="361dp"
         android:backgroundTint="#BD3232"
-        android:onClick="unit3_OnClick"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -274,7 +252,6 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="665dp"
         android:backgroundTint="#BD3232"
-        android:onClick="unit5_OnClick"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -288,7 +265,6 @@
         android:layout_marginStart="218dp"
         android:layout_marginTop="60dp"
         android:backgroundTint="#BD3232"
-        android:onClick="unit6_OnClick"
         android:scaleType="fitCenter"
         android:src="@drawable/_6"
         app:layout_constraintStart_toStartOf="parent"
@@ -302,7 +278,6 @@
         android:layout_marginStart="218dp"
         android:layout_marginTop="208dp"
         android:backgroundTint="#BD3232"
-        android:onClick="unit7_OnClick"
         android:scaleType="fitCenter"
         android:src="@drawable/_7"
         app:layout_constraintStart_toStartOf="parent"
