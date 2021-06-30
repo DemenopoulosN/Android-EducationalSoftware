@@ -109,6 +109,11 @@ public class LogInActivity extends AppCompatActivity {
                                     databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("weight").setValue(1);
                                     databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("score").setValue(0);
                                     databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("additionFaults").setValue(0);
+                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo1").setValue(0);
+                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo2").setValue(0);
+                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo3").setValue(0);
+                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo4").setValue(0);
+                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo5").setValue(0);
                                 }
                             }
 
