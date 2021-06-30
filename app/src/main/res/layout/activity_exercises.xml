@@ -129,29 +129,24 @@
             android:id="@+id/radioButton1"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="RadioButton"
-            android:textSize="30sp"
-            tools:text="5" />
+            android:textSize="30sp" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="3"
             android:textSize="30sp" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="1"
             android:textSize="30sp" />
 
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="2"
             android:textSize="30sp" />
 
     </RadioGroup>

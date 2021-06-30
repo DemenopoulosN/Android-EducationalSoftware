@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -128,6 +129,23 @@ public class ExercisesActivity extends AppCompatActivity {
                     else if(Objects.requireNonNull(dataSnapshot.child(String.valueOf(randomOperation)).child(String.valueOf(exerciseType)).child("type").getValue()).toString().equals("multiple choice")){
                         button3.setVisibility(View.VISIBLE);
                         radioGroup.setVisibility(View.VISIBLE);
+
+                        exercisesRef = FirebaseDatabase.getInstance().getReference().child("Exercises");
+                        exercisesRef.child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("2").child("answers").addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull @NotNull DataSnapshot radiobuttonSnapshot) {
+                                radioButton1.setText(radiobuttonSnapshot.child("1").getValue().toString());
+                                radioButton2.setText(radiobuttonSnapshot.child("2").getValue().toString());
+                                radioButton3.setText(radiobuttonSnapshot.child("3").getValue().toString());
+                                radioButton4.setText(radiobuttonSnapshot.child("4").getValue().toString());
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+                            }
+                        });
+
                     }
                     else{
                         button4.setVisibility(View.VISIBLE);
@@ -353,87 +371,46 @@ public class ExercisesActivity extends AppCompatActivity {
     }
 
     public void buttonSubmitMultipleChoiceOnClick(View view){
-        //
-        // updating Students' Data
-        //
-        exercisesRef = FirebaseDatabase.getInstance().getReference().child("Exercises");
-        exercisesRef.child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("2").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NotNull DataSnapshot dataSnapshot5)
-            {
-                if (dataSnapshot5.exists()) {
+        if(!radioButton1.isChecked() && !radioButton2.isChecked() && !radioButton3.isChecked() && !radioButton4.isChecked()) {
+            Toast.makeText(this, "You must select an answer first!", Toast.LENGTH_LONG).show();
+        }
+        else {
+            //
+            // updating Students' Data
+            //
+            exercisesRef = FirebaseDatabase.getInstance().getReference().child("Exercises");
+            exercisesRef.child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("2").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NotNull DataSnapshot dataSnapshot5) {
+                    if (dataSnapshot5.exists()) {
 
-                    studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).addListenerForSingleValueEvent(new ValueEventListener(){
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot6) {
-                            if (dataSnapshot5.child("answer").getValue().toString().equals(radiobuttonSelected.toString())) {
-                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo2").setValue(dataSnapshot6.child("lastNo1").getValue());
-                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo3").setValue(dataSnapshot6.child("lastNo2").getValue());
-                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo4").setValue(dataSnapshot6.child("lastNo3").getValue());
-                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo5").setValue(dataSnapshot6.child("lastNo4").getValue());
-                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo1").setValue(1);
+                        studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                        studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot6) {
+                                if (dataSnapshot5.child("answer").getValue().toString().equals(radiobuttonSelected.toString())) {
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo2").setValue(dataSnapshot6.child("lastNo1").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo3").setValue(dataSnapshot6.child("lastNo2").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo4").setValue(dataSnapshot6.child("lastNo3").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo5").setValue(dataSnapshot6.child("lastNo4").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo1").setValue(1);
 
-                                //Call Thread
-                                MyThread myThread = new MyThread(true);
-                                myThread.start();
+                                    //Call Thread
+                                    MyThread myThread = new MyThread(true);
+                                    myThread.start();
 
-                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(1);
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(1);
 
-                                //
-                                //Addition fault
-                                //
-                                //Subtract one to totalAdditionFaults only if additionFaults was correct before
-                                if(dataSnapshot6.child("additionFaults").getValue().toString().equals("1")){
-                                    //Total addition fault
-                                    studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot7) {
-                                            Integer total = Integer.parseInt(dataSnapshot7.child("totalAdditionFaults").getValue().toString()) - 1;
-                                            studentsRef.child(userID).child("totalAdditionFaults").setValue(total);
-                                        }
-
-                                        @Override
-                                        public void onCancelled(@NonNull @NotNull DatabaseError error) {
-                                            // we are showing that error message in toast
-                                            Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
-                                        }
-                                    });
-
+                                    //
                                     //Addition fault
-                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("additionFaults").setValue(0);
-                                }
-
-                            }
-                            else{
-                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo2").setValue(dataSnapshot6.child("lastNo1").getValue());
-                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo3").setValue(dataSnapshot6.child("lastNo2").getValue());
-                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo4").setValue(dataSnapshot6.child("lastNo3").getValue());
-                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo5").setValue(dataSnapshot6.child("lastNo4").getValue());
-                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo1").setValue(0);
-
-                                //Call Thread
-                                MyThread myThread = new MyThread(true);
-                                myThread.start();
-
-                                Integer newWeight = Integer.parseInt(dataSnapshot6.child("weight").getValue().toString()) + 1;
-                                studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(newWeight);
-
-                                //
-                                //Addition fault
-                                //
-                                //If student answered addition's answer
-                                if (dataSnapshot5.child("additionAnswer").getValue().toString().equals(radiobuttonSelected.toString())){
-                                    //Add one to totalAdditionFaults only if additionFaults was correct before
-                                    if(dataSnapshot6.child("additionFaults").getValue().toString().equals("0")) {
-                                        //Addition fault
-                                        studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("additionFaults").setValue(1);
-
+                                    //
+                                    //Subtract one to totalAdditionFaults only if additionFaults was correct before
+                                    if (dataSnapshot6.child("additionFaults").getValue().toString().equals("1")) {
                                         //Total addition fault
                                         studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                                             @Override
-                                            public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot8) {
-                                                Integer total = Integer.parseInt(dataSnapshot8.child("totalAdditionFaults").getValue().toString()) + 1;
+                                            public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot7) {
+                                                Integer total = Integer.parseInt(dataSnapshot7.child("totalAdditionFaults").getValue().toString()) - 1;
                                                 studentsRef.child(userID).child("totalAdditionFaults").setValue(total);
                                             }
 
@@ -443,59 +420,75 @@ public class ExercisesActivity extends AppCompatActivity {
                                                 Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
                                             }
                                         });
+
+                                        //Addition fault
+                                        studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("additionFaults").setValue(0);
                                     }
 
+                                } else {
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo2").setValue(dataSnapshot6.child("lastNo1").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo3").setValue(dataSnapshot6.child("lastNo2").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo4").setValue(dataSnapshot6.child("lastNo3").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo5").setValue(dataSnapshot6.child("lastNo4").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo1").setValue(0);
+
+                                    //Call Thread
+                                    MyThread myThread = new MyThread(true);
+                                    myThread.start();
+
+                                    Integer newWeight = Integer.parseInt(dataSnapshot6.child("weight").getValue().toString()) + 1;
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(newWeight);
+
+                                    //
+                                    //Addition fault
+                                    //
+                                    //If student answered addition's answer
+                                    if (dataSnapshot5.child("additionAnswer").getValue().toString().equals(radiobuttonSelected.toString())) {
+                                        //Add one to totalAdditionFaults only if additionFaults was correct before
+                                        if (dataSnapshot6.child("additionFaults").getValue().toString().equals("0")) {
+                                            //Addition fault
+                                            studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("additionFaults").setValue(1);
+
+                                            //Total addition fault
+                                            studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot8) {
+                                                    Integer total = Integer.parseInt(dataSnapshot8.child("totalAdditionFaults").getValue().toString()) + 1;
+                                                    studentsRef.child(userID).child("totalAdditionFaults").setValue(total);
+                                                }
+
+                                                @Override
+                                                public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                                                    // we are showing that error message in toast
+                                                    Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                                                }
+                                            });
+                                        }
+
+                                    }
                                 }
+
                             }
 
-                        }
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                            // we are showing that error message in toast
-                            Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
-                        }
-                    });
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                                // we are showing that error message in toast
+                                Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
                 }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                // we are showing that error message in toast
-                Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
-            }
-        });
 
-        //
-        //Intents
-        //
-        Intent intent = new Intent(getApplicationContext(), ExercisesActivity.class);
-        intent.putExtra("userID", currentUser.getUid());
-        intent.putExtra("selectedUnit", selectedUnit);
-        intent.putExtra("difficulty", difficulty);
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    // we are showing that error message in toast
+                    Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                }
+            });
 
-        //Intents for recursively calling ExercisesActivity
-        intent.putExtra("selectedQuestions", selectedQuestions);
-        intent.putExtra("count", count);
-
-        startActivity(intent);
-    }
-
-    public void buttonSubmitFillInTheGapOnClick(View view){
-
-        //
-        //Intents
-        //
-
-        //TO-DO
-        //έλεγχος για το αν έχει συμπληρώσει κάτι στο κενό
-        if(count > 10) {
-            //Go to MainActivity
-            Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
-            intent2.putExtra("userID", currentUser.getUid());
-            intent2.putExtra("email", currentUser.getEmail());
-            startActivity(intent2);
-        }
-        else {
-            //Recursively calling ExercisesActivity
+            //
+            //Intents
+            //
             Intent intent = new Intent(getApplicationContext(), ExercisesActivity.class);
             intent.putExtra("userID", currentUser.getUid());
             intent.putExtra("selectedUnit", selectedUnit);
@@ -506,6 +499,145 @@ public class ExercisesActivity extends AppCompatActivity {
             intent.putExtra("count", count);
 
             startActivity(intent);
+        }
+    }
+
+    public void buttonSubmitFillInTheGapOnClick(View view){
+        if (TextUtils.isEmpty(editText1.getText().toString())) {
+            Toast.makeText(this, "You must fill in the gap first!", Toast.LENGTH_LONG).show();
+        }
+        else {
+            exercisesRef = FirebaseDatabase.getInstance().getReference().child("Exercises");
+            exercisesRef.child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("3").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NotNull DataSnapshot dataSnapshot9)
+                {
+                    if (dataSnapshot9.exists()) {
+
+                        studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                        studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).addListenerForSingleValueEvent(new ValueEventListener(){
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot10) {
+                                if (dataSnapshot9.child("answer").getValue().toString().equals(editText1.getText().toString())) {
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo2").setValue(dataSnapshot10.child("lastNo1").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo3").setValue(dataSnapshot10.child("lastNo2").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo4").setValue(dataSnapshot10.child("lastNo3").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo5").setValue(dataSnapshot10.child("lastNo4").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo1").setValue(1);
+
+                                    //Call Thread
+                                    MyThread myThread = new MyThread(true);
+                                    myThread.start();
+
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(1);
+
+                                    //
+                                    //Addition fault
+                                    //
+                                    //Subtract one to totalAdditionFaults only if additionFaults was correct before
+                                    /*if(dataSnapshot10.child("additionFaults").getValue().toString().equals("1")){
+                                        //Total addition fault
+                                        studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot7) {
+                                                Integer total = Integer.parseInt(dataSnapshot7.child("totalAdditionFaults").getValue().toString()) - 1;
+                                                studentsRef.child(userID).child("totalAdditionFaults").setValue(total);
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                                                // we are showing that error message in toast
+                                                Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                                            }
+                                        });
+
+                                        //Addition fault
+                                        studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("additionFaults").setValue(0);
+                                    }*/
+
+                                }
+                                else{
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo2").setValue(dataSnapshot10.child("lastNo1").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo3").setValue(dataSnapshot10.child("lastNo2").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo4").setValue(dataSnapshot10.child("lastNo3").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo5").setValue(dataSnapshot10.child("lastNo4").getValue());
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("lastNo1").setValue(0);
+
+                                    //Call Thread
+                                    MyThread myThread = new MyThread(true);
+                                    myThread.start();
+
+                                    Integer newWeight = Integer.parseInt(dataSnapshot10.child("weight").getValue().toString()) + 1;
+                                    studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("weight").setValue(newWeight);
+
+                                    //
+                                    //Addition fault
+                                    //
+                                    //If student answered addition's answer
+                                    /*if (dataSnapshot10.child("additionAnswer").getValue().toString().equals(radiobuttonSelected.toString())){
+                                        //Add one to totalAdditionFaults only if additionFaults was correct before
+                                        if(dataSnapshot10.child("additionFaults").getValue().toString().equals("0")) {
+                                            //Addition fault
+                                            studentsRef.child(userID).child(String.valueOf(selectedUnit)).child(String.valueOf(randomOperation)).child("additionFaults").setValue(1);
+
+                                            //Total addition fault
+                                            studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot8) {
+                                                    Integer total = Integer.parseInt(dataSnapshot8.child("totalAdditionFaults").getValue().toString()) + 1;
+                                                    studentsRef.child(userID).child("totalAdditionFaults").setValue(total);
+                                                }
+
+                                                @Override
+                                                public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                                                    // we are showing that error message in toast
+                                                    Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                                                }
+                                            });
+                                        }
+
+                                    }*/
+                                }
+
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                                // we are showing that error message in toast
+                                Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                            }
+                        });
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    // we are showing that error message in toast
+                    Toast.makeText(ExercisesActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                }
+            });
+
+            //
+            //Intents
+            //
+            if(count > 10) {
+                //Go to MainActivity
+                Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                intent2.putExtra("userID", currentUser.getUid());
+                intent2.putExtra("email", currentUser.getEmail());
+                startActivity(intent2);
+            }
+            else {
+                //Recursively calling ExercisesActivity
+                Intent intent = new Intent(getApplicationContext(), ExercisesActivity.class);
+                intent.putExtra("userID", currentUser.getUid());
+                intent.putExtra("selectedUnit", selectedUnit);
+                intent.putExtra("difficulty", difficulty);
+
+                //Intents for recursively calling ExercisesActivity
+                intent.putExtra("selectedQuestions", selectedQuestions);
+                intent.putExtra("count", count);
+
+                startActivity(intent);
+            }
         }
     }
 
