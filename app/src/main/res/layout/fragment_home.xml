@@ -17,6 +17,24 @@
         app:srcCompat="@drawable/wp7955934" />
 
     <Button
+        android:id="@+id/buttonProblems"
+        android:layout_width="332dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="565dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="149dp"
+        android:backgroundTint="#0C877B"
+        android:text="ΕΠΑΝΑΛΗΠΤΙΚΑ ΠΡΟΒΛΗΜΑΤΑ"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/buttonTests"
         android:layout_width="332dp"
         android:layout_height="82dp"

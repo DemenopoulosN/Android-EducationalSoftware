@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.myProgress.MyProgressFragment">
 
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="455dp"
+        android:layout_height="860dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wp7955934" />
+
     <TextView
         android:id="@+id/text_myProgress"
         android:layout_width="match_parent"

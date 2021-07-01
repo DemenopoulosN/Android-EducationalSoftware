@@ -67,6 +67,7 @@
         android:layout_height="47dp"
         android:layout_marginStart="347dp"
         android:layout_marginTop="16dp"
+        android:onClick="infoExercises"
         android:scaleType="fitXY"
         android:src="@drawable/information_icon4_orange_svg"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,7 +114,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radioGroupRevision"
         android:layout_width="398dp"
         android:layout_height="53dp"
         android:layout_marginStart="27dp"
@@ -126,25 +127,25 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton1"
+            android:id="@+id/radioButton1Revision"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textSize="30sp" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioButton2Revision"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textSize="30sp" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/radioButton3Revision"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textSize="30sp" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/radioButton4Revision"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:textSize="30sp" />

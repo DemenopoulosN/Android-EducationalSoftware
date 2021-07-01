@@ -3,11 +3,9 @@ package com.unipi.p17019p17024.educationalsoftware;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -86,11 +84,11 @@ public class ExercisesActivity extends AppCompatActivity {
         button2 = findViewById(R.id.buttonWrong);
         button3 = findViewById(R.id.buttonSubmitMultipleChoice);
         button4 = findViewById(R.id.buttonSubmitFillInTheGap);
-        radioGroup = findViewById(R.id.radioGroup);
-        radioButton1 = findViewById(R.id.radioButton1);
-        radioButton2 = findViewById(R.id.radioButton2);
-        radioButton3 = findViewById(R.id.radioButton3);
-        radioButton4 = findViewById(R.id.radioButton4);
+        radioGroup = findViewById(R.id.radioGroupRevision);
+        radioButton1 = findViewById(R.id.radioButton1Revision);
+        radioButton2 = findViewById(R.id.radioButton2Revision);
+        radioButton3 = findViewById(R.id.radioButton3Revision);
+        radioButton4 = findViewById(R.id.radioButton4Revision);
         imageView = findViewById(R.id.imageViewInfoExercises);
         questionID = "0";
 
@@ -886,8 +884,8 @@ public class ExercisesActivity extends AppCompatActivity {
         public void run() {
             if (runThread) {
                 try {
-                    //2sec delay
-                    MyThread.sleep(2000);
+                    //1.5sec delay
+                    MyThread.sleep(1500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -954,5 +952,23 @@ public class ExercisesActivity extends AppCompatActivity {
         }
     }
 
+
+    public void infoExercises(View view){
+        //showMessage(getResources().getString(R.string.errorSavingImageTitle),getResources().getString(R.string.errorSavingImageMessage)+ message);
+        showMessage("Ώρα για παιχνίδι!","Το τεστ της ενότητας μόλις άρχισε! Προσπάθησε να απαντήσεις σωστά σε όσες παραπάνω ερωτήσεις μπορείς! Οι ερωτήσεις είναι τριών ειδών και εμφανίζονται ανάλογα με το επίπεδο δυσκολίας που έχεις επιλέξει. Καλή επιτυχία!");
+    }
+
+    public void showMessage(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setCancelable(true)
+                .setTitle(title)
+                .setMessage(message)
+                .setIcon(R.mipmap.application_photo_round)
+                .setPositiveButton("Ok", (dialog, which) -> {
+                    //do nothing
+                })
+                .show();
+    }
 
 }

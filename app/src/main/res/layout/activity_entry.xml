@@ -22,6 +22,7 @@
         android:layout_height="47dp"
         android:layout_marginStart="358dp"
         android:layout_marginTop="3dp"
+        android:onClick="infoEntry"
         android:scaleType="fitXY"
         android:src="@drawable/information_icon4_orange_svg"
         app:layout_constraintStart_toStartOf="parent"

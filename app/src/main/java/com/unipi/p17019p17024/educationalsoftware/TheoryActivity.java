@@ -3,8 +3,10 @@ package com.unipi.p17019p17024.educationalsoftware;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -349,5 +351,23 @@ public class TheoryActivity extends AppCompatActivity {
 
             startActivity(intent);
         });
+    }
+
+    public void infoTheory(View view){
+        //showMessage(getResources().getString(R.string.errorSavingImageTitle),getResources().getString(R.string.errorSavingImageMessage)+ message);
+        showMessage("Γειά σου και πάλι!","Σε αυτή την οθόνη βλέπεις την θεωρία για την ενότητα που επέλεξες καθώς και το σκόρ που έχεις με βάση την απόδοσή σου στα τεστ που έχεις κάνει μέχρι τώρα. Πατώντας το μοναδικό κουμπί της οθόνης, μεταβαίνεις αυτόματα στο τεστ της ενότητας.");
+    }
+
+    public void showMessage(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setCancelable(true)
+                .setTitle(title)
+                .setMessage(message)
+                .setIcon(R.mipmap.application_photo_round)
+                .setPositiveButton("Ok", (dialog, which) -> {
+                    //do nothing
+                })
+                .show();
     }
 }

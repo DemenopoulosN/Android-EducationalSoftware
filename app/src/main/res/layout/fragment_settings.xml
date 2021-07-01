@@ -16,6 +16,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wp7955934" />
 
+    <Button
+        android:id="@+id/buttonLogOut"
+        style="@android:style/Widget.Holo.Button.Toggle"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="288dp"
+        android:backgroundTint="#BD3232"
+        android:text="Αποσύνδεση"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewInfoSettings"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="358dp"
+        android:layout_marginTop="3dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/information_icon4_orange_svg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/text_settings"
         android:layout_width="match_parent"
@@ -32,19 +58,106 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="177dp"
-        android:layout_marginTop="33dp"
-        android:text="TextView"
+        android:layout_width="379dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="87dp"
+        android:fontFamily="monospace"
+        android:text="Επέλεξε επίπεδο δυσκολίας!"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FFC107"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="188dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="111dp"
+        android:layout_marginBottom="120dp"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/application_photo_foreground" />
+
+    <TextView
+        android:id="@+id/text_title1"
+        android:layout_width="315dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="468dp"
+        android:text="Educational Software App"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#C67805"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_title3"
+        android:layout_width="338dp"
+        android:layout_height="45dp"
+        android:text="2021 EducationalSoftwareApp Team"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="663dp" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="338dp"
+        android:layout_height="45dp"
+        android:text="All rigths reserved."
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="696dp" />
+
+    <TextView
+        android:id="@+id/text_title2"
+        android:layout_width="126dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="502dp"
+        android:text="for Android"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_title4"
+        android:layout_width="295dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="534dp"
+        android:layout_marginBottom="231dp"
+        android:text="Version v.0.0.1"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
         android:layout_width="383dp"
         android:layout_height="94dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="101dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="144dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

@@ -3,6 +3,7 @@ package com.unipi.p17019p17024.educationalsoftware;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -28,7 +29,8 @@ public class LogInActivity extends AppCompatActivity {
     Button button1,button2,button3,button4;
     TextView textView1,textView2,textView3;
     CheckBox checkBox, checkBox2;
-    ImageView imageView;
+    ImageView imageView, imageViewProfile;
+    String profile;
 
     //Shared Preferences
     SharedPreferences preferences;
@@ -57,6 +59,7 @@ public class LogInActivity extends AppCompatActivity {
         checkBox = findViewById(R.id.checkBox);
         checkBox2 = findViewById(R.id.checkBox2);
         imageView = findViewById(R.id.imageViewInfoLogIn);
+        imageViewProfile = findViewById(R.id.imageViewProfile);
 
         //
         //Shared Preferences
@@ -69,6 +72,8 @@ public class LogInActivity extends AppCompatActivity {
 
         checkBox.setChecked(false);
 
+        profile = getIntent().getStringExtra("profilePicture");
+
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
@@ -78,6 +83,14 @@ public class LogInActivity extends AppCompatActivity {
 
         button3.setVisibility(View.INVISIBLE);
         button4.setVisibility(View.INVISIBLE);
+
+        if(profile.equals("1")){
+            imageViewProfile.setImageResource(R.drawable.student);
+        }
+        else{
+            imageViewProfile.setImageResource(R.drawable.professor);
+
+        }
     }
 
     public void signUp(View view) {
@@ -99,6 +112,8 @@ public class LogInActivity extends AppCompatActivity {
                             //
                             DatabaseReference newStudent = databaseRef.child("Students").push();
                             databaseRef.child("Students").child(currentUser.getUid()).child("totalAdditionFaults").setValue(0);
+                            databaseRef.child("Students").child(currentUser.getUid()).child("RevisionTestScore").setValue(0);
+                            databaseRef.child("Students").child(currentUser.getUid()).child("ProblemsScore").setValue(0);
 
                             //units
                             for(int i = 1; i<=10; i++){
@@ -224,5 +239,23 @@ public class LogInActivity extends AppCompatActivity {
             }
             editor.apply();
         }
+    }
+
+    public void infoLogIn(View view){
+        //showMessage(getResources().getString(R.string.errorSavingImageTitle),getResources().getString(R.string.errorSavingImageMessage)+ message);
+        showMessage("Γειά σου!","Αν δεν έχεις λογαριασμό μπορείς να φτιάξεις έναν αμέσως μόνο με το email σου καθώς και με έναν κωδικό. Αν έχεις ήδη λογαριασμό, πάτησε το αντίστοιχο κουμπί.");
+    }
+
+    public void showMessage(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setCancelable(true)
+                .setTitle(title)
+                .setMessage(message)
+                .setIcon(R.mipmap.application_photo_round)
+                .setPositiveButton("Ok", (dialog, which) -> {
+                    //do nothing
+                })
+                .show();
     }
 }

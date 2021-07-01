@@ -3,8 +3,10 @@ package com.unipi.p17019p17024.educationalsoftware;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -464,5 +466,23 @@ public class UnitsActivity extends AppCompatActivity {
                 Toast.makeText(UnitsActivity.this, "You have to finish unit 9\nwith a score of at least 4/5!", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void infoUnits(View view){
+        //showMessage(getResources().getString(R.string.errorSavingImageTitle),getResources().getString(R.string.errorSavingImageMessage)+ message);
+        showMessage("Γειά σου!","Βρίσκεσαι στην οθόνη των ενοτήτων. Πατώντας το κάθε κουμπί μπορείς να μεταβείς στην θεωρία της προπαίδειας του κάθε αριθμού. Προσοχή όμως! Για να πας στην επόμενη ενότητα κάθε φορά, πρέπει να έχεις ένα καλό σκορ στην προηγούμενη ενότητα. Τα αστέρια κάτω από κάθε ενότητα θα σε βοηθήσουν να βλέπεις πάντα την απόδοσή σου για κάθε μία από τις ενότητες.");
+    }
+
+    public void showMessage(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setCancelable(true)
+                .setTitle(title)
+                .setMessage(message)
+                .setIcon(R.mipmap.application_photo_round)
+                .setPositiveButton("Ok", (dialog, which) -> {
+                    //do nothing
+                })
+                .show();
     }
 }

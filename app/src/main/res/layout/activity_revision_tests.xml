@@ -6,4 +6,152 @@
     android:layout_height="match_parent"
     tools:context=".RevisionTestsActivity">
 
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="455dp"
+        android:layout_height="860dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wp7955934" />
+
+    <TextView
+        android:id="@+id/textViewQuestionRevision"
+        android:layout_width="223dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="200dp"
+        android:textAlignment="center"
+        android:textSize="37sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextAnswerRevision"
+        android:layout_width="70dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="202dp"
+        android:layout_marginEnd="64dp"
+        android:ems="10"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textSize="35sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupRevision"
+        android:layout_width="398dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="329dp"
+        android:layout_marginBottom="414dp"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButton1Revision"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton2Revision"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton3Revision"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="30sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton4Revision"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="30sp" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/buttonWrongRevision"
+        style="@android:style/Widget.Holo.Button.Toggle"
+        android:layout_width="101dp"
+        android:layout_height="99dp"
+        android:layout_marginTop="329dp"
+        android:layout_marginEnd="66dp"
+        android:backgroundTint="#E4392D"
+        android:onClick="buttonFalseRevisionOnClick"
+        android:text="Λάθος"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSubmitFillInTheGapRevision"
+        style="@android:style/Widget.Holo.Button.Toggle"
+        android:layout_width="140dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="335dp"
+        android:backgroundTint="#14A51A"
+        android:onClick="buttonSubmitFillInTheGapRevisionOnClick"
+        android:text="Υποβολή"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCorrectRevision"
+        style="@android:style/Widget.Holo.Button.Toggle"
+        android:layout_width="101dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="329dp"
+        android:backgroundTint="#14A51A"
+        android:onClick="buttonCorrectRevisionOnClick"
+        android:text="Σωστό"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSubmitMultipleChoiceRevision"
+        style="@android:style/Widget.Holo.Button.Toggle"
+        android:layout_width="140dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="439dp"
+        android:backgroundTint="#14A51A"
+        android:onClick="buttonSubmitMultipleChoiceRevisionOnClick"
+        android:text="Υποβολή"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewInfoRevisionTest"
+        android:layout_width="60dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="335dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="721dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/information_icon4_orange_svg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
