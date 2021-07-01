@@ -87,10 +87,12 @@ public class UnitsActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
                 for(int i = 0; i <= 9; i++){
-                    for(int j = 1; j<= 10; j++){
+                    for(int j = 1; j <= 10; j++){
                         totalUnitsScoresArray[i] = totalUnitsScoresArray[i] + Double.parseDouble(dataSnapshot.child(String.valueOf(i + 1)).child(String.valueOf(j)).child("score").getValue().toString());
                     }
                     totalUnitsScoresArray[i] = totalUnitsScoresArray[i]/10;
+                    //Update Firebase
+                    studentsRef.child(userID).child(String.valueOf(i + 1)).child("unitScore").setValue((int) Math.round(totalUnitsScoresArray[i]));
                 }
 
                 //unit1
