@@ -18,6 +18,10 @@
     <string name="loginToast">Επιτυχής σύνδεση!</string>
     <string name="userCratedToast">Ο χρήστης δημιουργήθηκε</string>
 
+    <!--activity_teacher-->
+    <string name="titleTeacher">Μαθητές</string>
+    <string name="titleEmptyTeacher">Κανένας εγγεγραμένος χρήστης</string>
+
     <!--Theory Activity-->
     <string name="errorToast">Σφάλμα</string>
 </resources>

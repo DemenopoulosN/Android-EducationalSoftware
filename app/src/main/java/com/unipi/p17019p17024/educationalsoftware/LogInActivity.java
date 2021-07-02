@@ -107,36 +107,46 @@ public class LogInActivity extends AppCompatActivity {
                             isSignInPushed = false;
                             writeSP(false);
 
-                            //
-                            //creating node for each student in Firebase database
-                            //
-                            DatabaseReference newStudent = databaseRef.child("Students").push();
-                            databaseRef.child("Students").child(currentUser.getUid()).child("totalAdditionFaults").setValue(0);
-                            databaseRef.child("Students").child(currentUser.getUid()).child("RevisionTestScore").setValue(0);
-                            databaseRef.child("Students").child(currentUser.getUid()).child("ProblemsScore").setValue(0);
+                            if(profile.equals("1")) {
+                                //
+                                //creating node for each student in Firebase database
+                                //
+                                DatabaseReference newStudent = databaseRef.child("Students").push();
+                                databaseRef.child("Students").child(currentUser.getUid()).child("totalAdditionFaults").setValue(0);
+                                databaseRef.child("Students").child(currentUser.getUid()).child("RevisionTestScore").setValue(0);
+                                databaseRef.child("Students").child(currentUser.getUid()).child("ProblemsScore").setValue(0);
+                                databaseRef.child("Students").child(currentUser.getUid()).child("email").setValue(currentUser.getEmail());
 
-                            //units
-                            for(int i = 1; i<=10; i++){
-                                databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child("views").setValue(0);
-                                databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child("unitScore").setValue(0);
-                                //operations
-                                for(int j = 1; j<=10; j++){
-                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("weight").setValue(1);
-                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("score").setValue(0);
-                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("additionFaults").setValue(0);
-                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo1").setValue(0);
-                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo2").setValue(0);
-                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo3").setValue(0);
-                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo4").setValue(0);
-                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo5").setValue(0);
+                                //units
+                                for (int i = 1; i <= 10; i++) {
+                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child("views").setValue(0);
+                                    databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child("unitScore").setValue(0);
+                                    //operations
+                                    for (int j = 1; j <= 10; j++) {
+                                        databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("weight").setValue(1);
+                                        databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("score").setValue(0);
+                                        databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("additionFaults").setValue(0);
+                                        databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo1").setValue(0);
+                                        databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo2").setValue(0);
+                                        databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo3").setValue(0);
+                                        databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo4").setValue(0);
+                                        databaseRef.child("Students").child(currentUser.getUid()).child(String.valueOf(i)).child(String.valueOf(j)).child("lastNo5").setValue(0);
+                                    }
                                 }
-                            }
 
-                            //go to mainActivity
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            intent.putExtra("userID", currentUser.getUid());
-                            intent.putExtra("email", currentUser.getEmail());
-                            startActivity(intent);
+                                //go to mainActivity
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                intent.putExtra("userID", currentUser.getUid());
+                                intent.putExtra("email", currentUser.getEmail());
+                                startActivity(intent);
+                            }
+                            else {
+                                //go to TeacherActivity
+                                Intent intent3 = new Intent(getApplicationContext(), TeacherActivity.class);
+                                intent3.putExtra("userID", currentUser.getUid());
+                                intent3.putExtra("email", currentUser.getEmail());
+                                startActivity(intent3);
+                            }
                         }
                         else {
                             Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -190,10 +200,20 @@ public class LogInActivity extends AppCompatActivity {
                         isSignInPushed = true;
                         writeSP(true);
 
-                        Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
-                        intent2.putExtra("userID", currentUser.getUid());
-                        intent2.putExtra("email", currentUser.getEmail());
-                        startActivity(intent2);
+                        if(profile.equals("1")) {
+                            //go to mainActivity
+                            Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                            intent2.putExtra("userID", currentUser.getUid());
+                            intent2.putExtra("email", currentUser.getEmail());
+                            startActivity(intent2);
+                        }
+                        else {
+                            //go to TeacherActivity
+                            Intent intent4 = new Intent(getApplicationContext(), TeacherActivity.class);
+                            intent4.putExtra("userID", currentUser.getUid());
+                            intent4.putExtra("email", currentUser.getEmail());
+                            startActivity(intent4);
+                        }
                     }
                     else {
                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();

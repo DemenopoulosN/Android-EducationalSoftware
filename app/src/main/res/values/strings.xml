@@ -20,6 +20,10 @@
     <string name="loginToast">Log-in successful!</string>
     <string name="userCratedToast">User created</string>
 
+    <!--activity_teacher-->
+    <string name="titleTeacher">Students</string>
+    <string name="titleEmptyTeacher">No students registered yet</string>
+
     <!--Theory Activity-->
     <string name="errorToast">Error</string>
 </resources>
