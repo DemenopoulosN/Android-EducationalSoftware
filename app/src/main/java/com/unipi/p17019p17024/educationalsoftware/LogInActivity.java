@@ -1,14 +1,12 @@
 package com.unipi.p17019p17024.educationalsoftware;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -22,7 +20,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.unipi.p17019p17024.educationalsoftware.ui.home.HomeFragment;
 
 public class LogInActivity extends AppCompatActivity {
     EditText editTextEmail, editTextPassword, editTextUsername;
@@ -54,8 +51,8 @@ public class LogInActivity extends AppCompatActivity {
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
         button4 = findViewById(R.id.button4);
-        textView1 = findViewById(R.id.loginTitle1);
-        textView2 = findViewById(R.id.textView2);
+        textView1 = findViewById(R.id.textViewStudentNameTitle);
+        textView2 = findViewById(R.id.textViewStudentEmailTitle);
         textView3 = findViewById(R.id.loginTitle2);
         checkBox = findViewById(R.id.checkBox);
         checkBox2 = findViewById(R.id.checkBox2);
@@ -115,9 +112,10 @@ public class LogInActivity extends AppCompatActivity {
                                 //
                                 DatabaseReference newStudent = databaseRef.child("Students").push();
                                 databaseRef.child("Students").child(currentUser.getUid()).child("totalAdditionFaults").setValue(0);
-                                databaseRef.child("Students").child(currentUser.getUid()).child("RevisionTestScore").setValue(0);
-                                databaseRef.child("Students").child(currentUser.getUid()).child("ProblemsScore").setValue(0);
+                                databaseRef.child("Students").child(currentUser.getUid()).child("revisionTestScore").setValue(0);
+                                databaseRef.child("Students").child(currentUser.getUid()).child("problemsScore").setValue(0);
                                 databaseRef.child("Students").child(currentUser.getUid()).child("name").setValue(editTextUsername.getText().toString());
+                                databaseRef.child("Students").child(currentUser.getUid()).child("email").setValue(editTextEmail.getText().toString());
 
 
                                 //units

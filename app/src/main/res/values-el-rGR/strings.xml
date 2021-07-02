@@ -24,4 +24,8 @@
 
     <!--Theory Activity-->
     <string name="errorToast">Σφάλμα</string>
+
+    <!--students.xml-->
+    <string name="nameLabel">Όνομα:</string>
+    <string name="emailLabel">Email:</string>
 </resources>

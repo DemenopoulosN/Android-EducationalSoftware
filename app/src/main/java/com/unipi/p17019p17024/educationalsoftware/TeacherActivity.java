@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,8 +16,28 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+
+
 public class TeacherActivity extends AppCompatActivity {
-    String userID, email;
+    String userID, email, username;
+
+    //TextView
+    TextView textViewTeacherTitle, textViewTeacherEmptyTitle;
 
     //Firebase Database
     //FirebaseDatabase database;
@@ -30,14 +52,18 @@ public class TeacherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher);
 
+        textViewTeacherTitle = findViewById(R.id.textViewTeacherTitle);
+        textViewTeacherEmptyTitle = findViewById(R.id.textViewTeacherEmptyTitle);
+
         //GetIntent
         userID = getIntent().getStringExtra("userID");
         email = getIntent().getStringExtra("email");
+        username = getIntent().getStringExtra("username");
 
         //database Firebase
         //database = FirebaseDatabase.getInstance().getReference();
 
-        studentsRef = FirebaseDatabase.getInstance().getReference().child("Favorites").child(userID);
+        studentsRef = FirebaseDatabase.getInstance().getReference().child("Students").child(userID);
 
         recyclerView = findViewById(R.id.studentsRecyclerList);
 
@@ -47,15 +73,15 @@ public class TeacherActivity extends AppCompatActivity {
 
         // It is a class provide by the FirebaseUI to make a
         // query in the database to fetch appropriate data
-        /*FirebaseRecyclerOptions<Favorites> options
-                = new FirebaseRecyclerOptions.Builder<Favorites>()
-                .setQuery(studentsRef, Favorites.class)
+        FirebaseRecyclerOptions<Students> options
+                = new FirebaseRecyclerOptions.Builder<Students>()
+                .setQuery(studentsRef, Students.class)
                 .build();
         // Connecting object of required Adapter class to
         // the Adapter class itself
         adapter = new TeacherAdapter(options);
         // Connecting Adapter class with the Recycler view
-        recyclerView.setAdapter(adapter);*/
+        recyclerView.setAdapter(adapter);
 
 
         //
@@ -64,18 +90,22 @@ public class TeacherActivity extends AppCompatActivity {
         //userIDRef = FirebaseDatabase.getInstance().getReference().child("Favorites").child(userID);
 
         //userIDRef.addValueEventListener(new ValueEventListener() {
+
+        //
+        //If there are students in database: Visibility of buttons, textViews etc.
+        //
         studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
         studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot mySnapshot) {
                 if (mySnapshot.exists()){
-                    //textViewFavoritesTitle.setVisibility(View.VISIBLE);
-                    //textView4.setVisibility(View.INVISIBLE);
+                    textViewTeacherTitle.setVisibility(View.VISIBLE);
+                    textViewTeacherEmptyTitle.setVisibility(View.INVISIBLE);
                     //imageView2.setVisibility(View.INVISIBLE);
                 }
                 else {
-                    //textViewFavoritesTitle.setVisibility(View.INVISIBLE);
-                    //textView4.setVisibility(View.VISIBLE);
+                    textViewTeacherTitle.setVisibility(View.INVISIBLE);
+                    textViewTeacherEmptyTitle.setVisibility(View.VISIBLE);
                     //imageView2.setVisibility(View.VISIBLE);
                 }
             }
@@ -87,4 +117,24 @@ public class TeacherActivity extends AppCompatActivity {
         });
 
     }
+
+
+    // Function to tell the app to start getting
+    // data from database on starting of the activity
+    @Override protected void onStart()
+    {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    // Function to tell the app to stop getting
+    // data from database on stoping of the activity
+    @Override protected void onStop()
+    {
+        super.onStop();
+        adapter.stopListening();
+    }
+
+
+
 }
