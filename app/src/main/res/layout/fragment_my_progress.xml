@@ -16,6 +16,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wp7955934" />
 
+    <ImageView
+        android:id="@+id/imageViewInfoMyProgress"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="358dp"
+        android:layout_marginTop="3dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/information_icon4_orange_svg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/text_myProgress"
         android:layout_width="match_parent"
@@ -25,8 +36,53 @@
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBarUnit1"
+        style="@style/CircularDeterminateProgressBar"
+        android:layout_width="106dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewProgressUnit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBarUnit1"
+        app:layout_constraintEnd_toEndOf="@+id/progressBarUnit1"
+        app:layout_constraintStart_toStartOf="@+id/progressBarUnit1"
+        app:layout_constraintTop_toTopOf="@+id/progressBarUnit1" />
+
+    <TextView
+        android:id="@+id/textViewUnit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="88dp"
+        android:fontFamily="monospace"
+        android:text="Προπαίδεια του 1"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="229dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="225dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

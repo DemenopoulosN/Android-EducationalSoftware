@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -19,6 +20,8 @@ import com.unipi.p17019p17024.educationalsoftware.databinding.FragmentSettingsBi
 public class SettingsFragment extends Fragment {
     RadioButton radioButtonEasy, radioButtonMedium, radioButtonHard;
     String selectedDifficulty;
+    ImageView imageViewInfoSettings;
+
 
     private FragmentSettingsBinding binding;
 
@@ -35,6 +38,11 @@ public class SettingsFragment extends Fragment {
         radioButtonEasy = root.findViewById(R.id.radioButtonEasy);
         radioButtonMedium = root.findViewById(R.id.radioButtonMedium);
         radioButtonHard = root.findViewById(R.id.radioButtonHard);
+
+        imageViewInfoSettings = root.findViewById(R.id.imageViewInfoSettings);
+        imageViewInfoSettings.setOnClickListener(v -> {
+            ((MainActivity)getActivity()).infoMain2();
+        });
 
 
         //Starting Activity with pre-selected difficulty

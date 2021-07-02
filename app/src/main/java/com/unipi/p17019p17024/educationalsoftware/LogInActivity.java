@@ -25,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.unipi.p17019p17024.educationalsoftware.ui.home.HomeFragment;
 
 public class LogInActivity extends AppCompatActivity {
-    EditText editTextEmail, editTextPassword;
+    EditText editTextEmail, editTextPassword, editTextUsername;
     Button button1,button2,button3,button4;
     TextView textView1,textView2,textView3;
     CheckBox checkBox, checkBox2;
@@ -49,6 +49,7 @@ public class LogInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_log_in);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
+        editTextUsername = findViewById(R.id.editTextUsername);
         button1 = findViewById(R.id.button1);
         button2 = findViewById(R.id.button2);
         button3 = findViewById(R.id.button3);
@@ -94,7 +95,7 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     public void signUp(View view) {
-        if (editTextEmail.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty()) {
+        if (editTextEmail.getText().toString().isEmpty() || editTextPassword.getText().toString().isEmpty() || editTextUsername.getText().toString().isEmpty()) {
             Toast.makeText(this, getResources().getString(R.string.errorToast2), Toast.LENGTH_SHORT).show();
         }
         else {
@@ -103,6 +104,7 @@ public class LogInActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             currentUser = mAuth.getCurrentUser();
                             Toast.makeText(getApplicationContext(), getResources().getString(R.string.signUpToast), Toast.LENGTH_LONG).show();
+                            createUsername(editTextUsername.getText().toString(), currentUser);
 
                             isSignInPushed = false;
                             writeSP(false);
@@ -115,7 +117,8 @@ public class LogInActivity extends AppCompatActivity {
                                 databaseRef.child("Students").child(currentUser.getUid()).child("totalAdditionFaults").setValue(0);
                                 databaseRef.child("Students").child(currentUser.getUid()).child("RevisionTestScore").setValue(0);
                                 databaseRef.child("Students").child(currentUser.getUid()).child("ProblemsScore").setValue(0);
-                                databaseRef.child("Students").child(currentUser.getUid()).child("email").setValue(currentUser.getEmail());
+                                databaseRef.child("Students").child(currentUser.getUid()).child("name").setValue(editTextUsername.getText().toString());
+
 
                                 //units
                                 for (int i = 1; i <= 10; i++) {
@@ -138,6 +141,7 @@ public class LogInActivity extends AppCompatActivity {
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 intent.putExtra("userID", currentUser.getUid());
                                 intent.putExtra("email", currentUser.getEmail());
+                                intent.putExtra("username",currentUser.getDisplayName());
                                 startActivity(intent);
                             }
                             else {
@@ -145,6 +149,7 @@ public class LogInActivity extends AppCompatActivity {
                                 Intent intent3 = new Intent(getApplicationContext(), TeacherActivity.class);
                                 intent3.putExtra("userID", currentUser.getUid());
                                 intent3.putExtra("email", currentUser.getEmail());
+                                intent3.putExtra("username",currentUser.getDisplayName());
                                 startActivity(intent3);
                             }
                         }
@@ -157,12 +162,14 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     public void transitionClick(View view){
+        editTextUsername.setVisibility(View.INVISIBLE);
         button1.setVisibility(View.INVISIBLE);
         button2.setVisibility(View.INVISIBLE);
         button3.setVisibility(View.VISIBLE);
         button4.setVisibility(View.VISIBLE);
         textView2.setVisibility(View.INVISIBLE);
         textView1.setVisibility(View.INVISIBLE);
+        textView3.setVisibility(View.VISIBLE);
         checkBox.setVisibility(View.INVISIBLE);
         textView3.setVisibility(View.VISIBLE);
         checkBox2.setVisibility(View.VISIBLE);
@@ -175,6 +182,7 @@ public class LogInActivity extends AppCompatActivity {
     }
 
     public void goBack(View view){
+        editTextUsername.setVisibility(View.VISIBLE);
         button1.setVisibility(View.VISIBLE);
         button2.setVisibility(View.VISIBLE);
         button3.setVisibility(View.INVISIBLE);
@@ -205,6 +213,7 @@ public class LogInActivity extends AppCompatActivity {
                             Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
                             intent2.putExtra("userID", currentUser.getUid());
                             intent2.putExtra("email", currentUser.getEmail());
+                            intent2.putExtra("username",currentUser.getDisplayName());
                             startActivity(intent2);
                         }
                         else {
@@ -212,6 +221,7 @@ public class LogInActivity extends AppCompatActivity {
                             Intent intent4 = new Intent(getApplicationContext(), TeacherActivity.class);
                             intent4.putExtra("userID", currentUser.getUid());
                             intent4.putExtra("email", currentUser.getEmail());
+                            intent4.putExtra("username",currentUser.getDisplayName());
                             startActivity(intent4);
                         }
                     }
@@ -219,6 +229,14 @@ public class LogInActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
+    }
+
+    private void createUsername(String username, FirebaseUser user){
+        UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
+                .setDisplayName(username)
+                .build();
+        user.updateProfile(profileChangeRequest)
+                .addOnCompleteListener(task -> Toast.makeText(getApplicationContext(),getResources().getString(R.string.userCratedToast),Toast.LENGTH_LONG).show());
     }
 
 

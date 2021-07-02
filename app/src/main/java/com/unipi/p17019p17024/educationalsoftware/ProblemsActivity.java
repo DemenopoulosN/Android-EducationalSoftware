@@ -3,12 +3,14 @@ package com.unipi.p17019p17024.educationalsoftware;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +31,7 @@ public class ProblemsActivity extends AppCompatActivity {
     EditText editTextProblem1, editTextProblem2;
     String userID;
     Integer currentProblemsScore;
+    ImageView imageViewInfoProblems;
 
     //User Authentication
     public FirebaseAuth mAuth;
@@ -43,6 +46,7 @@ public class ProblemsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_problems);
         buttonSubmit = findViewById(R.id.buttonSubmit);
+        imageViewInfoProblems = findViewById(R.id.imageViewInfoProblems);
         editTextProblem1 = findViewById(R.id.editTextNumberProblem1);
         editTextProblem2 = findViewById(R.id.editTextNumberProblem2);
         currentProblemsScore = 0;
@@ -107,5 +111,23 @@ public class ProblemsActivity extends AppCompatActivity {
             intent.putExtra("userID", currentUser.getUid());
             startActivity(intent);
         }
+    }
+
+    public void infoProblems(View view){
+        //showMessage(getResources().getString(R.string.errorSavingImageTitle),getResources().getString(R.string.errorSavingImageMessage)+ message);
+        showMessage("Γειά σου!","Σε αυτή τη οθόνη βρίσκονται δύο επαναληπτικά προβλήματα για να δείς τι έμαθες με πιο διασκεδαστικό τρόπο! Προσπάθησε να απαντήσεις σωστά συμπληρώνοντας την απάντησή σου στο κενό! Καλό παιχνίδι!");
+    }
+
+    public void showMessage(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setCancelable(true)
+                .setTitle(title)
+                .setMessage(message)
+                .setIcon(R.mipmap.application_photo_round)
+                .setPositiveButton("Ok", (dialog, which) -> {
+                    //do nothing
+                })
+                .show();
     }
 }

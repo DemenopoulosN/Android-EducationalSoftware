@@ -4,16 +4,16 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:title="Κεντρική" />
 
     <item
         android:id="@+id/navigation_myProgress"
         android:icon="@drawable/bar_chart_hi"
-        android:title="My Progress" />
+        android:title="Η πρόοδός μου" />
 
     <item
         android:id="@+id/navigation_settings"
         android:icon="@drawable/settings_icon_3110_thumb"
-        android:title="Settings" />
+        android:title="Ρυθμίσεις" />
 
 </menu>

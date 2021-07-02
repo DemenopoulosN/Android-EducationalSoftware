@@ -82,6 +82,7 @@
         android:layout_height="47dp"
         android:layout_marginTop="6dp"
         android:layout_marginEnd="6dp"
+        android:onClick="infoProblems"
         android:scaleType="fitXY"
         android:src="@drawable/information_icon4_orange_svg"
         app:layout_constraintEnd_toEndOf="parent"
