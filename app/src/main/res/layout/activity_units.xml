@@ -226,7 +226,7 @@
         android:layout_height="92dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="45dp"
-        android:backgroundTint="#BD3232"
+        android:backgroundTint="#068A0B"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

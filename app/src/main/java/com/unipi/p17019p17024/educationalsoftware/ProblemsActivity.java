@@ -94,8 +94,8 @@ public class ProblemsActivity extends AppCompatActivity {
             studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot2) {
-                    if(currentProblemsScore > Integer.parseInt(dataSnapshot2.child("ProblemsScore").getValue().toString())) {
-                        studentsRef.child(userID).child("ProblemsScore").setValue(currentProblemsScore);
+                    if(currentProblemsScore > Integer.parseInt(dataSnapshot2.child("problemsScore").getValue().toString())) {
+                        studentsRef.child(userID).child("problemsScore").setValue(currentProblemsScore);
                     }
                 }
 

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -84,6 +85,7 @@ public class UnitsActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
 
 
+
         studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
         studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -134,9 +136,11 @@ public class UnitsActivity extends AppCompatActivity {
                 }
                 else if(score2 == 4){
                     imageViewStars2.setImageResource(R.drawable.stars4);
+                    imageButton2.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
                 else{
                     imageViewStars2.setImageResource(R.drawable.stars5);
+                    imageButton2.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
 
                 //unit3
@@ -155,9 +159,11 @@ public class UnitsActivity extends AppCompatActivity {
                 }
                 else if(score3 == 4){
                     imageViewStars3.setImageResource(R.drawable.stars4);
+                    imageButton3.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
                 else{
                     imageViewStars3.setImageResource(R.drawable.stars5);
+                    imageButton3.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
 
                 //unit4
@@ -176,9 +182,11 @@ public class UnitsActivity extends AppCompatActivity {
                 }
                 else if(score4 == 4){
                     imageViewStars4.setImageResource(R.drawable.stars4);
+                    imageButton4.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
                 else{
                     imageViewStars4.setImageResource(R.drawable.stars5);
+                    imageButton4.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
 
                 //unit5
@@ -197,9 +205,11 @@ public class UnitsActivity extends AppCompatActivity {
                 }
                 else if(score5 == 4){
                     imageViewStars5.setImageResource(R.drawable.stars4);
+                    imageButton5.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
                 else{
                     imageViewStars5.setImageResource(R.drawable.stars5);
+                    imageButton5.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
 
                 //unit6
@@ -218,9 +228,11 @@ public class UnitsActivity extends AppCompatActivity {
                 }
                 else if(score6 == 4){
                     imageViewStars6.setImageResource(R.drawable.stars4);
+                    imageButton6.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
                 else{
                     imageViewStars6.setImageResource(R.drawable.stars5);
+                    imageButton6.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
 
                 //unit7
@@ -239,9 +251,11 @@ public class UnitsActivity extends AppCompatActivity {
                 }
                 else if(score7 == 4){
                     imageViewStars7.setImageResource(R.drawable.stars4);
+                    imageButton7.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
                 else{
                     imageViewStars7.setImageResource(R.drawable.stars5);
+                    imageButton7.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
 
                 //unit8
@@ -260,9 +274,11 @@ public class UnitsActivity extends AppCompatActivity {
                 }
                 else if(score8 == 4){
                     imageViewStars8.setImageResource(R.drawable.stars4);
+                    imageButton8.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
                 else{
                     imageViewStars8.setImageResource(R.drawable.stars5);
+                    imageButton8.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
 
                 //unit9
@@ -281,9 +297,11 @@ public class UnitsActivity extends AppCompatActivity {
                 }
                 else if(score9 == 4){
                     imageViewStars9.setImageResource(R.drawable.stars4);
+                    imageButton9.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
                 else{
                     imageViewStars9.setImageResource(R.drawable.stars5);
+                    imageButton9.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
 
                 //unit10
@@ -302,9 +320,11 @@ public class UnitsActivity extends AppCompatActivity {
                 }
                 else if(score10 == 4){
                     imageViewStars10.setImageResource(R.drawable.stars4);
+                    imageButton10.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
                 else{
                     imageViewStars10.setImageResource(R.drawable.stars5);
+                    imageButton10.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
             }
 
@@ -323,6 +343,21 @@ public class UnitsActivity extends AppCompatActivity {
         //προαπαιτούμενο να έχει ολοκληρωθεί επιτυχώς η προηγούμενη ενότητα για να ανοίξει η επόμενη (θεωρία + καλό σκορ)
         //
         imageButton1.setOnClickListener(v -> {
+            studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+            studentsRef.child(userID).child("1").child("views").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot1) {
+                    Integer unit1Views = Integer.parseInt(dataSnapshot1.getValue().toString()) +1;
+                    studentsRef.child(userID).child("1").child("views").setValue(unit1Views);
+                }
+
+                @Override
+                public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                    // we are showing that error message in toast
+                    Toast.makeText(UnitsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                }
+            });
+
             Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
             intent.putExtra("userID", currentUser.getUid());
             selectedUnit = 1;
@@ -334,6 +369,22 @@ public class UnitsActivity extends AppCompatActivity {
 
         imageButton2.setOnClickListener(v -> {
             if (score1 >= 4) {
+                studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                studentsRef.child(userID).child("2").child("views").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot2) {
+                        Integer unit1Views = Integer.parseInt(dataSnapshot2.getValue().toString()) +1;
+                        studentsRef.child(userID).child("2").child("views").setValue(unit1Views);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                        // we are showing that error message in toast
+                        Toast.makeText(UnitsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
                 Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
                 intent.putExtra("userID", currentUser.getUid());
                 selectedUnit = 2;
@@ -349,6 +400,22 @@ public class UnitsActivity extends AppCompatActivity {
 
         imageButton3.setOnClickListener(v -> {
             if (score2 >= 4) {
+                studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                studentsRef.child(userID).child("3").child("views").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot3) {
+                        Integer unit1Views = Integer.parseInt(dataSnapshot3.getValue().toString()) +1;
+                        studentsRef.child(userID).child("3").child("views").setValue(unit1Views);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                        // we are showing that error message in toast
+                        Toast.makeText(UnitsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
                 Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
                 intent.putExtra("userID", currentUser.getUid());
                 selectedUnit = 3;
@@ -364,6 +431,22 @@ public class UnitsActivity extends AppCompatActivity {
 
         imageButton4.setOnClickListener(v -> {
             if (score3 >= 4) {
+                studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                studentsRef.child(userID).child("4").child("views").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot4) {
+                        Integer unit1Views = Integer.parseInt(dataSnapshot4.getValue().toString()) +1;
+                        studentsRef.child(userID).child("4").child("views").setValue(unit1Views);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                        // we are showing that error message in toast
+                        Toast.makeText(UnitsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
                 Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
                 intent.putExtra("userID", currentUser.getUid());
                 selectedUnit = 4;
@@ -379,6 +462,22 @@ public class UnitsActivity extends AppCompatActivity {
 
         imageButton5.setOnClickListener(v -> {
             if (score4 >= 4) {
+                studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                studentsRef.child(userID).child("5").child("views").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot5) {
+                        Integer unit1Views = Integer.parseInt(dataSnapshot5.getValue().toString()) +1;
+                        studentsRef.child(userID).child("5").child("views").setValue(unit1Views);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                        // we are showing that error message in toast
+                        Toast.makeText(UnitsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
                 Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
                 intent.putExtra("userID", currentUser.getUid());
                 selectedUnit = 5;
@@ -394,6 +493,23 @@ public class UnitsActivity extends AppCompatActivity {
 
         imageButton6.setOnClickListener(v -> {
             if (score5 >= 4) {
+                studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                studentsRef.child(userID).child("6").child("views").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot6) {
+                        Integer unit1Views = Integer.parseInt(dataSnapshot6.getValue().toString()) +1;
+                        studentsRef.child(userID).child("6").child("views").setValue(unit1Views);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                        // we are showing that error message in toast
+                        Toast.makeText(UnitsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
+
                 Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
                 intent.putExtra("userID", currentUser.getUid());
                 selectedUnit = 6;
@@ -409,6 +525,22 @@ public class UnitsActivity extends AppCompatActivity {
 
         imageButton7.setOnClickListener(v -> {
             if (score6 >= 4) {
+                studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                studentsRef.child(userID).child("7").child("views").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot7) {
+                        Integer unit1Views = Integer.parseInt(dataSnapshot7.getValue().toString()) +1;
+                        studentsRef.child(userID).child("7").child("views").setValue(unit1Views);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                        // we are showing that error message in toast
+                        Toast.makeText(UnitsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
                 Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
                 intent.putExtra("userID", currentUser.getUid());
                 selectedUnit = 7;
@@ -424,6 +556,22 @@ public class UnitsActivity extends AppCompatActivity {
 
         imageButton8.setOnClickListener(v -> {
             if (score7 >= 4) {
+                studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                studentsRef.child(userID).child("8").child("views").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot8) {
+                        Integer unit1Views = Integer.parseInt(dataSnapshot8.getValue().toString()) +1;
+                        studentsRef.child(userID).child("8").child("views").setValue(unit1Views);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                        // we are showing that error message in toast
+                        Toast.makeText(UnitsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
                 Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
                 intent.putExtra("userID", currentUser.getUid());
                 selectedUnit = 8;
@@ -439,6 +587,22 @@ public class UnitsActivity extends AppCompatActivity {
 
         imageButton9.setOnClickListener(v -> {
             if (score8 >= 4) {
+                studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                studentsRef.child(userID).child("9").child("views").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot9) {
+                        Integer unit1Views = Integer.parseInt(dataSnapshot9.getValue().toString()) +1;
+                        studentsRef.child(userID).child("9").child("views").setValue(unit1Views);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                        // we are showing that error message in toast
+                        Toast.makeText(UnitsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
                 Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
                 intent.putExtra("userID", currentUser.getUid());
                 selectedUnit = 9;
@@ -454,6 +618,22 @@ public class UnitsActivity extends AppCompatActivity {
 
         imageButton10.setOnClickListener(v -> {
             if (score9 >= 4) {
+                studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                studentsRef.child(userID).child("10").child("views").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot10) {
+                        Integer unit1Views = Integer.parseInt(dataSnapshot10.getValue().toString()) +1;
+                        studentsRef.child(userID).child("10").child("views").setValue(unit1Views);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                        // we are showing that error message in toast
+                        Toast.makeText(UnitsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+
                 Intent intent = new Intent(getApplicationContext(), TheoryActivity.class);
                 intent.putExtra("userID", currentUser.getUid());
                 selectedUnit = 10;

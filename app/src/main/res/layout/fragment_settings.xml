@@ -24,6 +24,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="276dp"
         android:backgroundTint="#BD3232"
+        android:onClick="LogOut"
         android:text="Αποσύνδεση"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="20sp"

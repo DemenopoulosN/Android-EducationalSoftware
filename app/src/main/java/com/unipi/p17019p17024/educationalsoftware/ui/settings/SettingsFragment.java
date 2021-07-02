@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ public class SettingsFragment extends Fragment {
     RadioButton radioButtonEasy, radioButtonMedium, radioButtonHard;
     String selectedDifficulty;
     ImageView imageViewInfoSettings;
+    Button buttonLogOut;
 
 
     private FragmentSettingsBinding binding;
@@ -79,6 +81,14 @@ public class SettingsFragment extends Fragment {
         radioButtonHard.setOnClickListener(v -> {
             ((MainActivity)getActivity()).setDifficulty("Hard");
         });
+
+
+        //When buttonLogOut is clicked in HomeFragment
+        buttonLogOut = root.findViewById(R.id.buttonLogOut);
+        buttonLogOut.setOnClickListener(v -> {
+            ((MainActivity)getActivity()).logOut();
+        });
+
 
         return root;
     }

@@ -384,8 +384,8 @@ public class RevisionTestsActivity extends AppCompatActivity {
                 studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull @NotNull DataSnapshot myDataSnapshot) {
-                        if(currentRevisionScore > Integer.parseInt(myDataSnapshot.child("RevisionTestScore").getValue().toString())){
-                            studentsRef.child(userID).child("RevisionTestScore").setValue(currentRevisionScore);
+                        if(currentRevisionScore > Integer.parseInt(myDataSnapshot.child("revisionTestScore").getValue().toString())){
+                            studentsRef.child(userID).child("revisionTestScore").setValue(currentRevisionScore);
                         }
                     }
 

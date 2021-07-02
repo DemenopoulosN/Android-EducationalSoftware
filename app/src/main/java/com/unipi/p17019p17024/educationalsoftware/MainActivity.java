@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -39,7 +41,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     String userID, email;
-    Button buttonUnits, buttonTests, buttonProblems;
+    Button buttonUnits, buttonTests, buttonProblems, buttonLogOut;
     ImageView imageView1, imageView2, imageView3;
     RadioButton radioButtonEasy, radioButtonMedium, radioButtonHard;
     String difficulty = "Easy";
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         imageView3 = findViewById(R.id.imageViewInfoMyProgress);
         buttonUnits = findViewById(R.id.buttonUnits);
         buttonTests = findViewById(R.id.buttonTests);
+        buttonLogOut = findViewById(R.id.buttonLogOut);
         buttonProblems = findViewById(R.id.buttonProblems);
         radioButtonEasy = findViewById(R.id.radioButtonEasy);
         radioButtonMedium = findViewById(R.id.radioButtonMedium);
@@ -84,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         textViewProgressUnit1 = findViewById(R.id.textViewProgressUnit1);
         progressBarUnit1 = findViewById(R.id.progressBarUnit1);
         textView11 = findViewById(R.id.textView11);
+
 
 
         com.unipi.p17019p17024.educationalsoftware.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -147,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        /*
         studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
         studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -167,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
                 // we are showing that error message in toast
                 Toast.makeText(MainActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
             }
-        });
+        }); */
     }
 
     public void buttonUnitsClick() {
@@ -235,6 +239,12 @@ public class MainActivity extends AppCompatActivity {
                     //do nothing
                 })
                 .show();
+    }
+
+    public void logOut() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent4 = new Intent(getApplicationContext(), EntryActivity.class);
+        startActivity(intent4);
     }
 
     /*public void setProgressBar(){
