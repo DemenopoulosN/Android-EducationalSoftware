@@ -103,205 +103,243 @@ public class UnitsActivity extends AppCompatActivity {
                 score1 = (int) Math.round(totalUnitsScoresArray[0]);
                 if(score1 == 0){
                     imageViewStars1.setImageResource(R.drawable.stars0);
+                    imageButton2.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score1 == 1){
                     imageViewStars1.setImageResource(R.drawable.stars1);
+                    imageButton2.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score1 == 2){
                     imageViewStars1.setImageResource(R.drawable.stars2);
+                    imageButton2.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score1 == 3){
                     imageViewStars1.setImageResource(R.drawable.stars3);
+                    imageButton2.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score1 == 4){
                     imageViewStars1.setImageResource(R.drawable.stars4);
+                    imageButton2.setBackgroundColor(getResources().getColor(R.color.green));
                 }
                 else{
                     imageViewStars1.setImageResource(R.drawable.stars5);
+                    imageButton2.setBackgroundColor(getResources().getColor(R.color.green));
                 }
 
                 //unit2
                 score2 = (int) Math.round(totalUnitsScoresArray[1]);
                 if(score2 == 0){
                     imageViewStars2.setImageResource(R.drawable.stars0);
+                    imageButton3.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score2 == 1){
                     imageViewStars2.setImageResource(R.drawable.stars1);
+                    imageButton3.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score2 == 2){
                     imageViewStars2.setImageResource(R.drawable.stars2);
+                    imageButton3.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score2 == 3){
                     imageViewStars2.setImageResource(R.drawable.stars3);
+                    imageButton3.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score2 == 4){
                     imageViewStars2.setImageResource(R.drawable.stars4);
-                    imageButton2.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton3.setBackgroundColor(getResources().getColor(R.color.green));
                 }
                 else{
                     imageViewStars2.setImageResource(R.drawable.stars5);
-                    imageButton2.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton3.setBackgroundColor(getResources().getColor(R.color.green));
                 }
 
                 //unit3
                 score3 = (int) Math.round(totalUnitsScoresArray[2]);
                 if(score3 == 0){
                     imageViewStars3.setImageResource(R.drawable.stars0);
+                    imageButton4.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score3 == 1){
                     imageViewStars3.setImageResource(R.drawable.stars1);
+                    imageButton4.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score3 == 2){
                     imageViewStars3.setImageResource(R.drawable.stars2);
+                    imageButton4.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score3 == 3){
                     imageViewStars3.setImageResource(R.drawable.stars3);
+                    imageButton4.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score3 == 4){
                     imageViewStars3.setImageResource(R.drawable.stars4);
-                    imageButton3.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton4.setBackgroundColor(getResources().getColor(R.color.green));
                 }
                 else{
                     imageViewStars3.setImageResource(R.drawable.stars5);
-                    imageButton3.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton4.setBackgroundColor(getResources().getColor(R.color.green));
                 }
 
                 //unit4
                 score4 = (int) Math.round(totalUnitsScoresArray[3]);
                 if(score4 == 0){
                     imageViewStars4.setImageResource(R.drawable.stars0);
+                    imageButton5.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score4 == 1){
                     imageViewStars4.setImageResource(R.drawable.stars1);
+                    imageButton5.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score4 == 2){
                     imageViewStars4.setImageResource(R.drawable.stars2);
+                    imageButton5.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score4 == 3){
                     imageViewStars4.setImageResource(R.drawable.stars3);
+                    imageButton5.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score4 == 4){
                     imageViewStars4.setImageResource(R.drawable.stars4);
-                    imageButton4.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton5.setBackgroundColor(getResources().getColor(R.color.green));
                 }
                 else{
                     imageViewStars4.setImageResource(R.drawable.stars5);
-                    imageButton4.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton5.setBackgroundColor(getResources().getColor(R.color.green));
                 }
 
                 //unit5
                 score5 = (int) Math.round(totalUnitsScoresArray[4]);
                 if(score5 == 0){
                     imageViewStars5.setImageResource(R.drawable.stars0);
+                    imageButton6.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score5 == 1){
                     imageViewStars5.setImageResource(R.drawable.stars1);
+                    imageButton6.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score5 == 2){
                     imageViewStars5.setImageResource(R.drawable.stars2);
+                    imageButton6.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score5 == 3){
                     imageViewStars5.setImageResource(R.drawable.stars3);
+                    imageButton6.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score5 == 4){
                     imageViewStars5.setImageResource(R.drawable.stars4);
-                    imageButton5.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton6.setBackgroundColor(getResources().getColor(R.color.green));
                 }
                 else{
                     imageViewStars5.setImageResource(R.drawable.stars5);
-                    imageButton5.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton6.setBackgroundColor(getResources().getColor(R.color.green));
                 }
 
                 //unit6
                 score6 = (int) Math.round(totalUnitsScoresArray[5]);
                 if(score6 == 0){
                     imageViewStars6.setImageResource(R.drawable.stars0);
+                    imageButton7.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score6 == 1){
                     imageViewStars6.setImageResource(R.drawable.stars1);
+                    imageButton7.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score6 == 2){
                     imageViewStars6.setImageResource(R.drawable.stars2);
+                    imageButton7.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score6 == 3){
                     imageViewStars6.setImageResource(R.drawable.stars3);
+                    imageButton7.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score6 == 4){
                     imageViewStars6.setImageResource(R.drawable.stars4);
-                    imageButton6.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton7.setBackgroundColor(getResources().getColor(R.color.green));
                 }
                 else{
                     imageViewStars6.setImageResource(R.drawable.stars5);
-                    imageButton6.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton7.setBackgroundColor(getResources().getColor(R.color.green));
                 }
 
                 //unit7
                 score7 = (int) Math.round(totalUnitsScoresArray[6]);
                 if(score7 == 0){
                     imageViewStars7.setImageResource(R.drawable.stars0);
+                    imageButton8.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score7 == 1){
                     imageViewStars7.setImageResource(R.drawable.stars1);
+                    imageButton8.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score7 == 2){
                     imageViewStars7.setImageResource(R.drawable.stars2);
+                    imageButton8.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score7 == 3){
                     imageViewStars7.setImageResource(R.drawable.stars3);
+                    imageButton8.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score7 == 4){
                     imageViewStars7.setImageResource(R.drawable.stars4);
-                    imageButton7.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton8.setBackgroundColor(getResources().getColor(R.color.green));
                 }
                 else{
                     imageViewStars7.setImageResource(R.drawable.stars5);
-                    imageButton7.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton8.setBackgroundColor(getResources().getColor(R.color.green));
                 }
 
                 //unit8
                 score8 = (int) Math.round(totalUnitsScoresArray[7]);
                 if(score8 == 0){
                     imageViewStars8.setImageResource(R.drawable.stars0);
+                    imageButton9.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score8 == 1){
                     imageViewStars8.setImageResource(R.drawable.stars1);
+                    imageButton9.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score8 == 2){
                     imageViewStars8.setImageResource(R.drawable.stars2);
+                    imageButton9.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score8 == 3){
                     imageViewStars8.setImageResource(R.drawable.stars3);
+                    imageButton9.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score8 == 4){
                     imageViewStars8.setImageResource(R.drawable.stars4);
-                    imageButton8.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton9.setBackgroundColor(getResources().getColor(R.color.green));
                 }
                 else{
                     imageViewStars8.setImageResource(R.drawable.stars5);
-                    imageButton8.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton9.setBackgroundColor(getResources().getColor(R.color.green));
                 }
 
                 //unit9
                 score9 = (int) Math.round(totalUnitsScoresArray[8]);
                 if(score9 == 0){
                     imageViewStars9.setImageResource(R.drawable.stars0);
+                    imageButton10.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score9 == 1){
                     imageViewStars9.setImageResource(R.drawable.stars1);
+                    imageButton10.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score9 == 2){
                     imageViewStars9.setImageResource(R.drawable.stars2);
+                    imageButton10.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score9 == 3){
                     imageViewStars9.setImageResource(R.drawable.stars3);
+                    imageButton10.setBackgroundColor(getResources().getColor(R.color.red));
                 }
                 else if(score9 == 4){
                     imageViewStars9.setImageResource(R.drawable.stars4);
-                    imageButton9.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton10.setBackgroundColor(getResources().getColor(R.color.green));
                 }
                 else{
                     imageViewStars9.setImageResource(R.drawable.stars5);
-                    imageButton9.setBackgroundColor(Color.parseColor("#068A0B"));
+                    imageButton10.setBackgroundColor(getResources().getColor(R.color.green));
                 }
 
                 //unit10
@@ -320,11 +358,9 @@ public class UnitsActivity extends AppCompatActivity {
                 }
                 else if(score10 == 4){
                     imageViewStars10.setImageResource(R.drawable.stars4);
-                    imageButton10.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
                 else{
                     imageViewStars10.setImageResource(R.drawable.stars5);
-                    imageButton10.setBackgroundColor(Color.parseColor("#068A0B"));
                 }
             }
 

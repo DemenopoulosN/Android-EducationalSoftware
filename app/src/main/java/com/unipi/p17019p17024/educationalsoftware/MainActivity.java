@@ -137,13 +137,47 @@ public class MainActivity extends AppCompatActivity {
         //When buttonTests is clicked in MainActivity
         buttonTests = findViewById(R.id.buttonTests);
         buttonTests.setOnClickListener(v -> {
-            buttonTestsClick();
+            studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+            studentsRef.child(userID).child("10").child("unitScore").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull @NotNull DataSnapshot testSnapshot) {
+                    if(Integer.parseInt(testSnapshot.getValue().toString()) == 4 || Integer.parseInt(testSnapshot.getValue().toString()) == 5){
+                        buttonTestsClick();
+                    }
+                    else{
+                        showMessage("Προσοχή!", "Πρέπει να ολοκληρώσεις επιτυχώς όλες τις ενότητες με 4 ή 5 αστέρια για να μπορείς να κάνεις το επαναληπτικό τεστ.");
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                    // we are showing that error message in toast
+                    Toast.makeText(MainActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                }
+            });
         });
 
         //When buttonProblems is clicked in MainActivity
         buttonProblems = findViewById(R.id.buttonProblems);
         buttonProblems.setOnClickListener(v -> {
-            buttonProblemsClick();
+            studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+            studentsRef.child(userID).child("10").child("unitScore").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull @NotNull DataSnapshot testSnapshot) {
+                    if(Integer.parseInt(testSnapshot.getValue().toString()) == 4 || Integer.parseInt(testSnapshot.getValue().toString()) == 5){
+                        buttonProblemsClick();
+                    }
+                    else{
+                        showMessage("Προσοχή!", "Πρέπει να ολοκληρώσεις επιτυχώς όλες τις ενότητες με 4 ή 5 αστέρια για να μπορείς να κάνεις τα επαναληπτικά προβλήματα.");
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                    // we are showing that error message in toast
+                    Toast.makeText(MainActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                }
+            });
         });
 
 
