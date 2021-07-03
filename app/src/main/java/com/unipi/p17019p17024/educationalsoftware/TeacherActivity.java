@@ -34,13 +34,12 @@ import com.google.firebase.database.ValueEventListener;
 
 
 public class TeacherActivity extends AppCompatActivity {
-    String userID, email, username;
+    //String userID, email, username;
 
     //TextView
     TextView textViewTeacherTitle, textViewTeacherEmptyTitle;
 
     //Firebase Database
-    //FirebaseDatabase database;
     DatabaseReference studentsRef;
 
     //RecyclerView
@@ -56,14 +55,12 @@ public class TeacherActivity extends AppCompatActivity {
         textViewTeacherEmptyTitle = findViewById(R.id.textViewTeacherEmptyTitle);
 
         //GetIntent
-        userID = getIntent().getStringExtra("userID");
-        email = getIntent().getStringExtra("email");
-        username = getIntent().getStringExtra("username");
+        //userID = getIntent().getStringExtra("userID");
+        //email = getIntent().getStringExtra("email");
+        //username = getIntent().getStringExtra("username");
 
-        //database Firebase
-        //database = FirebaseDatabase.getInstance().getReference();
-
-        studentsRef = FirebaseDatabase.getInstance().getReference().child("Students").child(userID);
+        //Firebase Database
+        studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
 
         recyclerView = findViewById(R.id.studentsRecyclerList);
 
@@ -79,34 +76,26 @@ public class TeacherActivity extends AppCompatActivity {
                 .build();
         // Connecting object of required Adapter class to
         // the Adapter class itself
-        adapter = new TeacherAdapter(options);
+        //adapter = new TeacherAdapter(options);
+        // adapter = new TeacherAdapter(TeacherActivity.this, options);
+        adapter = new TeacherAdapter(this, options);
         // Connecting Adapter class with the Recycler view
         recyclerView.setAdapter(adapter);
 
 
         //
-        //If the user has items in favorites: Visibility of buttons, textViews etc.
-        //
-        //userIDRef = FirebaseDatabase.getInstance().getReference().child("Favorites").child(userID);
-
-        //userIDRef.addValueEventListener(new ValueEventListener() {
-
-        //
-        //If there are students in database: Visibility of buttons, textViews etc.
+        //If there are students in database: Visibility of textViews etc.
         //
         studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-        studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+        studentsRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot mySnapshot) {
-                if (mySnapshot.exists()){
+                if (mySnapshot.hasChildren()) {
                     textViewTeacherTitle.setVisibility(View.VISIBLE);
                     textViewTeacherEmptyTitle.setVisibility(View.INVISIBLE);
-                    //imageView2.setVisibility(View.INVISIBLE);
-                }
-                else {
+                } else {
                     textViewTeacherTitle.setVisibility(View.INVISIBLE);
                     textViewTeacherEmptyTitle.setVisibility(View.VISIBLE);
-                    //imageView2.setVisibility(View.VISIBLE);
                 }
             }
 

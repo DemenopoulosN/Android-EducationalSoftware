@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".TeacherActivity">
 
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="455dp"
+        android:layout_height="860dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wp7955934" />
+
     <TextView
         android:id="@+id/textViewTeacherTitle"
         android:layout_width="wrap_content"
@@ -24,11 +34,12 @@
         android:id="@+id/textViewTeacherEmptyTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
         android:text="@string/titleEmptyTeacher"
         android:textSize="28sp"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

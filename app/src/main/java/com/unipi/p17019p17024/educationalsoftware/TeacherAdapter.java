@@ -1,5 +1,9 @@
 package com.unipi.p17019p17024.educationalsoftware;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,17 +28,25 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class TeacherAdapter extends FirebaseRecyclerAdapter<
         Students, TeacherAdapter.TeacherViewholder> {
 
+    //private Context myContext;
+    private Context context;
 
     //User Authentication
     public FirebaseAuth mAuth;
     FirebaseUser currentUser;
 
-    private DatabaseReference userIDRef;
+    private DatabaseReference studentsRef;
 
     public TeacherAdapter(
+            //Context context,
+            @NonNull Activity context,
             @NonNull FirebaseRecyclerOptions<Students> options)
     {
         super(options);
+        //myContext = context;
+        this.context = context;
+        //super(context, options);
+        //super(options);
     }
 
 
@@ -47,33 +59,41 @@ public class TeacherAdapter extends FirebaseRecyclerAdapter<
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
 
-        String userID = currentUser.getUid();
 
+        studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
 
+        String studentsIDs = getRef(position).getKey();
 
-        userIDRef = FirebaseDatabase.getInstance().getReference().child("Students").child(userID);
-
-        //String productIDs = getRef(position).getKey();
-
-        userIDRef.addValueEventListener(new ValueEventListener()
+        studentsRef.child(studentsIDs).addValueEventListener(new ValueEventListener()
         {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                if(snapshot.exists()) {
-
-                    //String pImage = snapshot.child("image").getValue().toString();
-
-                    //Picasso.get().load(pImage).placeholder(R.drawable.ic_product_image).into(holder.productImage);
-
-                    String sName = snapshot.child("name").getValue().toString();
-                    String sEmail = snapshot.child("email").getValue().toString();
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()) {
+                    String sName = dataSnapshot.child("name").getValue().toString();
+                    String sEmail = dataSnapshot.child("email").getValue().toString();
 
                     holder.studentName.setText(sName);
                     holder.studentEmail.setText(sEmail);
 
-                }
 
+                    //
+                    //On Click
+                    //
+                    holder.itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent studentIntent = new Intent(context, StudentsDataActivity.class);
+
+                            studentIntent.putExtra("studentID", studentsIDs);
+                            studentIntent.putExtra("studentName", sName);
+                            studentIntent.putExtra("studentEmail", sEmail);
+
+                            context.startActivity(studentIntent);
+                        }
+                    });
+
+
+                }
             }
 
             @Override
@@ -102,7 +122,6 @@ public class TeacherAdapter extends FirebaseRecyclerAdapter<
 
     class TeacherViewholder extends RecyclerView.ViewHolder {
         TextView studentName, studentEmail;
-        //CircleImageView studentImage;
 
         public TeacherViewholder(@NonNull View itemView)
         {
@@ -110,7 +129,6 @@ public class TeacherAdapter extends FirebaseRecyclerAdapter<
 
             studentName = itemView.findViewById(R.id.textViewStudentName);
             studentEmail = itemView.findViewById(R.id.textViewStudentEmail);
-            //studentImage = itemView.findViewById(R.id.student_profile_image);
         }
     }
 
