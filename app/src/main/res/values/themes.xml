@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.EducationalSoftware" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#00bfff</item>
-        <item name="colorPrimaryVariant">#00bfff</item>
+        <item name="colorPrimary">#1da9ef</item>
+        <item name="colorPrimaryVariant">#1da9ef</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
