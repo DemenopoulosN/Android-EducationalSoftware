@@ -37,7 +37,7 @@ public class RevisionTestsActivity extends AppCompatActivity {
     RadioGroup radioGroupRevision;
     RadioButton radioButton1Revision, radioButton2Revision, radioButton3Revision, radioButton4Revision;
 
-    Integer randomUnit, randomOperation, currentRevisionScore;
+    Integer randomUnit, randomOperation; //, currentRevisionScore
     ArrayList<String> selectedQuestions = new ArrayList<>();
     Boolean condition1;
     Integer count;
@@ -70,7 +70,7 @@ public class RevisionTestsActivity extends AppCompatActivity {
         radioButton3Revision = findViewById(R.id.radioButton3Revision);
         radioButton4Revision = findViewById(R.id.radioButton4Revision);
         questionID = "0";
-        currentRevisionScore = 0;
+        //currentRevisionScore = 0;
 
 
         //GetIntent
@@ -90,6 +90,25 @@ public class RevisionTestsActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         unitRef = FirebaseDatabase.getInstance().getReference().child("Exercises");
 
+
+        //
+        //Initializing currentRevisionScore to zero on the first exercise
+        //
+        if (count == 1) {
+            studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+            studentsRef.child(userID).child("currentRevisionScore").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull @NotNull DataSnapshot myDataSnapshot) {
+                    studentsRef.child(userID).child("currentRevisionScore").setValue("0");
+                }
+
+                @Override
+                public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                    // we are showing that error message in toast
+                    Toast.makeText(RevisionTestsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                }
+            });
+        }
 
 
         //generateExercise();
@@ -198,7 +217,7 @@ public class RevisionTestsActivity extends AppCompatActivity {
 
 
 
-    public void buttonCorrectOnClick(View view){
+    public void buttonCorrectRevisionOnClick(View view){
         //
         // updating Students' Data
         //
@@ -210,11 +229,14 @@ public class RevisionTestsActivity extends AppCompatActivity {
                 if (dataSnapshot1.exists()) {
 
                     studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-                    studentsRef.child(userID).child(String.valueOf(randomUnit)).child(String.valueOf(randomOperation)).addListenerForSingleValueEvent(new ValueEventListener(){
+                    studentsRef.child(userID).child("currentRevisionScore").addListenerForSingleValueEvent(new ValueEventListener(){
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot2) {
                             if (dataSnapshot1.getValue().toString().equals("true")) {
-                                currentRevisionScore = currentRevisionScore + 1;
+                                //currentRevisionScore = currentRevisionScore + 1;
+                                Integer currentRevisionScore = Integer.parseInt(dataSnapshot2.getValue().toString());
+                                currentRevisionScore += 1;
+                                studentsRef.child(userID).child("currentRevisionScore").setValue(String.valueOf(currentRevisionScore));
                             }
                         }
                         @Override
@@ -235,16 +257,21 @@ public class RevisionTestsActivity extends AppCompatActivity {
         //
         //Intents
         //
-        Intent intent = new Intent(getApplicationContext(), RevisionTestsActivity.class);
+        /*Intent intent = new Intent(getApplicationContext(), RevisionTestsActivity.class);
         intent.putExtra("userID", currentUser.getUid());
 
         //Intents for recursively calling RevisionTestsActivity
         intent.putExtra("selectedQuestions", selectedQuestions);
         intent.putExtra("count", count);
-        startActivity(intent);
+        startActivity(intent);*/
+
+        //Call Thread
+        ThreadIntentTests threadIntentTests = new ThreadIntentTests(true);
+        threadIntentTests.start();
+
     }
 
-    public void buttonFalseOnClick(View view){
+    public void buttonFalseRevisionOnClick(View view){
         //
         // updating Students' Data
         //
@@ -256,11 +283,14 @@ public class RevisionTestsActivity extends AppCompatActivity {
                 if (dataSnapshot3.exists()) {
 
                     studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-                    studentsRef.child(userID).child(String.valueOf(randomUnit)).child(String.valueOf(randomOperation)).addListenerForSingleValueEvent(new ValueEventListener(){
+                    studentsRef.child(userID).child("currentRevisionScore").addListenerForSingleValueEvent(new ValueEventListener(){
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot4) {
                             if (dataSnapshot3.getValue().toString().equals("false")) {
-                                currentRevisionScore = currentRevisionScore + 1;
+                                //currentRevisionScore = currentRevisionScore + 1;
+                                Integer currentRevisionScore = Integer.parseInt(dataSnapshot4.getValue().toString());
+                                currentRevisionScore += 1;
+                                studentsRef.child(userID).child("currentRevisionScore").setValue(String.valueOf(currentRevisionScore));
                             }
                         }
                         @Override
@@ -281,16 +311,20 @@ public class RevisionTestsActivity extends AppCompatActivity {
         //
         //Intents
         //
-        Intent intent = new Intent(getApplicationContext(), RevisionTestsActivity.class);
+        /*Intent intent = new Intent(getApplicationContext(), RevisionTestsActivity.class);
         intent.putExtra("userID", currentUser.getUid());
 
         //Intents for recursively calling RevisionTestsActivity
         intent.putExtra("selectedQuestions", selectedQuestions);
         intent.putExtra("count", count);
-        startActivity(intent);
+        startActivity(intent);*/
+
+        //Call Thread
+        ThreadIntentTests threadIntentTests = new ThreadIntentTests(true);
+        threadIntentTests.start();
     }
 
-    public void buttonSubmitMultipleChoiceOnClick(View view){
+    public void buttonSubmitMultipleChoiceRevisionOnClick(View view){
         if(!radioButton1Revision.isChecked() && !radioButton2Revision.isChecked() && !radioButton3Revision.isChecked() && !radioButton4Revision.isChecked()) {
             Toast.makeText(this, "You must select an answer first!", Toast.LENGTH_LONG).show();
         }
@@ -305,11 +339,14 @@ public class RevisionTestsActivity extends AppCompatActivity {
                     if (dataSnapshot5.exists()) {
 
                         studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-                        studentsRef.child(userID).child(String.valueOf(randomUnit)).child(String.valueOf(randomOperation)).addListenerForSingleValueEvent(new ValueEventListener() {
+                        studentsRef.child(userID).child("currentRevisionScore").addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot6) {
                                 if (dataSnapshot5.child("answer").getValue().toString().equals(radiobuttonSelected.toString())) {
-                                    currentRevisionScore = currentRevisionScore + 1;
+                                    //currentRevisionScore = currentRevisionScore + 1;
+                                    Integer currentRevisionScore = Integer.parseInt(dataSnapshot6.getValue().toString());
+                                    currentRevisionScore += 1;
+                                    studentsRef.child(userID).child("currentRevisionScore").setValue(String.valueOf(currentRevisionScore));
                                 }
                             }
 
@@ -332,17 +369,21 @@ public class RevisionTestsActivity extends AppCompatActivity {
             //
             //Intents
             //
-            Intent intent = new Intent(getApplicationContext(), RevisionTestsActivity.class);
+            /*Intent intent = new Intent(getApplicationContext(), RevisionTestsActivity.class);
             intent.putExtra("userID", currentUser.getUid());
 
             //Intents for recursively calling RevisionTestsActivity
             intent.putExtra("selectedQuestions", selectedQuestions);
             intent.putExtra("count", count);
-            startActivity(intent);
+            startActivity(intent);*/
+
+            //Call Thread
+            ThreadIntentTests threadIntentTests = new ThreadIntentTests(true);
+            threadIntentTests.start();
         }
     }
 
-    public void buttonSubmitFillInTheGapOnClick(View view){
+    public void buttonSubmitFillInTheGapRevisionOnClick(View view){
         if (TextUtils.isEmpty(editTextRevision.getText().toString())) {
             Toast.makeText(this, "You must fill in the gap first!", Toast.LENGTH_LONG).show();
         }
@@ -355,11 +396,14 @@ public class RevisionTestsActivity extends AppCompatActivity {
                     if (dataSnapshot9.exists()) {
 
                         studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-                        studentsRef.child(userID).child(String.valueOf(randomUnit)).child(String.valueOf(randomOperation)).addListenerForSingleValueEvent(new ValueEventListener(){
+                        studentsRef.child(userID).child("currentRevisionScore").addListenerForSingleValueEvent(new ValueEventListener(){
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot10) {
                                 if (dataSnapshot9.child("answer").getValue().toString().equals(editTextRevision.getText().toString())) {
-                                    currentRevisionScore = currentRevisionScore + 1;
+                                    //currentRevisionScore = currentRevisionScore + 1;
+                                    Integer currentRevisionScore = Integer.parseInt(dataSnapshot10.getValue().toString());
+                                    currentRevisionScore += 1;
+                                    studentsRef.child(userID).child("currentRevisionScore").setValue(String.valueOf(currentRevisionScore));
                                 }
                             }
                             @Override
@@ -381,11 +425,83 @@ public class RevisionTestsActivity extends AppCompatActivity {
             //Intents
             //
             if(count > 30) {
+                /*studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
+                studentsRef.child(userID).child("currentRevisionScore").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull @NotNull DataSnapshot myDataSnapshot) {
+                        //Integer currentRevisionScore = Integer.parseInt(myDataSnapshot.getValue().toString());
+                        //currentRevisionScore += 1;
+                        //studentsRef.child(userID).child("currentRevisionScore").setValue(String.valueOf(currentRevisionScore));
+                        //if(currentRevisionScore > Integer.parseInt(myDataSnapshot.child("revisionTestScore").getValue().toString())){
+                        //    studentsRef.child(userID).child("revisionTestScore").setValue(currentRevisionScore);
+                        //}
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
+                        // we are showing that error message in toast
+                        Toast.makeText(RevisionTestsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
+                    }
+                });*/
+
+
+                //Call Thread
+                UpdateRevisionTestScoreThread updateRevisionTestScoreThread = new UpdateRevisionTestScoreThread(true);
+                updateRevisionTestScoreThread.start();
+
+
+                //Go to MainActivity
+                Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
+                intent2.putExtra("userID", currentUser.getUid());
+                intent2.putExtra("email", currentUser.getEmail());
+                startActivity(intent2);
+            }
+            else {
+                //Recursively calling RevisionTestsActivity
+                /*Intent intent = new Intent(getApplicationContext(), RevisionTestsActivity.class);
+                intent.putExtra("userID", currentUser.getUid());
+
+                //Intents for recursively calling RevisionTestsActivity
+                intent.putExtra("selectedQuestions", selectedQuestions);
+                intent.putExtra("count", count);
+                startActivity(intent);*/
+
+                //Call Thread
+                ThreadIntentTests threadIntentTests = new ThreadIntentTests(true);
+                threadIntentTests.start();
+            }
+        }
+    }
+
+
+    //
+    //Thread for calculating student's revision test score
+    //
+    class UpdateRevisionTestScoreThread extends Thread {
+        Boolean runThread;
+
+        UpdateRevisionTestScoreThread(Boolean runThread) {
+            this.runThread = runThread;
+        }
+
+        public void run() {
+            if (runThread) {
+                try {
+                    //1.5sec delay
+                    ExercisesActivity.MyThread.sleep(1500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
                 studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull @NotNull DataSnapshot myDataSnapshot) {
-                        if(currentRevisionScore > Integer.parseInt(myDataSnapshot.child("revisionTestScore").getValue().toString())){
-                            studentsRef.child(userID).child("revisionTestScore").setValue(currentRevisionScore);
+                        Integer currentRevisionScore = Integer.parseInt(myDataSnapshot.child("currentRevisionScore").getValue().toString());
+                        Integer revisionTestScore = Integer.parseInt(myDataSnapshot.child("revisionTestScore").getValue().toString());
+
+                        if(currentRevisionScore > revisionTestScore){
+                            studentsRef.child(userID).child("revisionTestScore").setValue(String.valueOf(currentRevisionScore));
                         }
                     }
 
@@ -395,23 +511,44 @@ public class RevisionTestsActivity extends AppCompatActivity {
                         Toast.makeText(RevisionTestsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
                     }
                 });
-
-
-                //Go to MainActivity
-                Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
-                intent2.putExtra("userID", currentUser.getUid());
-                startActivity(intent2);
-            }
-            else {
-                //Recursively calling RevisionTestsActivity
-                Intent intent = new Intent(getApplicationContext(), RevisionTestsActivity.class);
-                intent.putExtra("userID", currentUser.getUid());
-
-                //Intents for recursively calling RevisionTestsActivity
-                intent.putExtra("selectedQuestions", selectedQuestions);
-                intent.putExtra("count", count);
-                startActivity(intent);
+                runThread = false;
             }
         }
     }
+
+
+    class ThreadIntentTests extends Thread {
+        Boolean runThread;
+
+        ThreadIntentTests(Boolean runThread) {
+            this.runThread = runThread;
+        }
+
+        public void run() {
+            if (runThread) {
+                try {
+                    //1sec delay
+                    ExercisesActivity.MyThread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+
+                //Recursively calling ExercisesActivity
+                Intent intent = new Intent(getApplicationContext(), RevisionTestsActivity.class);
+                intent.putExtra("userID", currentUser.getUid());
+
+                //Intents for recursively calling ExercisesActivity
+                intent.putExtra("selectedQuestions", selectedQuestions);
+                intent.putExtra("count", count);
+
+                startActivity(intent);
+
+
+                runThread = false;
+            }
+        }
+    }
+
+
 }

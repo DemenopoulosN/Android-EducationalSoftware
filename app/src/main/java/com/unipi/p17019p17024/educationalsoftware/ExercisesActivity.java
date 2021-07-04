@@ -96,7 +96,7 @@ public class ExercisesActivity extends AppCompatActivity {
         //Recursion
         selectedQuestions = getIntent().getStringArrayListExtra("selectedQuestions");
         count = getIntent().getIntExtra("count", 1);
-        Toast.makeText(getApplicationContext(), "Exercise Number: " + count, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(), "Exercise Number: " + count, Toast.LENGTH_LONG).show();
         email = getIntent().getStringExtra("email");
 
 

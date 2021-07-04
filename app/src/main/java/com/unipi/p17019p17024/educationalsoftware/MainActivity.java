@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             studentsRef.child(userID).child("10").child("unitScore").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull @NotNull DataSnapshot testSnapshot) {
-                    if(Integer.parseInt(testSnapshot.getValue().toString()) == 4 || Integer.parseInt(testSnapshot.getValue().toString()) == 5){
+                    if(Integer.parseInt(testSnapshot.getValue().toString()) >= 4){
                         buttonTestsClick();
                     }
                     else{
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
             studentsRef.child(userID).child("10").child("unitScore").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull @NotNull DataSnapshot testSnapshot) {
-                    if(Integer.parseInt(testSnapshot.getValue().toString()) == 4 || Integer.parseInt(testSnapshot.getValue().toString()) == 5){
+                    if(Integer.parseInt(testSnapshot.getValue().toString()) >= 4){
                         buttonProblemsClick();
                     }
                     else{

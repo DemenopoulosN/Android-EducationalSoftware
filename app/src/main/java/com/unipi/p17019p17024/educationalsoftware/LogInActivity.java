@@ -21,6 +21,8 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Random;
+
 public class LogInActivity extends AppCompatActivity {
     EditText editTextEmail, editTextPassword, editTextUsername;
     Button button1,button2,button3,button4;
@@ -39,6 +41,21 @@ public class LogInActivity extends AppCompatActivity {
     DatabaseReference databaseRef;
 
     boolean isSignInPushed = false;
+
+
+
+
+
+
+
+    Random random;
+
+
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +130,7 @@ public class LogInActivity extends AppCompatActivity {
                                 DatabaseReference newStudent = databaseRef.child("Students").push();
                                 databaseRef.child("Students").child(currentUser.getUid()).child("totalAdditionFaults").setValue(0);
                                 databaseRef.child("Students").child(currentUser.getUid()).child("revisionTestScore").setValue(0);
+                                databaseRef.child("Students").child(currentUser.getUid()).child("currentRevisionScore").setValue(0);
                                 databaseRef.child("Students").child(currentUser.getUid()).child("problemsScore").setValue(0);
                                 databaseRef.child("Students").child(currentUser.getUid()).child("name").setValue(editTextUsername.getText().toString());
                                 databaseRef.child("Students").child(currentUser.getUid()).child("email").setValue(editTextEmail.getText().toString());
@@ -206,6 +224,7 @@ public class LogInActivity extends AppCompatActivity {
                         isSignInPushed = true;
                         writeSP(true);
 
+
                         if(profile.equals("1")) {
                             //go to mainActivity
                             Intent intent2 = new Intent(getApplicationContext(), MainActivity.class);
@@ -294,4 +313,143 @@ public class LogInActivity extends AppCompatActivity {
                 })
                 .show();
     }
+
+    //
+    //Creating node for each exercise in Firebase database
+    //
+    public void createExercisesDatabase(){
+        random = new Random();
+        int randomTrueOrFalse, rightAnswer, additionAnswer, randomWrongAnswer1, randomWrongAnswer2, max, min, rightAnswerPosition, additionAnswerPosition, randomWrongAnswer1Position, randomWrongAnswer2Position;
+        String strQuestion = "";
+        //units
+        for (int unit = 1; unit <= 10; unit++) {
+            //operations
+            for (int operation = 1; operation <= 10; operation++) {
+                rightAnswer = unit * operation;
+                additionAnswer = unit + operation;
+
+                //questions
+                for (int question = 1; question <= 3; question++) {
+                    strQuestion = unit + " x " + operation + " = ";
+                    //first question
+                    if (question == 1){
+                        //
+                        //type
+                        //
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("type").setValue("true or false");
+                        //
+                        //question
+                        //
+                        randomTrueOrFalse = random.nextInt(2) + 1;
+                        //If true
+                        if(randomTrueOrFalse == 1) {
+                            strQuestion = strQuestion + rightAnswer;
+                            databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("question").setValue(strQuestion);
+                            //
+                            //answer
+                            //
+                            databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("answer").setValue("true");
+                        }
+                        //If false
+                        else {
+                            max = unit * (operation + 1);
+                            min = unit * (operation - 1);
+                            do {
+                                randomWrongAnswer1 = random.nextInt(max + 1 - min) + min;
+                            } while (randomWrongAnswer1 == rightAnswer || randomWrongAnswer1 == 0);
+
+                            strQuestion = strQuestion + randomWrongAnswer1;
+                            databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("question").setValue(strQuestion);
+                            //
+                            //answer
+                            //
+                            databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("answer").setValue("false");
+                        }
+                        //
+                        //answers
+                        //
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("answers").child("1").setValue("true");
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("answers").child("2").setValue("false");
+                    }
+                    //second question
+                    else if (question == 2){
+                        //
+                        //type
+                        //
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("type").setValue("multiple choice");
+                        //
+                        //question
+                        //
+                        strQuestion = strQuestion + "?";
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("question").setValue(strQuestion);
+                        //
+                        //answer
+                        //
+                        rightAnswerPosition = random.nextInt(4) + 1;
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("answer").setValue(String.valueOf(rightAnswerPosition));
+                        //
+                        //additionAnswer
+                        //
+                        do {
+                            additionAnswerPosition = random.nextInt(4) + 1;
+                        } while (additionAnswerPosition == rightAnswerPosition);
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("additionAnswer").setValue(String.valueOf(additionAnswerPosition));
+                        //
+                        //answers
+                        //
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("answers").child(String.valueOf(rightAnswerPosition)).setValue(String.valueOf(rightAnswer));
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("answers").child(String.valueOf(additionAnswerPosition)).setValue(String.valueOf(additionAnswer));
+                        //int numberOfAnswersFilled = 0;
+                        //while (numberOfAnswersFilled < 2){
+
+                        //    numberOfAnswersFilled++;
+                        //}
+
+                        max = unit * (operation + 1);
+                        min = unit * (operation - 1);
+
+                        //randomWrongAnswer1Position
+                        do {
+                            randomWrongAnswer1Position = random.nextInt(4) + 1;
+                        } while(randomWrongAnswer1Position == rightAnswerPosition || randomWrongAnswer1Position == additionAnswerPosition);
+                        //randomWrongAnswer1
+                        do {
+                            randomWrongAnswer1 = random.nextInt(max + 1 - min) + min;
+                        } while(randomWrongAnswer1 == rightAnswer || randomWrongAnswer1 == additionAnswer || randomWrongAnswer1 == 0);
+
+                        //randomWrongAnswer2Position
+                        do {
+                            randomWrongAnswer2Position = random.nextInt(4) + 1;
+                        } while(randomWrongAnswer2Position == rightAnswerPosition || randomWrongAnswer2Position == additionAnswerPosition || randomWrongAnswer2Position == randomWrongAnswer1Position);
+                        //randomWrongAnswer2
+                        do {
+                            randomWrongAnswer2 = random.nextInt(max + 1 - min) + min;
+                        } while(randomWrongAnswer2 == rightAnswer || randomWrongAnswer2 == additionAnswer || randomWrongAnswer2 == randomWrongAnswer1 || randomWrongAnswer2 == 0);
+
+
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("answers").child(String.valueOf(randomWrongAnswer1Position)).setValue(String.valueOf(randomWrongAnswer1));
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("answers").child(String.valueOf(randomWrongAnswer2Position)).setValue(String.valueOf(randomWrongAnswer2));
+
+
+                    }
+                    //third question
+                    else{
+                        //
+                        //type
+                        //
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("type").setValue("fill in the blank");
+                        //
+                        //question
+                        //
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("question").setValue(strQuestion);
+                        //
+                        //answer
+                        //
+                        databaseRef.child("Exercises").child(String.valueOf(unit)).child(String.valueOf(operation)).child(String.valueOf(question)).child("answer").setValue(String.valueOf(rightAnswer));
+                    }
+                }
+            }
+        }
+    }
+
 }
