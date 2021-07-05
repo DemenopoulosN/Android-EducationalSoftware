@@ -3,7 +3,9 @@ package com.unipi.p17019p17024.educationalsoftware;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,8 +26,9 @@ public class StudentsDataActivity extends AppCompatActivity {
     ImageView imageViewUnit1Score, imageViewUnit2Score, imageViewUnit3Score, imageViewUnit4Score, imageViewUnit5Score, imageViewUnit6Score, imageViewUnit7Score, imageViewUnit8Score, imageViewUnit9Score, imageViewUnit10Score;
     Integer[] totalUnitsScoresArray = new Integer[]{0,0,0,0,0,0,0,0,0,0};
     Integer[] viewsArray = new Integer[]{0,0,0,0,0,0,0,0,0,0};
-    int score1, score2, score3, score4, score5, score6, score7, score8, score9, score10;
-    int problemsScore, revisionTestScore, totalAdditionFaults;
+    Integer score1, score2, score3, score4, score5, score6, score7, score8, score9, score10;
+    Integer problemsScore, revisionTestScore, totalAdditionFaults;
+    ImageView imageViewInfoTeacher2;
 
     //Firebase Database
     DatabaseReference studentsRef;
@@ -61,6 +64,8 @@ public class StudentsDataActivity extends AppCompatActivity {
         textViewProblemsScore = findViewById(R.id.textViewProblemsScore);
         textViewRevisionTestScore = findViewById(R.id.textViewRevisionTestScore);
         textViewTotalAdditionFaults = findViewById(R.id.textViewTotalAdditionFaults);
+
+        imageViewInfoTeacher2 = findViewById(R.id.imageViewInfoTeacher2);
 
 
         //GetIntent
@@ -321,8 +326,24 @@ public class StudentsDataActivity extends AppCompatActivity {
         });
 
 
+    }
 
 
+    public void infoTeacher2(View view){
+        //showMessage(getResources().getString(R.string.errorSavingImageTitle),getResources().getString(R.string.errorSavingImageMessage)+ message);
+        showMessage("Καλησπέρα!","Σε αυτή την οθόνη βλέπεις όλα τα στατιστικά στοιχεία του μαθητή που επέλεξες.");
+    }
 
+    public void showMessage(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setCancelable(true)
+                .setTitle(title)
+                .setMessage(message)
+                .setIcon(R.mipmap.application_photo_round)
+                .setPositiveButton("Ok", (dialog, which) -> {
+                    //do nothing
+                })
+                .show();
     }
 }

@@ -43,18 +43,7 @@ public class LogInActivity extends AppCompatActivity {
     boolean isSignInPushed = false;
 
 
-
-
-
-
-
     Random random;
-
-
-
-
-
-
 
 
     @Override

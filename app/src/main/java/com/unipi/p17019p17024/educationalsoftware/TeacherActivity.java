@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -38,6 +40,7 @@ public class TeacherActivity extends AppCompatActivity {
 
     //TextView
     TextView textViewTeacherTitle, textViewTeacherEmptyTitle;
+    ImageView imageViewInfoTeacher1;
 
     //Firebase Database
     DatabaseReference studentsRef;
@@ -53,6 +56,7 @@ public class TeacherActivity extends AppCompatActivity {
 
         textViewTeacherTitle = findViewById(R.id.textViewTeacherTitle);
         textViewTeacherEmptyTitle = findViewById(R.id.textViewTeacherEmptyTitle);
+        imageViewInfoTeacher1 = findViewById(R.id.imageViewInfoTeacher1);
 
         //GetIntent
         //userID = getIntent().getStringExtra("userID");
@@ -122,6 +126,25 @@ public class TeacherActivity extends AppCompatActivity {
     {
         super.onStop();
         adapter.stopListening();
+    }
+
+
+    public void infoTeacher1(View view){
+        //showMessage(getResources().getString(R.string.errorSavingImageTitle),getResources().getString(R.string.errorSavingImageMessage)+ message);
+        showMessage("Καλησπέρα!","Σε αυτή την οθόνη μπορείς να δεις μια λίστα με τους εγγεγραμμένους στην εφαρμογή μαθητές και να επιλέξεις όποιον επιθυμείς από αυτούς για να μεταβείς στην επόμενη οθόνη όπου θα εμφανίζονται τα στατιστικά και τα σκορ του μαθητή που επέλεξες.");
+    }
+
+    public void showMessage(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setCancelable(true)
+                .setTitle(title)
+                .setMessage(message)
+                .setIcon(R.mipmap.application_photo_round)
+                .setPositiveButton("Ok", (dialog, which) -> {
+                    //do nothing
+                })
+                .show();
     }
 
 

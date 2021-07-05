@@ -16,11 +16,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wp7955934" />
 
+    <ImageView
+        android:id="@+id/imageViewInfoTeacher1"
+        android:layout_width="48dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="360dp"
+        android:layout_marginTop="1dp"
+        android:onClick="infoTeacher1"
+        android:scaleType="fitXY"
+        android:src="@drawable/information_icon4_orange_svg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/textViewTeacherTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="104dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="105dp"
         android:text="@string/titleTeacher"
         android:textSize="26sp"
@@ -57,7 +70,7 @@
         android:id="@+id/studentsRecyclerList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="53dp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -27,6 +27,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/imageViewInfoTeacher2"
+                android:layout_width="48dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="344dp"
+                android:layout_marginTop="12dp"
+                android:onClick="infoTeacher2"
+                android:scaleType="fitXY"
+                android:src="@drawable/information_icon4_orange_svg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/textViewTotalAdditionFaults"
                 android:layout_width="wrap_content"

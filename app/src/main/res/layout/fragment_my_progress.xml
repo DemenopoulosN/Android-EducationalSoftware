@@ -16,46 +16,90 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wp7955934" />
 
-    <ImageView
-        android:id="@+id/imageViewInfoMyProgress"
-        android:layout_width="48dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="358dp"
-        android:layout_marginTop="3dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/information_icon4_orange_svg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="70dp"
         android:text="Unit 44"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="5dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textViewRevisionTestScoreMyProgress"
+                android:id="@+id/textViewMyProgressTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="242dp"
-                android:layout_marginTop="1850dp"
-                android:textSize="24sp"
-                android:textStyle="normal"
+                android:layout_marginStart="96dp"
+                android:layout_marginTop="13dp"
+                android:fontFamily="monospace"
+                android:text="Η πρόοδός μου"
+                android:textSize="28sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/imageView21"
+                android:layout_width="91dp"
+                android:layout_height="71dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="35dp"
+                android:src="@drawable/bar_chart_hi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewInfoMyProgress"
+                android:layout_width="48dp"
+                android:layout_height="47dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="4dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/information_icon4_orange_svg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewUnit9ScoreMyProgress"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="790dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
-                android:id="@+id/textViewRevisionTestScoreTitleMyProgress"
+                android:id="@+id/textViewUnit10TitleMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1850dp"
-                android:text="Revision Test Score:"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="862dp"
+                android:text="Ενότητα 10"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewUnit10ScoreMyProgress"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="860dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewProblemsScoreTitleMyProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="968dp"
+                android:text="Σκορ Προβλημάτων:"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -65,86 +109,43 @@
                 android:id="@+id/textViewProblemsScoreMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="202dp"
-                android:layout_marginTop="1800dp"
+                android:layout_marginEnd="90dp"
+                android:layout_marginBottom="35dp"
                 android:textSize="24sp"
                 android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/textViewProblemsScoreTitleMyProgress"
+                android:id="@+id/textViewRevisionTestScoreTitleMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1800dp"
-                android:text="Problems Score:"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="1004dp"
+                android:text="Σκορ Επαναληπτικών Τεστ:"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageViewUnit10ScoreMyProgress"
-                android:layout_width="121dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="1730dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
-                android:id="@+id/textViewUnit10ScoreTitleMyProgress"
+                android:id="@+id/textViewRevisionTestScoreMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1730dp"
-                android:text="Score:"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="1dp"
                 android:textSize="24sp"
                 android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
-                android:id="@+id/textViewUnit10TitleMyProgress"
+                android:id="@+id/textViewUnit8TitleMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1620dp"
-                android:text="Unit 10"
-                android:textSize="34sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageViewUnit9ScoreMyProgress"
-                android:layout_width="121dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="1550dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textViewUnit9ScoreTitleMyProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1550dp"
-                android:text="Score:"
-                android:textSize="24sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textViewUnit9TitleMyProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1440dp"
-                android:text="Unit 9"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="716dp"
+                android:text="Ενότητα 8"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -152,55 +153,22 @@
 
             <ImageView
                 android:id="@+id/imageViewUnit8ScoreMyProgress"
-                android:layout_width="121dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="1370dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="714dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textViewUnit8ScoreTitleMyProgress"
+                android:id="@+id/textViewUnit9TitleMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1370dp"
-                android:text="Score:"
-                android:textSize="24sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textViewUnit8TitleMyProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1260dp"
-                android:text="Unit 8"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="792dp"
+                android:text="Ενότητα 9"
                 android:textSize="34sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/imageViewUnit7ScoreMyProgress"
-                android:layout_width="121dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="1190dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textViewUnit7ScoreTitleMyProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1190dp"
-                android:text="Score:"
-                android:textSize="24sp"
-                android:textStyle="normal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -208,42 +176,39 @@
                 android:id="@+id/textViewUnit7TitleMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1080dp"
-                android:text="Unit 7"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="641dp"
+                android:text="Ενότητα 7"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/imageViewUnit6ScoreMyProgress"
-                android:layout_width="121dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="1010dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/imageViewUnit7ScoreMyProgress"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="641dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textViewUnit6ScoreTitleMyProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1010dp"
-                android:text="Score:"
-                android:textSize="24sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="parent"
+            <ImageView
+                android:id="@+id/imageViewUnit6ScoreMyProgress"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="563dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textViewUnit6TitleMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="900dp"
-                android:text="Unit 6"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="563dp"
+                android:text="Ενότητα 6"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -251,32 +216,20 @@
 
             <ImageView
                 android:id="@+id/imageViewUnit5ScoreMyProgress"
-                android:layout_width="121dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="830dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textViewUnit5ScoreTitleMyProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="830dp"
-                android:text="Score:"
-                android:textSize="24sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="480dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textViewUnit5TitleMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="720dp"
-                android:text="Unit 5"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="480dp"
+                android:text="Ενότητα 5"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -284,32 +237,20 @@
 
             <ImageView
                 android:id="@+id/imageViewUnit4ScoreMyProgress"
-                android:layout_width="121dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="650dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textViewUnit4ScoreTitleMyProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="650dp"
-                android:text="Score:"
-                android:textSize="24sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="399dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textViewUnit4TitleMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="540dp"
-                android:text="Unit 4"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="399dp"
+                android:text="Ενότητα 4"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -317,58 +258,22 @@
 
             <ImageView
                 android:id="@+id/imageViewUnit3ScoreMyProgress"
-                android:layout_width="121dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="470dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textViewUnit3ScoreTitleMyProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="470dp"
-                android:text="Score:"
-                android:textSize="24sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="316dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textViewUnit3TitleMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="360dp"
-                android:text="Unit 3"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="316dp"
+                android:text="Ενότητα 3"
                 android:textSize="34sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textViewUnit2ScoreTitleMyProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="290dp"
-                android:text="Score:"
-                android:textSize="24sp"
-                android:textStyle="normal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textViewUnit1ScoreTitleMyProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="60dp"
-                android:text="Score:"
-                android:textSize="24sp"
-                android:textStyle="normal"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -376,9 +281,9 @@
                 android:id="@+id/textViewUnit2TitleMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="120dp"
-                android:text="Unit 2"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="225dp"
+                android:text="Ενότητα 2"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -388,8 +293,9 @@
                 android:id="@+id/textViewUnit1TitleMyProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:text="Unit 1"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="142dp"
+                android:text="Ενότητα 1"
                 android:textSize="34sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -397,20 +303,20 @@
 
             <ImageView
                 android:id="@+id/imageViewUnit2ScoreMyProgress"
-                android:layout_width="121dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="290dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="225dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/imageViewUnit1ScoreMyProgress"
-                android:layout_width="121dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="100dp"
-                android:layout_marginTop="60dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="150dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="141dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

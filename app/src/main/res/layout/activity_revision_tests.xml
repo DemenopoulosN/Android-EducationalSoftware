@@ -148,6 +148,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="721dp"
+        android:onClick="infoRevisionTest"
         android:scaleType="fitXY"
         android:src="@drawable/information_icon4_orange_svg"
         app:layout_constraintBottom_toBottomOf="parent"

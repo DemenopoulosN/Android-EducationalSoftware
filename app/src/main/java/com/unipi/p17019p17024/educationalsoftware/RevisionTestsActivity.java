@@ -3,12 +3,14 @@ package com.unipi.p17019p17024.educationalsoftware;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -36,6 +38,7 @@ public class RevisionTestsActivity extends AppCompatActivity {
     Button buttonCorrectRevision,buttonWrongRevision,buttonSubmitMultipleChoiceRevision,buttonSubmitFillInTheGapRevision;
     RadioGroup radioGroupRevision;
     RadioButton radioButton1Revision, radioButton2Revision, radioButton3Revision, radioButton4Revision;
+    ImageView imageView;
 
     Integer randomUnit, randomOperation; //, currentRevisionScore
     ArrayList<String> selectedQuestions = new ArrayList<>();
@@ -69,6 +72,7 @@ public class RevisionTestsActivity extends AppCompatActivity {
         radioButton2Revision = findViewById(R.id.radioButton2Revision);
         radioButton3Revision = findViewById(R.id.radioButton3Revision);
         radioButton4Revision = findViewById(R.id.radioButton4Revision);
+        imageView = findViewById(R.id.imageViewInfoRevisionTest);
         questionID = "0";
         //currentRevisionScore = 0;
 
@@ -99,7 +103,7 @@ public class RevisionTestsActivity extends AppCompatActivity {
             studentsRef.child(userID).child("currentRevisionScore").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull @NotNull DataSnapshot myDataSnapshot) {
-                    studentsRef.child(userID).child("currentRevisionScore").setValue("0");
+                    studentsRef.child(userID).child("currentRevisionScore").setValue(0);
                 }
 
                 @Override
@@ -236,7 +240,7 @@ public class RevisionTestsActivity extends AppCompatActivity {
                                 //currentRevisionScore = currentRevisionScore + 1;
                                 Integer currentRevisionScore = Integer.parseInt(dataSnapshot2.getValue().toString());
                                 currentRevisionScore += 1;
-                                studentsRef.child(userID).child("currentRevisionScore").setValue(String.valueOf(currentRevisionScore));
+                                studentsRef.child(userID).child("currentRevisionScore").setValue(currentRevisionScore);
                             }
                         }
                         @Override
@@ -290,7 +294,7 @@ public class RevisionTestsActivity extends AppCompatActivity {
                                 //currentRevisionScore = currentRevisionScore + 1;
                                 Integer currentRevisionScore = Integer.parseInt(dataSnapshot4.getValue().toString());
                                 currentRevisionScore += 1;
-                                studentsRef.child(userID).child("currentRevisionScore").setValue(String.valueOf(currentRevisionScore));
+                                studentsRef.child(userID).child("currentRevisionScore").setValue(currentRevisionScore);
                             }
                         }
                         @Override
@@ -346,7 +350,7 @@ public class RevisionTestsActivity extends AppCompatActivity {
                                     //currentRevisionScore = currentRevisionScore + 1;
                                     Integer currentRevisionScore = Integer.parseInt(dataSnapshot6.getValue().toString());
                                     currentRevisionScore += 1;
-                                    studentsRef.child(userID).child("currentRevisionScore").setValue(String.valueOf(currentRevisionScore));
+                                    studentsRef.child(userID).child("currentRevisionScore").setValue(currentRevisionScore);
                                 }
                             }
 
@@ -403,7 +407,7 @@ public class RevisionTestsActivity extends AppCompatActivity {
                                     //currentRevisionScore = currentRevisionScore + 1;
                                     Integer currentRevisionScore = Integer.parseInt(dataSnapshot10.getValue().toString());
                                     currentRevisionScore += 1;
-                                    studentsRef.child(userID).child("currentRevisionScore").setValue(String.valueOf(currentRevisionScore));
+                                    studentsRef.child(userID).child("currentRevisionScore").setValue(currentRevisionScore);
                                 }
                             }
                             @Override
@@ -425,25 +429,6 @@ public class RevisionTestsActivity extends AppCompatActivity {
             //Intents
             //
             if(count > 30) {
-                /*studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-                studentsRef.child(userID).child("currentRevisionScore").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull @NotNull DataSnapshot myDataSnapshot) {
-                        //Integer currentRevisionScore = Integer.parseInt(myDataSnapshot.getValue().toString());
-                        //currentRevisionScore += 1;
-                        //studentsRef.child(userID).child("currentRevisionScore").setValue(String.valueOf(currentRevisionScore));
-                        //if(currentRevisionScore > Integer.parseInt(myDataSnapshot.child("revisionTestScore").getValue().toString())){
-                        //    studentsRef.child(userID).child("revisionTestScore").setValue(currentRevisionScore);
-                        //}
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
-                        // we are showing that error message in toast
-                        Toast.makeText(RevisionTestsActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
-                    }
-                });*/
-
 
                 //Call Thread
                 UpdateRevisionTestScoreThread updateRevisionTestScoreThread = new UpdateRevisionTestScoreThread(true);
@@ -501,7 +486,7 @@ public class RevisionTestsActivity extends AppCompatActivity {
                         Integer revisionTestScore = Integer.parseInt(myDataSnapshot.child("revisionTestScore").getValue().toString());
 
                         if(currentRevisionScore > revisionTestScore){
-                            studentsRef.child(userID).child("revisionTestScore").setValue(String.valueOf(currentRevisionScore));
+                            studentsRef.child(userID).child("revisionTestScore").setValue(currentRevisionScore);
                         }
                     }
 
@@ -551,4 +536,21 @@ public class RevisionTestsActivity extends AppCompatActivity {
     }
 
 
+    public void infoRevisionTest(View view){
+        //showMessage(getResources().getString(R.string.errorSavingImageTitle),getResources().getString(R.string.errorSavingImageMessage)+ message);
+        showMessage("Γειά σου! Ώρα για παιχνίδι!","Το τεστ της ενότητας μόλις άρχισε! Προσπάθησε να απαντήσεις σωστά σε όσες παραπάνω ερωτήσεις μπορείς! Οι ερωτήσεις είναι τριών ειδών και εμφανίζονται ανάλογα με το επίπεδο δυσκολίας που έχεις επιλέξει. Καλή επιτυχία!");
+    }
+
+    public void showMessage(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setCancelable(true)
+                .setTitle(title)
+                .setMessage(message)
+                .setIcon(R.mipmap.application_photo_round)
+                .setPositiveButton("Ok", (dialog, which) -> {
+                    //do nothing
+                })
+                .show();
+    }
 }

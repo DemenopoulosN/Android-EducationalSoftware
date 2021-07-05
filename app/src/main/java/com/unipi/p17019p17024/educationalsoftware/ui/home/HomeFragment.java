@@ -73,22 +73,4 @@ public class HomeFragment extends Fragment {
         binding = null;
     }
 
-    /*
-    public void infoMain(){
-        //showMessage(getResources().getString(R.string.errorSavingImageTitle),getResources().getString(R.string.errorSavingImageMessage)+ message);
-        showMessage("Βρίσκεσαι στην κεντρική σελίδα!","Πάτησε το κουμπί 'ΕΝΟΤΗΤΕΣ' για να περιηγηθείς στην θεωρία και να τεστάρεις τι έμαθες σε κάθε κεφάλαιο.\nΠάτησε το κουμπί 'ΕΠΑΝΑΛΗΠΤΙΚΑ ΤΕΣΤ' για να τεστάρεις τις γνώσεις σου συνολικά για όλα τα κεφάλαια.\nΠάτησε το κουμπί 'ΕΠΑΝΑΛΗΠΤΙΚΑ ΠΡΟΒΛΗΜΑΤΑ' για να δοκιμάσεις κάτι το παραπάνω!\nΕπιλέγοντας το κουμπί 'Η πρόοδός μου' θα δεις αναλυτικά τα σκόρ σου στα τεστ για να μπορείς να τα συγκρίνεις με τους φίλους σου!\nΕπιλέγοντας το κουμπί 'Ρυθμίσεις' μπορείς να αλλάξεις την δυσκολία των ερωτήσεων των κεφαλαίων αλλά και να αποσυνδεθείς από την εφαρμογή εφόσον το επιθυμείς.\nΚαλό παιχνίδι!");
-    }
-
-    public void showMessage(String title, String message){
-        AlertDialog.Builder builder = new AlertDialog.Builder();
-
-        builder.setCancelable(true)
-                .setTitle(title)
-                .setMessage(message)
-                .setIcon(R.mipmap.application_photo_round)
-                .setPositiveButton("Ok", (dialog, which) -> {
-                    //do nothing
-                })
-                .show();
-    } */
 }

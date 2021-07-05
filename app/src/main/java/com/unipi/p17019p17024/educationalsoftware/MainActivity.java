@@ -63,14 +63,6 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences preferences;
 
 
-    ProgressBar progressBarUnit1;
-    //int pStatus = 0;
-    //private Handler handler = new Handler();
-    TextView textViewProgressUnit1;
-    Double[] totalUnitsScoresArray = new Double[]{0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0};
-    TextView textView11;
-    Integer score1;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,34 +170,6 @@ public class MainActivity extends AppCompatActivity {
             });
         });
 
-
-        //Bundle bundle = new Bundle();
-        //bundle.putString("userID", userID);
-        //MyProgressFragment myProgressFragment = new MyProgressFragment();
-        //myProgressFragment.setArguments(bundle);
-
-
-        /*
-        studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-        studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
-                for(int i = 0; i <= 9; i++){
-                    for(int j = 1; j <= 10; j++){
-                        totalUnitsScoresArray[i] = totalUnitsScoresArray[i] + Double.parseDouble(dataSnapshot.child(String.valueOf(i + 1)).child(String.valueOf(j)).child("score").getValue().toString());
-                    }
-                    totalUnitsScoresArray[i] = totalUnitsScoresArray[i]/10;
-                    score1 = (int) Math.round(totalUnitsScoresArray[0]);
-                    textView11.setText(score1);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError error) {
-                // we are showing that error message in toast
-                Toast.makeText(MainActivity.this, getResources().getString(R.string.errorToast), Toast.LENGTH_LONG).show();
-            }
-        }); */
     }
 
     public void buttonUnitsClick() {
@@ -281,78 +245,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent4);
     }
 
-    /*public void setProgressBar(){
-        Resources res = getResources();
-        Drawable drawable = res.getDrawable(R.drawable.circle);
-        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBarUnit1);
-        progressBar.setProgress(0);   // Main Progress
-        progressBar.setSecondaryProgress(100); // Secondary Progress
-        progressBar.setMax(100); // Maximum Progress
-        progressBar.setProgressDrawable(drawable);
-
-
-        textViewProgressUnit1 = (TextView) findViewById(R.id.textViewProgressUnit1);
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                // TODO Auto-generated method stub
-                while (pStatus < 100) {
-                    pStatus += 1;
-
-                    handler.post(new Runnable() {
-
-                        @Override
-                        public void run() {
-                            // TODO Auto-generated method stub
-                            mProgress.setProgress(pStatus);
-                            textViewProgressUnit1.setText(pStatus + "%");
-
-                        }
-                    });
-                    try {
-                        // Sleep for 200 milliseconds.
-                        // Just to display the progress slowly
-                        Thread.sleep(8); //thread will take approx 1.5 seconds to finish
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
-        }).start();
-    }*/
-
-    public void setProgressBar(Integer[] scoresArray){
-        //int score1 = scoresArray[0]*20;
-        //progressBarUnit1.setProgress(scoresArray[0]);
-        //textViewProgressUnit1.setText(score1+"%");
-    }
-
 
     public String getUserID() {
         return userID;
     }
-
-
-    /* studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-        studentsRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
-                for(int i = 0; i <= 9; i++){
-                    totalUnitsScoresArray[i] = Integer.parseInt(dataSnapshot.child(String.valueOf(i + 1)).child("unitScore").getValue().toString());
-                    Log.d("score", String.valueOf(totalUnitsScoresArray[i]));
-                }
-                int score1 = totalUnitsScoresArray[0]*20;
-                progressBarUnit1.setProgress(score1);
-                textViewProgressUnit1.setText(score1+"%");
-            }
-
-            @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
-            }
-        }); */
-
-
 
 }
