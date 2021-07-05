@@ -34,6 +34,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.unipi.p17019p17024.educationalsoftware.databinding.ActivityMainBinding;
+import com.unipi.p17019p17024.educationalsoftware.ui.myProgress.MyProgressFragment;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -84,9 +85,6 @@ public class MainActivity extends AppCompatActivity {
         radioButtonEasy = findViewById(R.id.radioButtonEasy);
         radioButtonMedium = findViewById(R.id.radioButtonMedium);
         radioButtonHard = findViewById(R.id.radioButtonHard);
-        textViewProgressUnit1 = findViewById(R.id.textViewProgressUnit1);
-        progressBarUnit1 = findViewById(R.id.progressBarUnit1);
-        textView11 = findViewById(R.id.textView11);
 
 
 
@@ -181,8 +179,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
+        //Bundle bundle = new Bundle();
+        //bundle.putString("userID", userID);
+        //MyProgressFragment myProgressFragment = new MyProgressFragment();
+        //myProgressFragment.setArguments(bundle);
 
 
         /*
@@ -352,5 +352,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }); */
+
+
 
 }
