@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         buttonTests = findViewById(R.id.buttonTests);
         buttonTests.setOnClickListener(v -> {
             studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-            studentsRef.child(userID).child("10").child("unitScore").addListenerForSingleValueEvent(new ValueEventListener() {
+            studentsRef.child(userID).child(String.valueOf(10)).child("unitScore").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull @NotNull DataSnapshot testSnapshot) {
                     if(Integer.parseInt(testSnapshot.getValue().toString()) >= 4){
@@ -151,10 +151,10 @@ public class MainActivity extends AppCompatActivity {
         buttonProblems = findViewById(R.id.buttonProblems);
         buttonProblems.setOnClickListener(v -> {
             studentsRef = FirebaseDatabase.getInstance().getReference().child("Students");
-            studentsRef.child(userID).child("10").child("unitScore").addListenerForSingleValueEvent(new ValueEventListener() {
+            studentsRef.child(userID).child(String.valueOf(10)).child("unitScore").addValueEventListener(new ValueEventListener() {
                 @Override
-                public void onDataChange(@NonNull @NotNull DataSnapshot testSnapshot) {
-                    if(Integer.parseInt(testSnapshot.getValue().toString()) >= 4){
+                public void onDataChange(@NonNull @NotNull DataSnapshot testSnapshot2) {
+                    if(Integer.parseInt(testSnapshot2.getValue().toString()) >= 4){
                         buttonProblemsClick();
                     }
                     else{
