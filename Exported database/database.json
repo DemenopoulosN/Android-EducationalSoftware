@@ -1,0 +1,3619 @@
+{
+  "Exercises" : {
+    "1" : [ null, [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "1 x 1 = 5",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 3,
+      "answers" : [ null, 10, 8, 1, 2 ],
+      "question" : "1 x 1 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 1,
+      "question" : "1 x 1 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "1 x 2 = 2",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 1,
+      "answer" : 2,
+      "answers" : [ null, 3, 2, 5, 1 ],
+      "question" : "1 x 2 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 2,
+      "question" : "1 x 2 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "1 x 3 = 3",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 1,
+      "answer" : 3,
+      "answers" : [ null, 4, 1, 3, 7 ],
+      "question" : "1 x 3 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 3,
+      "question" : "1 x 3 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "1 x 4 = 1",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 2,
+      "answers" : [ null, 7, 4, 6, 5 ],
+      "question" : "1 x 4 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 4,
+      "question" : "1 x 4 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "1 x 5 = 5",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 1,
+      "answers" : [ null, 5, 6, 10, 8 ],
+      "question" : "1 x 5 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 5,
+      "question" : "1 x 5 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "1 x 6 = 4",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 3,
+      "answers" : [ null, 8, 2, 6, 7 ],
+      "question" : "1 x 6 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 6,
+      "question" : "1 x 6 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "1 x 7 = 7",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 4,
+      "answers" : [ null, 9, 8, 4, 7 ],
+      "question" : "1 x 7 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 7,
+      "question" : "1 x 7 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "1 x 8 = 16",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 1,
+      "answers" : [ null, 8, 6, 1, 9 ],
+      "question" : "1 x 8 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 8,
+      "question" : "1 x 8 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "1 x 9 = 9",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 2,
+      "answers" : [ null, 8, 9, 2, 10 ],
+      "question" : "1 x 9 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 9,
+      "question" : "1 x 9 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "1 x 10 = 1",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 3,
+      "answer" : 2,
+      "answers" : [ null, 5, 10, 11, 1 ],
+      "question" : "1 x 10 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 10,
+      "question" : "1 x 10 = ",
+      "type" : "fill in the blank"
+    } ] ],
+    "2" : [ null, [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "2 x 1 = 2",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 1,
+      "answers" : [ null, 2, 3, 5, 6 ],
+      "question" : "2 x 1 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 2,
+      "question" : "2 x 1 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "2 x 2 = 4",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 0,
+      "answer" : 2,
+      "answers" : [ null, 3, 4, 10, 5 ],
+      "question" : "2 x 2 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 4,
+      "question" : "2 x 2 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "2 x 3 = 4",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 3,
+      "answers" : [ null, 10, 5, 6, 1 ],
+      "question" : "2 x 3 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 6,
+      "question" : "2 x 3 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "2 x 4 = 8",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 3,
+      "answer" : 4,
+      "answers" : [ null, 4, 3, 6, 8 ],
+      "question" : "2 x 4 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 8,
+      "question" : "2 x 4 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "2 x 5 = 6",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 3,
+      "answers" : [ null, 3, 7, 10, 5 ],
+      "question" : "2 x 5 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 10,
+      "question" : "2 x 5 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "2 x 6 = 12",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 3,
+      "answer" : 1,
+      "answers" : [ null, 12, 10, 8, 3 ],
+      "question" : "2 x 6 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 12,
+      "question" : "2 x 6 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "2 x 7 = 7",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 3,
+      "answers" : [ null, 7, 20, 14, 9 ],
+      "question" : "2 x 7 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 14,
+      "question" : "2 x 7 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "2 x 8 = 16",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 4,
+      "answers" : [ null, 2, 10, 25, 16 ],
+      "question" : "2 x 8 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 16,
+      "question" : "2 x 8 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "2 x 9 = 18",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 3,
+      "answers" : [ null, 9, 23, 18, 11 ],
+      "question" : "2 x 9 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 18,
+      "question" : "2 x 9 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "2 x 10 = 30",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 1,
+      "answers" : [ null, 20, 30, 10, 12 ],
+      "question" : "2 x 10 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 20,
+      "question" : "2 x 10 = ",
+      "type" : "fill in the blank"
+    } ] ],
+    "3" : [ null, [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "3 x 1 = 3",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 3,
+      "answer" : 4,
+      "answers" : [ null, 10, 5, 4, 3 ],
+      "question" : "3 x 1 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 3,
+      "question" : "3 x 1 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "3 x 2 = 6",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 1,
+      "answers" : [ null, 6, 5, 10, 2 ],
+      "question" : "3 x 2 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 6,
+      "question" : "3 x 2 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "3 x 3 = 12",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 4,
+      "answers" : [ null, 10, 6, 3, 9 ],
+      "question" : "3 x 3 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 9,
+      "question" : "3 x 3 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "3 x 4 = 12",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 2,
+      "answers" : [ null, 4, 12, 15, 7 ],
+      "question" : "3 x 4 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 12,
+      "question" : "3 x 4 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "3 x 5 = 15",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 1,
+      "answers" : [ null, 15, 20, 30, 8 ],
+      "question" : "3 x 5 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 15,
+      "question" : "3 x 5 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "3 x 6 = 18",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 2,
+      "answers" : [ null, 20, 18, 36, 9 ],
+      "question" : "3 x 6 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 18,
+      "question" : "3 x 6 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "3 x 7 = 25",
+      "type" : "true or false"
+    }, {
+      "additionAnswers" : 3,
+      "answer" : 4,
+      "answers" : [ null, 77, 30, 10, 21 ],
+      "question" : "3 x 7 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 21,
+      "question" : "3 x 7 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "2 x 8 = 16",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 3,
+      "answer" : 2,
+      "answers" : [ null, 16, 24, 11, 8 ],
+      "question" : "3 x 8 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 24,
+      "question" : "3 x 8 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "3 x 9 = 27",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 1,
+      "answer" : 3,
+      "answers" : [ null, 12, 90, 27, 30 ],
+      "question" : "3 x 9 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 27,
+      "question" : "3 x 9 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "3 x 10 = 15",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 3,
+      "answers" : [ null, 10, 50, 30, 13 ],
+      "question" : "3 x 10 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 30,
+      "question" : "3 x 10 = ",
+      "type" : "fill in the blank"
+    } ] ],
+    "4" : [ null, [ null, {
+      "answer" : [ null, true, false ],
+      "answers" : false,
+      "question" : "4 x 1 = 3",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 1,
+      "answers" : [ null, 4, 5, 10, 14 ],
+      "question" : "4 x 1 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 4,
+      "question" : "4 x 1 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "4 x 2 = 8",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 3,
+      "answer" : 2,
+      "answers" : [ null, 16, 8, 6, 10 ],
+      "question" : "4 x 2 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 8,
+      "question" : "4 x 2 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "4 x 3 = 15",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 1,
+      "answer" : 3,
+      "answers" : [ null, 7, 22, 12, 4 ],
+      "question" : "4 x 3 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 12,
+      "question" : "4 x 3 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "4 x 4 = 16",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 4,
+      "answers" : [ null, 10, 8, 15, 16 ],
+      "question" : "4 x 4 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 16,
+      "question" : "4 x 4 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "4 x 5 = 25",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 3,
+      "answers" : [ null, 15, 9, 20, 30 ],
+      "question" : "4 x 5 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 20,
+      "question" : "4 x 5 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "4 x 6 = 24",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 3,
+      "answers" : [ null, 16, 25, 24, 10 ],
+      "question" : "4 x 6 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 24,
+      "question" : "4 x 6 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "4 x 7 = 30",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 3,
+      "answers" : [ null, 14, 25, 28, 11 ],
+      "question" : "4 x 7 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 28,
+      "question" : "4 x 7 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "4 x 8 = 32",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 3,
+      "answer" : 1,
+      "answers" : [ null, 32, 16, 12, 40 ],
+      "question" : "4 x 8 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 32,
+      "question" : "4 x 8 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "4 x 9 = 40",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 3,
+      "answer" : 4,
+      "answers" : [ null, 4, 45, 13, 36 ],
+      "question" : "4 x 9 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 36,
+      "question" : "4 x 9 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "4 x 10 = 40",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 4,
+      "answers" : [ null, 10, 14, 30, 40 ],
+      "question" : "4 x 10 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 40,
+      "question" : "4 x 10 = ",
+      "type" : "fill in the blank"
+    } ] ],
+    "5" : [ null, [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "5 x 1 = 5",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 3,
+      "answer" : 1,
+      "answers" : [ null, 5, 8, 6, 4 ],
+      "question" : "5 x 1 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 5,
+      "question" : "5 x 1 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "5 x 2 = 7",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 1,
+      "answers" : [ null, 10, 12, 20, 7 ],
+      "question" : "5 x 2 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 10,
+      "question" : "5 x 2 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "5 x 3 = 15",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 1,
+      "answer" : 2,
+      "answers" : [ null, 8, 15, 10, 25 ],
+      "question" : "5 x 3 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 15,
+      "question" : "5 x 3 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "5 x 4 = 25",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 2,
+      "answers" : [ null, 25, 20, 12, 9 ],
+      "question" : "5 x 4 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 20,
+      "question" : "5 x 4 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "5 x 5 = 25",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 1,
+      "answer" : 4,
+      "answers" : [ null, 10, 15, 20, 25 ],
+      "question" : "5 x 5 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 25,
+      "question" : "5 x 5 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "5 x 6 = 30",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 3,
+      "answer" : 2,
+      "answers" : [ null, 15, 30, 11, 24 ],
+      "question" : "5 x 6 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 30,
+      "question" : "5 x 6 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "5 x 7 = 45",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 1,
+      "answers" : [ null, 35, 12, 30, 45 ],
+      "question" : "5 x 7 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 35,
+      "question" : "5 x 7 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "5 x 8 = 48",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 4,
+      "answer" : 2,
+      "answers" : [ null, 48, 40, 20, 13 ],
+      "question" : "5 x 8 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 40,
+      "question" : "5 x 8 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : true,
+      "answers" : [ null, true, false ],
+      "question" : "5 x 9 = 45",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 2,
+      "answer" : 3,
+      "answers" : [ null, 40, 14, 45, 57 ],
+      "question" : "5 x 9 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 45,
+      "question" : "5 x 9 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : false,
+      "answers" : [ null, true, false ],
+      "question" : "5 x 10 = 55",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : 3,
+      "answer" : 1,
+      "answers" : [ null, 50, 55, 15, 60 ],
+      "question" : "5 x 10 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : 50,
+      "question" : "5 x 10 = ",
+      "type" : "fill in the blank"
+    } ] ],
+    "6" : [ null, [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "6 x 1 = 4",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "3",
+      "answer" : "2",
+      "answers" : [ null, "4", "6", "7", "3" ],
+      "question" : "6 x 1 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "6",
+      "question" : "6 x 1 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "6 x 2 = 12",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "3",
+      "answers" : [ null, "11", "8", "12", "7" ],
+      "question" : "6 x 2 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "12",
+      "question" : "6 x 2 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "6 x 3 = 21",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "1",
+      "answers" : [ null, "18", "9", "22", "20" ],
+      "question" : "6 x 3 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "18",
+      "question" : "6 x 3 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "6 x 4 = 24",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "2",
+      "answers" : [ null, "25", "24", "23", "10" ],
+      "question" : "6 x 4 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "24",
+      "question" : "6 x 4 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "6 x 5 = 33",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "4",
+      "answers" : [ null, "33", "11", "32", "30" ],
+      "question" : "6 x 5 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "30",
+      "question" : "6 x 5 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "6 x 6 = 35",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "1",
+      "answers" : [ null, "36", "34", "33", "12" ],
+      "question" : "6 x 6 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "36",
+      "question" : "6 x 6 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "6 x 7 = 45",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "1",
+      "answer" : "2",
+      "answers" : [ null, "13", "42", "36", "43" ],
+      "question" : "6 x 7 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "42",
+      "question" : "6 x 7 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "6 x 8 = 47",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "1",
+      "answers" : [ null, "48", "53", "47", "14" ],
+      "question" : "6 x 8 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "48",
+      "question" : "6 x 8 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "6 x 9 = 60",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "2",
+      "answers" : [ null, "57", "54", "50", "15" ],
+      "question" : "6 x 9 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "54",
+      "question" : "6 x 9 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "6 x 10 = 55",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "1",
+      "answers" : [ null, "60", "16", "65", "61" ],
+      "question" : "6 x 10 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "60",
+      "question" : "6 x 10 = ",
+      "type" : "fill in the blank"
+    } ] ],
+    "7" : [ null, [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "7 x 1 = 7",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "3",
+      "answers" : [ null, "5", "10", "7", "8" ],
+      "question" : "7 x 1 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "7",
+      "question" : "7 x 1 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "7 x 2 = 14",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "1",
+      "answer" : "4",
+      "answers" : [ null, "9", "17", "19", "14" ],
+      "question" : "7 x 2 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "14",
+      "question" : "7 x 2 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "7 x 3 = 24",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "3",
+      "answers" : [ null, "20", "10", "21", "26" ],
+      "question" : "7 x 3 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "21",
+      "question" : "7 x 3 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "7 x 4 = 31",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "1",
+      "answer" : "2",
+      "answers" : [ null, "11", "28", "26", "30" ],
+      "question" : "7 x 4 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "28",
+      "question" : "7 x 4 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "7 x 5 = 36",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "3",
+      "answer" : "2",
+      "answers" : [ null, "38", "35", "12", "36" ],
+      "question" : "7 x 5 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "35",
+      "question" : "7 x 5 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "7 x 6 = 40",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "2",
+      "answers" : [ null, "39", "42", "48", "13" ],
+      "question" : "7 x 6 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "42",
+      "question" : "7 x 6 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "7 x 7 = 49",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "3",
+      "answers" : [ null, "44", "56", "49", "14" ],
+      "question" : "7 x 7 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "49",
+      "question" : "7 x 7 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "7 x 8 = 56",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "3",
+      "answer" : "1",
+      "answers" : [ null, "56", "61", "15", "62" ],
+      "question" : "7 x 8 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "56",
+      "question" : "7 x 8 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "7 x 9 = 63",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "1",
+      "answers" : [ null, "63", "16", "69", "70" ],
+      "question" : "7 x 9 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "63",
+      "question" : "7 x 9 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "7 x 10 = 69",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "3",
+      "answer" : "2",
+      "answers" : [ null, "73", "70", "17", "63" ],
+      "question" : "7 x 10 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "70",
+      "question" : "7 x 10 = ",
+      "type" : "fill in the blank"
+    } ] ],
+    "8" : [ null, [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "8 x 1 = 8",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "1",
+      "answers" : [ null, "8", "9", "16", "13" ],
+      "question" : "8 x 1 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "8",
+      "question" : "8 x 1 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "8 x 2 = 20",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "3",
+      "answer" : "1",
+      "answers" : [ null, "16", "24", "10", "9" ],
+      "question" : "8 x 2 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "16",
+      "question" : "8 x 2 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "8 x 3 = 24",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "3",
+      "answer" : "4",
+      "answers" : [ null, "18", "16", "11", "24" ],
+      "question" : "8 x 3 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "24",
+      "question" : "8 x 3 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "8 x 4 = 32",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "1",
+      "answers" : [ null, "32", "12", "37", "29" ],
+      "question" : "8 x 4 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "32",
+      "question" : "8 x 4 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "8 x 5 = 40",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "1",
+      "answer" : "4",
+      "answers" : [ null, "13", "38", "44", "40" ],
+      "question" : "8 x 5 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "40",
+      "question" : "8 x 5 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "8 x 6 = 54",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "1",
+      "answers" : [ null, "48", "41", "40", "14" ],
+      "question" : "8 x 6 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "48",
+      "question" : "8 x 6 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "8 x 7 = 64",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "4",
+      "answers" : [ null, "62", "15", "49", "56" ],
+      "question" : "8 x 7 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "56",
+      "question" : "8 x 7 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "8 x 8 = 60",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "1",
+      "answer" : "2",
+      "answers" : [ null, "16", "64", "69", "68" ],
+      "question" : "8 x 8 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "64",
+      "question" : "8 x 8 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "8 x 9 = 74",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "1",
+      "answer" : "4",
+      "answers" : [ null, "17", "65", "80", "72" ],
+      "question" : "8 x 9 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "72",
+      "question" : "8 x 9 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "8 x 10 = 83",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "1",
+      "answers" : [ null, "80", "18", "72", "78" ],
+      "question" : "8 x 10 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "80",
+      "question" : "8 x 10 = ",
+      "type" : "fill in the blank"
+    } ] ],
+    "9" : [ null, [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "9 x 1 = 5",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "3",
+      "answers" : [ null, "3", "10", "9", "4" ],
+      "question" : "9 x 1 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "9",
+      "question" : "9 x 1 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "9 x 2 = 18",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "3",
+      "answer" : "2",
+      "answers" : [ null, "9", "18", "11", "17" ],
+      "question" : "9 x 2 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "18",
+      "question" : "9 x 2 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "9 x 3 = 35",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "4",
+      "answers" : [ null, "29", "12", "30", "27" ],
+      "question" : "9 x 3 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "27",
+      "question" : "9 x 3 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "9 x 4 = 31",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "3",
+      "answer" : "2",
+      "answers" : [ null, "28", "36", "13", "37" ],
+      "question" : "9 x 4 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "36",
+      "question" : "9 x 4 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "9 x 5 = 38",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "3",
+      "answers" : [ null, "44", "14", "45", "38" ],
+      "question" : "9 x 5 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "45",
+      "question" : "9 x 5 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "9 x 6 = 58",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "1",
+      "answers" : [ null, "54", "55", "52", "15" ],
+      "question" : "9 x 6 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "54",
+      "question" : "9 x 6 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "9 x 7 = 68",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "3",
+      "answers" : [ null, "58", "66", "63", "16" ],
+      "question" : "9 x 7 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "63",
+      "question" : "9 x 7 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "9 x 8 = 72",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "1",
+      "answers" : [ null, "72", "77", "81", "17" ],
+      "question" : "9 x 8 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "72",
+      "question" : "9 x 8 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "9 x 9 = 81",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "1",
+      "answer" : "2",
+      "answers" : [ null, "18", "81", "88", "79" ],
+      "question" : "9 x 9 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "81",
+      "question" : "9 x 9 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "9 x 10 = 90",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "1",
+      "answer" : "2",
+      "answers" : [ null, "19", "90", "84", "91" ],
+      "question" : "9 x 10 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "90",
+      "question" : "9 x 10 = ",
+      "type" : "fill in the blank"
+    } ] ],
+    "10" : [ null, [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "10 x 1 = 17",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "2",
+      "answers" : [ null, "19", "10", "18", "11" ],
+      "question" : "10 x 1 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "10",
+      "question" : "10 x 1 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "10 x 2 = 21",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "2",
+      "answers" : [ null, "18", "20", "15", "12" ],
+      "question" : "10 x 2 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "20",
+      "question" : "10 x 2 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "10 x 3 = 34",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "3",
+      "answer" : "4",
+      "answers" : [ null, "27", "26", "13", "30" ],
+      "question" : "10 x 3 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "30",
+      "question" : "10 x 3 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "10 x 4 = 40",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "1",
+      "answers" : [ null, "40", "48", "36", "14" ],
+      "question" : "10 x 4 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "40",
+      "question" : "10 x 4 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "10 x 5 = 58",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "3",
+      "answers" : [ null, "43", "15", "50", "52" ],
+      "question" : "10 x 5 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "50",
+      "question" : "10 x 5 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "10 x 6 = 60",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "4",
+      "answers" : [ null, "59", "16", "67", "60" ],
+      "question" : "10 x 6 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "60",
+      "question" : "10 x 6 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "10 x 7 = 64",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "3",
+      "answer" : "2",
+      "answers" : [ null, "75", "70", "17", "72" ],
+      "question" : "10 x 7 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "70",
+      "question" : "10 x 7 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "true",
+      "answers" : [ null, "true", "false" ],
+      "question" : "10 x 8 = 80",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "1",
+      "answers" : [ null, "80", "18", "76", "89" ],
+      "question" : "10 x 8 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "80",
+      "question" : "10 x 8 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "10 x 9 = 100",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "4",
+      "answer" : "3",
+      "answers" : [ null, "99", "86", "90", "19" ],
+      "question" : "10 x 9 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "90",
+      "question" : "10 x 9 = ",
+      "type" : "fill in the blank"
+    } ], [ null, {
+      "answer" : "false",
+      "answers" : [ null, "true", "false" ],
+      "question" : "10 x 10 = 94",
+      "type" : "true or false"
+    }, {
+      "additionAnswer" : "2",
+      "answer" : "1",
+      "answers" : [ null, "100", "20", "106", "99" ],
+      "question" : "10 x 10 = ?",
+      "type" : "multiple choice"
+    }, {
+      "answer" : "100",
+      "question" : "10 x 10 = ",
+      "type" : "fill in the blank"
+    } ] ],
+    "problem1" : {
+      "answer" : 54
+    },
+    "problem2" : {
+      "answer" : 56
+    }
+  },
+  "Students" : {
+    "QOT28S5yFJd8NjjWhy1zeikqpd93" : {
+      "1" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 4
+      },
+      "2" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "3" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "4" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "5" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "6" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "7" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "8" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "9" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "10" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "currentRevisionScore" : 0,
+      "email" : "nikolasdemen@hotmail.com",
+      "name" : "Nikolas",
+      "problemsScore" : 0,
+      "revisionTestScore" : 0,
+      "totalAdditionFaults" : 0
+    },
+    "RABacmLSrKdOI1S1I4hkGyLQTme2" : {
+      "1" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "2" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "3" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "4" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "5" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "6" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "7" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "8" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "9" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "10" : {
+        "1" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "2" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "3" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "4" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "5" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "6" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "7" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "8" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "9" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "10" : {
+          "additionFaults" : 0,
+          "lastNo1" : 0,
+          "lastNo2" : 0,
+          "lastNo3" : 0,
+          "lastNo4" : 0,
+          "lastNo5" : 0,
+          "score" : 0,
+          "weight" : 1
+        },
+        "unitScore" : 0,
+        "views" : 0
+      },
+      "currentRevisionScore" : 0,
+      "email" : "kgerasovits@yahoo.gr",
+      "name" : "Konstantinos",
+      "problemsScore" : 2,
+      "revisionTestScore" : 28,
+      "totalAdditionFaults" : 0
+    }
+  },
+  "Units" : [ null, [ null, "1 x 1 = 1", "1 x 2 = 2", "1 x 3 = 3", "1 x 4 = 4", "1 x 5 = 5", "1 x 6 = 6", "1 x 7 = 7", "1 x 8 = 8", "1 x 9 = 9", "1 x 10 = 10" ], [ null, "2 x 1 = 2", "2 x 2 = 4", "2 x 3 = 6", "2 x 4 = 8", "2 x 5 = 10", "2 x 6 = 12", "2 x 7 = 14", "2 x 8 = 16", "2 x 9 = 18", "2 x 10 = 20" ], [ null, "3 x 1 = 3", "3 x 2 = 6", "3 x 3 = 9", "3 x 4 = 12", "3 x 5 = 15", "3 x 6 = 18", "3 x 7 = 21", "3 x 8 = 24", "3 x 9 = 27", "3 x 10 = 30" ], [ null, "4 x 1 = 4", "4 x 2 = 8", "4 x 3 = 12", "4 x 4 = 16", "4 x 5 = 20", "4 x 6 = 24", "4 x 7 = 28", "4 x 8 = 32", "4 x 9 = 36", "4 x 10 = 40" ], [ null, "5 x 1 = 5", "5 x 2 = 10", "5 x 3 = 15", "5 x 4 = 20", "5 x 5 = 25", "5 x 6 = 30", "5 x 7 = 35", "5 x 8 = 40", "5 x 9 = 45", "5 x 10 = 50" ], [ null, "6 x 1 = 6", "6 x 2 = 12", "6 x 3 = 18", "6 x 4 = 24", "6 x 5 = 30", "6 x 6 = 36", "6 x 7 = 42", "6 x 8 = 48", "6 x 9 = 54", "6 x 10 = 60" ], [ null, "7 x 1 = 7", "7 x 2 = 14", "7 x 3 = 21", "7 x 4 = 28", "7 x 5 = 35", "7 x 6 = 42", "7 x 7 = 49", "7 x 8 = 56", "7 x 9 = 63", "7 x 10 = 70" ], [ null, "8 x 1 = 8", "8 x 2 = 16", "8 x 3 = 24", "8 x 4 = 32", "8 x 5 = 40", "8 x 6 = 48", "8 x 7 = 56", "8 x 8 = 64", "8 x 9 = 72", "8 x 10 = 80" ], [ null, "9 x 1 = 9", "9 x 2 = 18", "9 x 3 = 27", "9 x 4 = 36", "9 x 5 = 45", "9 x 6 = 54", "9 x 7 = 63", "9 x 8 = 72", "9 x 9 = 81", "9 x 10 = 90" ], [ null, "10 x 1 = 10", "10 x 2 = 20", "10 x 3 = 30", "10 x 4 = 40", "10 x 5 = 50", "10 x 6 = 60", "10 x 7 = 70", "10 x 8 = 80", "10 x 9 = 90", "10 x 10 = 100" ] ]
+}
