@@ -4,12 +4,12 @@ In this project, we created an educational game as an android app in order for y
 <br />
 <br />
 
-<img src="Screenshots/1.PNG" width="206" height="512" />
-<img src="Screenshots/2.PNG" width="600" height="300" />
-<img src="Screenshots/3.PNG" width="600" height="300" />
-<img src="Screenshots/4.PNG" width="600" height="300" />
-<img src="Screenshots/5.PNG" width="600" height="300" />
-<img src="Screenshots/6.PNG" width="600" height="300" />
-<img src="Screenshots/7.PNG" width="600" height="300" />
-<img src="Screenshots/8.PNG" width="600" height="300" />
-<img src="Screenshots/11.PNG" width="600" height="300" />
+<img src="Screenshots/1.PNG" width="256" height="512" />
+<img src="Screenshots/2.PNG" width="256" height="512" />
+<img src="Screenshots/3.PNG" width="256" height="512" />
+<img src="Screenshots/4.PNG" width="256" height="512" />
+<img src="Screenshots/5.PNG" width="256" height="512" />
+<img src="Screenshots/6.PNG" width="256" height="512" />
+<img src="Screenshots/7.PNG" width="256" height="512" />
+<img src="Screenshots/8.PNG" width="256" height="512" />
+<img src="Screenshots/11.PNG" width="256" height="512" />
