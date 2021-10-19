@@ -4,8 +4,12 @@ In this project, we created an educational game as an android app in order for y
 <br />
 <br />
 
-<img src="Screenshots/1.PNG" width="545" height="365" />
-<img src="https://github.com/KonstantinosGer/WebApplication-ASP.NET-MVC/blob/master/Screenshots/MVC%20Screenshot%20(2).png" width="600" height="300" />
-<img src="https://github.com/KonstantinosGer/WebApplication-ASP.NET-MVC/blob/master/Screenshots/MVC%20Screenshot%20(3).png" width="600" height="300" />
-<img src="https://github.com/KonstantinosGer/WebApplication-ASP.NET-MVC/blob/master/Screenshots/MVC%20Screenshot%20(4).png" width="600" height="300" />
-<img src="https://github.com/KonstantinosGer/WebApplication-ASP.NET-MVC/blob/master/Screenshots/MVC%20Screenshot%20(5).png" width="600" height="300" />
+<img src="Screenshots/1.PNG" width="108" height="412" />
+<img src="Screenshots/2.PNG" width="600" height="300" />
+<img src="Screenshots/3.PNG" width="600" height="300" />
+<img src="Screenshots/4.PNG" width="600" height="300" />
+<img src="Screenshots/5.PNG" width="600" height="300" />
+<img src="Screenshots/6.PNG" width="600" height="300" />
+<img src="Screenshots/7.PNG" width="600" height="300" />
+<img src="Screenshots/8.PNG" width="600" height="300" />
+<img src="Screenshots/11.PNG" width="600" height="300" />
