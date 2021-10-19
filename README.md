@@ -4,7 +4,7 @@ In this project, we created an educational game as an android app in order for y
 <br />
 <br />
 
-<img src="Screenshots/1.PNG" width="108" height="412" />
+<img src="Screenshots/1.PNG" width="206" height="512" />
 <img src="Screenshots/2.PNG" width="600" height="300" />
 <img src="Screenshots/3.PNG" width="600" height="300" />
 <img src="Screenshots/4.PNG" width="600" height="300" />
